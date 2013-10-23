@@ -1,0 +1,36 @@
+
+-- REQUIREMENTS --
+
+* Javascript-enabled web browser
+
+* CCK module <http://drupal.org/project/cck>
+
+* FileField module <http://drupal.org/project/filefield>
+
+
+-- PRE-REQUISITES --
+
+* If you are upgrading from a previous version, please
+
+  - backup your files and database in front of the upgrade
+
+  - run Drupal's update.php after updating the module's files.
+    Further information: http://drupal.org/upgrade/running-update-php
+
+  - read notes about important changes that may affect your site or theme in
+    CHANGELOG.txt.
+
+  - update your theme, especially if you have any theme override functions for
+    image or img_assist.
+
+
+-- INSTALLATION --
+
+* Place the entire SCORM directory into a modules directory of your
+  choice, in most cases: sites/all/modules.
+
+* Enable the SCORM module by navigating to:
+
+  Administer > Site building > Modules
+
+* Now you can add a scorm file field to any content type of your choice (select "file" as field and "SCORM" as type).

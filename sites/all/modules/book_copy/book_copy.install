@@ -1,0 +1,68 @@
+<?php
+// $Id: book_copy.install,v 1.1 2008/10/31 00:35:32 jgraham Exp $
+// @file
+/**
+ * Implementation of hook_install().
+ */
+function book_copy_install() {
+  // Create tables.
+  drupal_install_schema('book_copy');
+  db_query("UPDATE {system} SET weight = 15 WHERE name = 'book_copy'"); // our module should run after any book modules
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function book_copy_uninstall() {
+  // Remove tables.
+  drupal_uninstall_schema('book_copy');
+}
+
+/**
+ * Implementation of hook_schema().
+ * 
+ * An entry in the {book_copy} table indicates that a
+ * book is to be considered personal, meaning that only the
+ * owner may add pages to it.
+ */
+function book_copy_schema() {
+  $schema['book_copy_history'] = array(
+    'description' => t('This table maintains source history for books derived via the copy feature'),
+    'fields' => array(
+      'nid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => t('The new nid of the node copied')),
+      'bid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => t('The target book (when initially copied)')),
+      'sbid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => t('The source book')),
+      'snid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => t('The source nid.'),
+        ),
+      'copied' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => t('The datetime this was copied')),
+    ),
+    'primary key' => array('nid'),
+  );
+  
+  return $schema;
+}

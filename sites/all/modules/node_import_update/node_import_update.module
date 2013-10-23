@@ -1,0 +1,185 @@
+<?php
+
+/**
+ * @file
+ * Update current nodes at node import.
+ */
+
+/**
+* Implementation of hook_menu().
+*/
+function node_import_update_menu() {
+  $items = array();
+  $items['admin/settings/node_import_update'] = array(
+    'title' => t('Node Import Update'),
+    'description' => t('Update current nodes at import.'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('node_import_update_settings_form'),
+    'access arguments' => array('administer node import update'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+
+/**
+ * Implementation of hook_form_alter
+ */
+function node_import_update_form_alter(&$form, $form_state, $form_id) {
+  // Check if we are importing
+  if (arg(2) == 'node_import') {
+    /**
+     * Set custom data
+     * These should  be defined in admin settings form for node import update
+     */
+     
+    $IMPORT_UNIQUE_ID_NAME   = variable_get('niu_id_field', 'title');  // Import field that holds the unique identifier
+    $IMPORT_UNIQUE_ID_TYPE   = variable_get('niu_id_field_type', FALSE); // Type of the unique identifier
+    $IMPORT_NTYPE            = variable_get('niu_content_type', 'page'); // Node type to be imported
+    $IMPORT_UPDATE_DATETIME  = variable_get('niu_update_date', FALSE); // Settting: update date/time value?
+
+
+    // Alter node edit form
+    if ($form_id == $IMPORT_NTYPE .'_node_form') {
+      // Determine the value and build the SQL query
+      // This switch should be changed to allow dinamicaly load the diferent ID types from the contrib .inc files
+      switch ($IMPORT_UNIQUE_ID_TYPE) {
+        case 'cck_field':
+        // get unique id from cck fields
+        $unique_id_value = $form['#post']['cck:'.$IMPORT_UNIQUE_ID_NAME.':value'][0];
+        // build query
+        $query = 'SELECT c.nid, c.vid FROM {content_type_%s} c WHERE c.%s_value = "%s"';
+          break;
+        case 'uc_sku_field':
+       // get unique id from ubercart fields
+        $unique_id_value = $form['#post'][$IMPORT_UNIQUE_ID_NAME];
+       // build query
+       $query = 'SELECT n.nid, n.vid FROM {uc_products} u, {node} n WHERE u.nid = n.nid AND n.type = "%s" AND u.%s = "%s"';
+          break;
+        default:
+        // get unique id for node values
+        $unique_id_value = $form['#post'][$IMPORT_UNIQUE_ID_NAME];
+        // build query
+        $query = 'SELECT n.nid, n.vid FROM {node} n WHERE n.type = "%s" AND n.%s = "%s"';
+      }
+
+      // Check if we have a unique id
+      if ($unique_id_value) {
+        // execute query
+        $row = db_fetch_array(db_query($query, $IMPORT_NTYPE, $IMPORT_UNIQUE_ID_NAME, $unique_id_value));
+
+        // Destroy so we don't pass an array on next iteration
+        unset($query);
+
+        // If already exists (non empty result)
+        if (!empty($row['nid'])) {
+          //drupal_set_message('update in effect!');
+
+          // Set nid and vid to that node
+          $form['nid']['#value']= intval($row['nid']);
+          $form['vid']['#value']= intval($row['vid']);
+
+          // Set time to last updated
+          if ($IMPORT_UPDATE_DATETIME) {
+            $form['changed']['#value'] = time ();
+          }
+          else {
+            // create timestamp from string date
+            $timestamp = strtotime($form['#post']['changed']);
+
+            // set timestamp value for the below
+            $form['changed']['#default_value'] = $timestamp;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/**
+ * Admin settings for node import update
+ */
+function node_import_update_settings_form($form_state) {
+  $form = array();
+  
+  $form['niu_settings']['general'] = array(
+     '#title'       => 'Node Import Update settings',
+     '#type'        => 'fieldset',
+  );
+  $form['niu_settings']['general']['niu_content_type'] = array(
+    '#type' => 'select',
+    '#title' => t('Content type'),
+    '#default_value' => variable_get('niu_content_type', 'page'),
+    '#options' => node_import_update_load_content_types(),
+    '#description' => t('Name of the content type to update.'),
+  );
+  $form['niu_settings']['general']['niu_id_field'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Unique ID field'),
+    '#default_value' => variable_get('niu_id_field', 'title'),
+    '#description' => t('Name of the field containing the unique identifier.'),
+  );
+    $form['niu_settings']['general']['niu_id_field_type'] = array(
+    '#type' => 'select',
+    '#title' => t('Unique ID field type'),
+    '#default_value' => variable_get('niu_id_field_type', 'node_field'),
+    '#options' => node_import_update_load_field_types(),
+    '#description' => t('Select the type of the field containing the unique identifier.'),
+  );
+  $form['niu_settings']['general']['niu_update_date'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Update date/time value'),
+    '#default_value' => variable_get('niu_update_date', FALSE),
+    '#description' => t('Update the date and time values of the nodes updated?'),
+  );
+
+  return system_settings_form($form);
+}
+
+
+/**
+ * Helper function to load the different content types for the settings form select
+ * @return array with content type names as keys and the human readable name as value
+ */
+function node_import_update_load_content_types() {
+   $niu_content_type = array();
+   $niu_content_types = array();
+   foreach (node_get_types('names') as $type => $name) {
+      $content_type=content_types($type);
+      $niu_content_types[$content_type['type']] = $content_type['name'];
+   }
+   return  $niu_content_types;
+}
+
+
+/**
+ * Helper function to load the different field types for the unique identifier select
+ * @return array with custom field types names as keys and a description as value
+ */
+function node_import_update_load_field_types() {
+   // This function should load the diferent field types from the contrib folder .inc files
+   $niu_field_types = array('node_field'=>'Node field','cck_field'=>'CCK field','uc_sku_field'=>'Ubercart SKU');
+
+   return  $niu_field_types;
+}
+
+
+// module below ensures existing nodes are updated, to avoid duplication
+// kept for the time-being for leagacy sake. May borrow image field handling code, as this remains untested in new code above.
+/* function node_import_update_form_product_node_form_alter($data) {
+  $sku = $data['#post']['model'];
+  if (is_numeric($sku)){
+    $sku = intval($sku) ;
+    $row = db_fetch_array(db_query("SELECT uc_products.nid, uc_products.vid, content_field_image_cache.field_image_cache_fid, content_field_image_cache.field_image_cache_list, content_field_image_cache.field_image_cache_data FROM uc_products, content_field_image_cache WHERE uc_products.model = %d AND uc_products.nid = content_field_image_cache.nid LIMIT 1", $sku));
+    if (!empty($row)) {
+      $data['nid']['#value']= intval($row['nid']);
+      $data['vid']['#value']= intval($row['vid']);
+      $data['#post']['field_image_cache'] = Array(Array('data' => $row['field_image_cache_data'], 'list' => $row['field_image_cache_list'], 'fid' => $row['field_image_cache_fid']));
+      $data['#post']['cck:field_image_cache:data'] = $row['field_image_cache_data'];
+      $data['#post']['cck:field_image_cache:fid'] = $row['field_image_cache_fid'];
+      $data['#post']['cck:field_image_cache:list'] = $row['field_image_cache_list'];
+      $data['changed']['#value']= time ();
+    }
+  }
+} */

@@ -1,0 +1,14 @@
+; $Id$
+
+name = Book Block
+description = Enables users to add specific book navigation blocks to non-book pages.
+core = 6.x
+dependencies[] = book
+package = Other
+
+; Information added by drupal.org packaging script on 2012-07-09
+version = "6.x-1.0-beta2"
+core = "6.x"
+project = "bookblock"
+datestamp = "1341865278"
+

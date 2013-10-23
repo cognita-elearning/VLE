@@ -1,0 +1,714 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from files:
+#  filter.admin.inc,v 1.8.2.1 2008/02/12 14:25:34 goba
+#  filter.pages.inc,v 1.2 2007/11/10 17:41:18 dries
+#  filter.module,v 1.204.2.8 2008/12/10 22:30:14 goba
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-08-10 15:10+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/filter/filter.admin.inc:33
+msgid "All roles may use default format"
+msgstr "Sve uloge mogu koristiti podrazumijevani format"
+
+#: modules/filter/filter.admin.inc:33
+msgid "No roles may use this format"
+msgstr "Nijedna uloga ne može koristiti ovaj format"
+
+#: modules/filter/filter.admin.inc:38
+msgid "Set default format"
+msgstr "Postavi podrazumijevani format"
+
+#: modules/filter/filter.admin.inc:45
+msgid "Default format updated."
+msgstr "Podrazumijevani format je ažuriran."
+
+#: modules/filter/filter.admin.inc:97
+msgid "All roles for the default format must be enabled and cannot be changed."
+msgstr ""
+"Sve uloge za podrazumijevani format moraju biti uključene i ne mogu biti "
+"mijenjane."
+
+#: modules/filter/filter.admin.inc:104
+msgid "Specify a unique name for this filter format."
+msgstr "Unesite jedinstveno ime za ovaj filter."
+
+#: modules/filter/filter.admin.inc:111
+msgid ""
+"Choose which roles may use this filter format. Note that roles with the "
+"\"administer filters\" permission can always use all the filter formats."
+msgstr ""
+"Izaberite uloge koje mogu da koriste ovaj format filtera. Imajte u vidu da "
+"uloge sa dozvolama za \"administriranje filtera\" uvijek mogu da koriste sve "
+"formate filtera."
+
+#: modules/filter/filter.admin.inc:130
+msgid "Filters"
+msgstr "Filteri"
+
+#: modules/filter/filter.admin.inc:131
+msgid "Choose the filters that will be used in this filter format."
+msgstr "Izaberite filtere koji će biti korišteni u ovom filteru formata."
+
+#: modules/filter/filter.admin.inc:149
+msgid "No guidelines available."
+msgstr "Nema smjernica na raspolaganju."
+
+#: modules/filter/filter.admin.inc:151
+msgid ""
+"These are the guidelines that users will see for posting in this input "
+"format. They are automatically generated from the filter settings."
+msgstr ""
+"Ovo su upute koje će korisnici vidjeti prilikom slanja sadržaja koji koristi "
+"ovaj ulazni format. Automatski se generiraju na osnovu postavki filtera."
+
+#: modules/filter/filter.admin.inc:168
+msgid ""
+"Filter format names need to be unique. A format named %name already exists."
+msgstr ""
+"Imena filter formata trebaju biti jedinstvena. Format imena %name već "
+"postoji."
+
+#: modules/filter/filter.admin.inc:187
+msgid "Added input format %format."
+msgstr "Ulazini format %format je dodan."
+
+#: modules/filter/filter.admin.inc:190
+msgid "The input format settings have been updated."
+msgstr "Postavke ulaznog formata su ažurirane."
+
+#: modules/filter/filter.admin.inc:252
+msgid "Are you sure you want to delete the input format %format?"
+msgstr "Da li ste sigurni da želite obrisati ulazni format %format?"
+
+#: modules/filter/filter.admin.inc:252
+msgid ""
+"If you have any content left in this input format, it will be switched to "
+"the default input format. This action cannot be undone."
+msgstr ""
+"Ako ostavite bilo koji sadržaj u ovom ulznom formatu, biće prebačen na "
+"podrazumijevani ulazni format. Ova radnja ne može biti vraćena u prvobitno "
+"stanje."
+
+#: modules/filter/filter.admin.inc:255
+msgid "The default format cannot be deleted."
+msgstr "Osnovni format se ne može obrisati."
+
+#: modules/filter/filter.admin.inc:278
+msgid "Deleted input format %format."
+msgstr "Obrisan ulazni format %format."
+
+#: modules/filter/filter.admin.inc:289
+msgid "Configure %format"
+msgstr "Konfiguriraj %format"
+
+#: modules/filter/filter.admin.inc:312
+msgid "No settings are available."
+msgstr "Nema dostupnih postavki."
+
+#: modules/filter/filter.admin.inc:330
+msgid "Rearrange %format"
+msgstr "Preuredi %format"
+
+#: modules/filter/filter.admin.inc:391
+msgid "The filter ordering has been saved."
+msgstr "Redoslijed filtera je spremljen."
+
+#: modules/filter/filter.pages.inc:35
+msgid "input formats"
+msgstr "Ulazni formati"
+
+#: modules/filter/filter.module:23
+msgid ""
+"The filter module allows administrators to configure text input formats for "
+"use on your site. An input format defines the HTML tags, codes, and other "
+"input allowed in both content and comments, and is a key feature in guarding "
+"against potentially damaging input from malicious users. Two input formats "
+"included by default are <em>Filtered HTML</em> (which allows only an "
+"administrator-approved subset of HTML tags) and <em>Full HTML</em> (which "
+"allows the full set of HTML tags). Additional input formats may be created "
+"by an administrator."
+msgstr ""
+"Modul za filtriranje omogućava administratorima da konfiguriraju ulazni "
+"format za site. Jedan ulazni format definira HTML oznake, kodove, i druge "
+"ulaze omogućujući i u sadržaju i u komentaru ovaj unos, a glavna značajka je "
+"zaštita od štetnog ulaza postavljenog od strane malicioznih korisnika. Dva "
+"ulazna formata unijeta po standardu su <em>Filtrirani HTML</em> (koji "
+"omogućava samo uz administratorsko odobrenje podskup HTML znakova) i "
+"<em>Potpun HTML</em> (koji dozvoljava sve HTML znakove). Dopunski ulazni "
+"format može biti kreiran od strane administratora."
+
+#: modules/filter/filter.module:24
+msgid ""
+"Each input format uses filters to manipulate text, and most input formats "
+"apply several different filters to text in a specific order. Each filter is "
+"designed for a specific purpose, and generally either adds, removes or "
+"transforms elements within user-entered text before it is displayed. A "
+"filter does not change the actual content of a post, but instead, modifies "
+"it temporarily before it is displayed. A filter may remove unapproved HTML "
+"tags, for instance, while another automatically adds HTML to make links "
+"referenced in text clickable."
+msgstr ""
+"Svaki ulazni format koristi filtere da bi manipulirao tekstom, i većina "
+"ulaznih formata primjenjuju više različitih tekst filtera u određenom "
+"redoslijedu. Svaki filter služi određenoj svrsi, i generalno ili dodaje, "
+"ukljanja ili mijenja elemente u tekstu koji je unio korisnik prije nego što "
+"će tekst biti prikazan. Filter ne mijenja sadržaj stranice beć ga privremeno "
+"mijenja prije prikazivanja. Jedan Filter može da ukloni nedozvoljene HTML "
+"tagove, dok drugi može da automatski doda HTML da bi od teksta u linkovima "
+"napravio link."
+
+#: modules/filter/filter.module:25
+msgid ""
+"Users can choose between the available input formats when creating or "
+"editing content. Administrators can configure which input formats are "
+"available to which user roles, as well as choose a default input format."
+msgstr ""
+"Korisnici mogu odabrati jedan od ponuđenih ulaznih formata kada prave ili "
+"mijenjaju sadržaj. Administratori mogu da odrede koji su ulazni formati "
+"dostupni kojim korisničkim ulogama, kao i da odaberu podrazumijevani ulazni "
+"format."
+
+#: modules/filter/filter.module:26
+msgid ""
+"For more information, see the online handbook entry for <a href=\"@filter"
+"\">Filter module</a>."
+msgstr ""
+"Za više informacija, pogledajte online priručnik za <a href=\"@filter"
+"\">Filter modul</a>."
+
+#: modules/filter/filter.module:29
+msgid ""
+"<em>Input formats</em> define a way of processing user-supplied text in "
+"Drupal. Each input format uses filters to manipulate text, and most input "
+"formats apply several different filters to text, in a specific order. Each "
+"filter is designed to accomplish a specific purpose, and generally either "
+"removes elements from or adds elements to text before it is displayed. Users "
+"can choose between the available input formats when submitting content."
+msgstr ""
+"<em>Ulazni formati</em> definiraju način na koji se obrađuje tekst koji je "
+"korisnik proslijedio u Drupalu. Svaki ulazni format koristi filtere za "
+"manipulaciju tekstom, i većina ulaznih formata primjeni više različitih "
+"filtera na tekst, u doređenom redoslijedu. Svaki filter je napravljen zbog "
+"određene svrhe i generalno on ili uklanja ili dodaje elemente u tekst prije "
+"njegovog prikazivanja. Korisnici mogu da biraju neki od raspoloživih ulaznih "
+"formata kada prosljeđuju sadržaj."
+
+#: modules/filter/filter.module:30
+msgid ""
+"Use the list below to configure which input formats are available to which "
+"roles, as well as choose a default input format (used for imported content, "
+"for example). The default format is always available to users. All input "
+"formats are available to users in a role with the \"administer filters\" "
+"permission."
+msgstr ""
+"Koristite slijedeći popis da bi ste doredili koji su ulazni fomati omogućeni "
+"za određene uloge, kao i da izaberete podrazumjevani ulazni format (koji se "
+"koristi npr. za uvezeni sadržaj). Podrazumijevani format je uvijek dostupan "
+"svim korisnicima. Svi ulazni formati su dostupni korisnicima sa ulogom koja "
+"ima pravo \"administriranja filtera\"."
+
+#: modules/filter/filter.module:33
+msgid ""
+"Every <em>filter</em> performs one particular change on the user input, for "
+"example stripping out malicious HTML or making URLs clickable. Choose which "
+"filters you want to apply to text in this input format. If you notice some "
+"filters are causing conflicts in the output, you can <a href=\"@rearrange"
+"\">rearrange them</a>."
+msgstr ""
+"Svaki <em>filter</em> izvršava jednu određenu promjenu na sadržaju koji je "
+"postavljen od strane korisnika, npr. uklanjanje malicioznih HTML oznaka ili "
+"pretvaranje URL-a u linkove. Izaberite koje filtere želite primijeniti na "
+"sadržaj u ulaznim formatima. Ako primjetite da neki filteri izazivaju "
+"neusuglašenost u izlazu možete im <a href=\"@rearrange\">promijeniti "
+"redosljed</a>."
+
+#: modules/filter/filter.module:35
+msgid ""
+"If you cannot find the settings for a certain filter, make sure you have "
+"enabled it on the <a href=\"@url\">view tab</a> first."
+msgstr ""
+"Ukoliko me možete naći postavke za određeni filtar, prvo provjerite jeste li "
+"ga omogućili na <a href=\"@url\">pregledu oznaka</a>"
+
+#: modules/filter/filter.module:37
+msgid ""
+"Because of the flexible filtering system, you might encounter a situation "
+"where one filter prevents another from doing its job. For example: a word in "
+"an URL gets converted into a glossary term, before the URL can be converted "
+"to a clickable link. When this happens, rearrange the order of the filters."
+msgstr ""
+"Zbog fleksibilnosti sustava filtriranja, možete doći u situaciju gdje jedan "
+"filter poništava djelovanje drugog.  Npr. riječ u URL se prebacuje u "
+"odrednicu za riječnik, prije nego će URL biti prebačen u link. Kada se ovo "
+"dogodi promijenite redosljed filtera."
+
+#: modules/filter/filter.module:38
+msgid ""
+"Filters are executed from top-to-bottom. To change the order of the filters, "
+"modify the values in the <em>Weight</em> column or grab a drag-and-drop "
+"handle under the <em>Name</em> column and drag filters to new locations in "
+"the list. (Grab a handle by clicking and holding the mouse while hovering "
+"over a handle icon.) Remember that your changes will not be saved until you "
+"click the <em>Save configuration</em> button at the bottom of the page."
+msgstr ""
+"Filteri se izvršavaju od prvog prema posljednjem. Kako bi ste promijenili "
+"redoslijed filtera, promijenite vrijednost kolone <em>Težina</em> ili "
+"uhvatite ručicu u koloni <em>Ime</em> i prevucite je na novo mjesto u "
+"popisu. (Ručicu hvatate tako što pređete mišem preko ikone ručice, kliknete "
+"na nju i vučete ju). Zapamtite da vaše izmjene neće biti sačuvane dok ne "
+"kliknete na <em>Spremi konfigiraciju</em> dugme na dnu stranice."
+
+#: modules/filter/filter.module:180,182
+msgid "Allowed HTML tags: @tags"
+msgstr "Dozvoljene HTML oznake: @tags"
+
+#: modules/filter/filter.module:187
+msgid ""
+"\n"
+"<p>This site allows HTML content. While learning all of HTML may feel "
+"intimidating, learning how to use a very small number of the most basic HTML "
+"\"tags\" is very easy. This table provides examples for each tag that is "
+"enabled on this site.</p>\n"
+"<p>For more information see W3C's <a href=\"http://www.w3.org/TR/html/"
+"\">HTML Specifications</a> or use your favorite search engine to find other "
+"sites that explain HTML.</p>"
+msgstr ""
+"\n"
+"<p>Ovaj site dozvoljava sadržaj napisan u HTML-u. Iako učenje cijelog HTML-a "
+"može biti zastrašujuće, lako je naučiti par osnovnih \"oznaka\". Tablica "
+"ispod prikazuje primjere za svaku oznaku na ovom siteu koja je omogućena.</p>"
+"\r\n"
+"<p>Ukoliko želite saznati nešto više, pogledajte <a href=\"http://www.w3.org/"
+"TR/html/\">HTML specifikacije</a>organizacije W3C ili potražite neki drugi "
+"site koji opisuje HTML.</p>"
+
+#: modules/filter/filter.module:191
+msgid "Anchors are used to make links to other pages."
+msgstr "Sidra se koriste za pravljenje linkova ka drugim stranicama."
+
+#: modules/filter/filter.module:192
+msgid ""
+"By default line break tags are automatically added, so use this tag to add "
+"additional ones. Use of this tag is different because it is not used with an "
+"open/close pair like all the others. Use the extra \" /\" inside the tag to "
+"maintain XHTML 1.0 compatibility"
+msgstr ""
+"Oznake za prijelom redova su podrazumijevane, zato koristite ovu ozaku samo "
+"ukoliko želite dodatno napraviti prijelom reda. Uporaba ove oznake je nešto "
+"drugačija od ostalih, pošto je nije potrebno zatvoriti. Koristite dodatnu "
+"prazninu i kosu crtu  \" /\"  unutar oznake kako bi ste održali "
+"kompatibilnost sa XHTML 1.0"
+
+#: modules/filter/filter.module:192
+msgid "Text with <br />line break"
+msgstr "Tekst sa <br /> prijelomom reda"
+
+#: modules/filter/filter.module:193
+msgid ""
+"By default paragraph tags are automatically added, so use this tag to add "
+"additional ones."
+msgstr ""
+"Kako se oznake za paragrafe dodaju automatski, koristite ovu oznaku samo "
+"ukoliko želite dodati dodatne paragrafe."
+
+#: modules/filter/filter.module:193
+msgid "Paragraph one."
+msgstr "Paragraf jedan."
+
+#: modules/filter/filter.module:193
+msgid "Paragraph two."
+msgstr "Paragraf dva."
+
+#: modules/filter/filter.module:194
+msgid "Strong"
+msgstr "Jako"
+
+#: modules/filter/filter.module:195
+msgid "Emphasized"
+msgstr "Naglašeno"
+
+#: modules/filter/filter.module:196
+msgid "Cited"
+msgstr "Citirano"
+
+#: modules/filter/filter.module:197
+msgid "Coded text used to show programming source code"
+msgstr "Tekst-kod koji se koristi za prikazivanje programerskog izvornog koda"
+
+#: modules/filter/filter.module:197
+msgid "Coded"
+msgstr "Kod"
+
+#: modules/filter/filter.module:198
+msgid "Bolded"
+msgstr "Podebljano"
+
+#: modules/filter/filter.module:199
+msgid "Underlined"
+msgstr "Podvučeno"
+
+#: modules/filter/filter.module:200
+msgid "Italicized"
+msgstr "Ukošeno"
+
+#: modules/filter/filter.module:201
+msgid "Superscripted"
+msgstr "Gornji index"
+
+#: modules/filter/filter.module:201
+msgid "<sup>Super</sup>scripted"
+msgstr "<sup>Gornji</sup> index"
+
+#: modules/filter/filter.module:202
+msgid "Subscripted"
+msgstr "Donji index"
+
+#: modules/filter/filter.module:202
+msgid "<sub>Sub</sub>scripted"
+msgstr "<sub>Donji</sub> index"
+
+#: modules/filter/filter.module:203
+msgid "Preformatted"
+msgstr "Već formatirano"
+
+#: modules/filter/filter.module:204
+msgid "Abbreviation"
+msgstr "Skraćenica"
+
+#: modules/filter/filter.module:204
+msgid "<abbr title=\"Abbreviation\">Abbrev.</abbr>"
+msgstr "<abbr title=\"Skraćenica\">Skr.</abbr>"
+
+#: modules/filter/filter.module:205
+msgid "Acronym"
+msgstr "Akronim"
+
+#: modules/filter/filter.module:205
+msgid "<acronym title=\"Three-Letter Acronym\">TLA</acronym>"
+msgstr "<acronym title=\"Hrvatske željeznice\">HŽ</acronym>"
+
+#: modules/filter/filter.module:206
+msgid "Block quoted"
+msgstr "Citiranje u vidu bloka"
+
+#: modules/filter/filter.module:207
+msgid "Quoted inline"
+msgstr "Citiranje u redu"
+
+#: modules/filter/filter.module:209
+msgid "Table"
+msgstr "Tabela"
+
+#: modules/filter/filter.module:209
+msgid "Table header"
+msgstr "Zaglavlje tabele"
+
+#: modules/filter/filter.module:209
+msgid "Table cell"
+msgstr "Ćelija tabele"
+
+#: modules/filter/filter.module:211
+msgid "Deleted"
+msgstr "Obrisano"
+
+#: modules/filter/filter.module:212
+msgid "Inserted"
+msgstr "Umetnuto"
+
+#: modules/filter/filter.module:214
+msgid "Ordered list - use the &lt;li&gt; to begin each list item"
+msgstr "Popis sa rednim brojevima - koristite &lt;li&gt; za svaku novu stavku"
+
+#: modules/filter/filter.module:214,215
+msgid "First item"
+msgstr "Prva stavka"
+
+#: modules/filter/filter.module:214,215
+msgid "Second item"
+msgstr "Druga stavka"
+
+#: modules/filter/filter.module:215
+msgid "Unordered list - use the &lt;li&gt; to begin each list item"
+msgstr ""
+"Popis bez rednih brojeva - koristite &lt;li&gt; za svaki novi unos u popisu"
+
+#: modules/filter/filter.module:218
+msgid ""
+"Definition lists are similar to other HTML lists. &lt;dl&gt; begins the "
+"definition list, &lt;dt&gt; begins the definition term and &lt;dd&gt; begins "
+"the definition description."
+msgstr ""
+"Popisi definicija su slični ostalim popisima u HTML-u. &lt;dl&gt; započinje "
+"novi popis, &lt;dt&gt; započinje novi pojam i &lt;dd&gt; započinje samu "
+"definiciju."
+
+#: modules/filter/filter.module:218
+msgid "First term"
+msgstr "Prvi pojam"
+
+#: modules/filter/filter.module:218
+msgid "First definition"
+msgstr "Prva definicija"
+
+#: modules/filter/filter.module:218
+msgid "Second term"
+msgstr "Drugi pojam"
+
+#: modules/filter/filter.module:218
+msgid "Second definition"
+msgstr "Druga definicija"
+
+#: modules/filter/filter.module:221
+msgid "Subtitle"
+msgstr "Podnaslov"
+
+#: modules/filter/filter.module:222
+msgid "Subtitle three"
+msgstr "Podnaslov tri"
+
+#: modules/filter/filter.module:223
+msgid "Subtitle four"
+msgstr "Podnaslov četiri"
+
+#: modules/filter/filter.module:224
+msgid "Subtitle five"
+msgstr "Podnaslov pet"
+
+#: modules/filter/filter.module:225
+msgid "Subtitle six"
+msgstr "Podnaslov šest"
+
+#: modules/filter/filter.module:227
+msgid "Tag Description"
+msgstr "Opis oznake"
+
+#: modules/filter/filter.module:227,256
+msgid "You Type"
+msgstr "Tipkajte"
+
+#: modules/filter/filter.module:227,256
+msgid "You Get"
+msgstr "Dobijete"
+
+#: modules/filter/filter.module:241
+msgid "No help provided for tag %tag."
+msgstr "Ne postoji pomoć za oznaku %tag."
+
+#: modules/filter/filter.module:247
+msgid ""
+"\n"
+"<p>Most unusual characters can be directly entered without any problems.</"
+"p>\n"
+"<p>If you do encounter problems, try using HTML character entities. A common "
+"example looks like &amp;amp; for an ampersand &amp; character. For a full "
+"list of entities see HTML's <a href=\"http://www.w3.org/TR/html4/sgml/"
+"entities.html\">entities</a> page. Some of the available characters include:"
+"</p>"
+msgstr ""
+"\n"
+"<p>Većinu neobičnih znakova možete izravno unijeti bez ikakvih problema.</p>"
+"\r\n"
+"<p>Ukoliko naiđete na problem, pokušajte koristiti posebne HTML kodove. "
+"Jedan od uobičajenih primjera je &amp;amp; za znak ampersand  &amp;. Ukoliko "
+"vam treba potpuni popis, pogledajte stranicu sa HTML <a href=\"http://www.w3."
+"org/TR/html4/sgml/entities.html\">entitetima</a>. Neki od takvih znakova su:"
+"</p>"
+
+#: modules/filter/filter.module:251
+msgid "Ampersand"
+msgstr "Ampersand"
+
+#: modules/filter/filter.module:252
+msgid "Greater than"
+msgstr "Veće od"
+
+#: modules/filter/filter.module:253
+msgid "Less than"
+msgstr "Manje od"
+
+#: modules/filter/filter.module:254
+msgid "Quotation mark"
+msgstr "Znak navoda"
+
+#: modules/filter/filter.module:256
+msgid "Character Description"
+msgstr "Opis znaka"
+
+#: modules/filter/filter.module:270
+msgid "No HTML tags allowed"
+msgstr "HTML znakovi nisu dozvoljeni"
+
+#: modules/filter/filter.module:278
+msgid "Lines and paragraphs break automatically."
+msgstr "Redove i paragrafe automatski prelomiti."
+
+#: modules/filter/filter.module:280
+msgid ""
+"Lines and paragraphs are automatically recognized. The &lt;br /&gt; line "
+"break, &lt;p&gt; paragraph and &lt;/p&gt; close paragraph tags are inserted "
+"automatically. If paragraphs are not recognized simply add a couple blank "
+"lines."
+msgstr ""
+"Redovi i paragrafi prepoznaju se automatski. Oznake &lt;br /&gt; za prijelom "
+"reda, &lt;p&gt; za novi paragraf i &lt;/p&gt; za kraj paragrafa dodaju se "
+"automatski. Ukoliko paragrafi ne budu prepoznati, probajte ubaciti par "
+"paznih redova."
+
+#: modules/filter/filter.module:284
+msgid "Web page addresses and e-mail addresses turn into links automatically."
+msgstr "Web i e-mail adrese pretvaraju se u linkove automatski."
+
+#: modules/filter/filter.module:495
+msgid "Input format"
+msgstr "Format unosa"
+
+#: modules/filter/filter.module:615,666
+msgid "HTML filter"
+msgstr "HTML filter"
+
+#: modules/filter/filter.module:615
+msgid "Line break converter"
+msgstr "Pretvarač prijeloma reda"
+
+#: modules/filter/filter.module:615,726
+msgid "URL filter"
+msgstr "URL filter"
+
+#: modules/filter/filter.module:615
+msgid "HTML corrector"
+msgstr "HTML korektor"
+
+#: modules/filter/filter.module:620
+msgid ""
+"Allows you to restrict whether users can post HTML and which tags to filter "
+"out. It will also remove harmful content such as JavaScript events, "
+"JavaScript URLs and CSS styles from those tags that are not removed."
+msgstr ""
+"Omogućava da ograničite može li korisnik unijeti HTML i koje će oznake biti "
+"filtrirane. Također će biti uklonjeni svi potencijalni štetni sadržaji kao "
+"sto je JavaScript, JavaScript URL i CSS stilovi sa onih oznaka koje nisu "
+"uklonjene."
+
+#: modules/filter/filter.module:622
+msgid "Converts line breaks into HTML (i.e. &lt;br&gt; and &lt;p&gt; tags)."
+msgstr "Pretvara prekide redova u HTML (npr. &lt;br&gt; i &lt;p&gt; tags)."
+
+#: modules/filter/filter.module:624
+msgid "Turns web and e-mail addresses into clickable links."
+msgstr "Web i e-mail adrese pretvaraju se u linkove automatski."
+
+#: modules/filter/filter.module:626
+msgid "Corrects faulty and chopped off HTML in postings."
+msgstr "Korekcija pogrešnog i odrezanog HTML-a u sadržajima."
+
+#: modules/filter/filter.module:671
+msgid "Filter HTML tags"
+msgstr "Filtriraj HTML oznake."
+
+#: modules/filter/filter.module:673
+msgid "Strip disallowed tags"
+msgstr "Ukloni nedozvoljene oznake"
+
+#: modules/filter/filter.module:673
+msgid "Escape all tags"
+msgstr "Istakni sve oznake"
+
+#: modules/filter/filter.module:674
+msgid ""
+"How to deal with HTML tags in user-contributed content. If set to \"Strip "
+"disallowed tags\", dangerous tags are removed (see below). If set to "
+"\"Escape tags\", all HTML is escaped and presented as it was typed."
+msgstr ""
+"Kako se odnositi prema HTML oznakama u sadržaju korisnika. Ukoliko je "
+"odabrano \"ukloni nedozvoljene oznake\", opasne oznake biti će uklonjene "
+"(pogledajte ispod). Ukoliko je odabrano \"Prikaži oznake\", cijeli HTML kod "
+"biti će prikazan onako kako je unešen."
+
+#: modules/filter/filter.module:682
+msgid ""
+"If \"Strip disallowed tags\" is selected, optionally specify tags which "
+"should not be stripped. JavaScript event attributes are always stripped."
+msgstr ""
+"Ukoliko je odabrano \"ukloni nedozvoljene oznake\", eventualno navedite "
+"oznake koje ne treba ukloniti. JavaScript događaji se uvijek uklanjaju."
+
+#: modules/filter/filter.module:686
+msgid "Display HTML help"
+msgstr "Prikaži HTML pomoć"
+
+#: modules/filter/filter.module:688
+msgid ""
+"If enabled, Drupal will display some basic HTML help in the long filter tips."
+msgstr ""
+"Ukoliko je uključeno, Drupal će prikazati osnovnu pomoć o HTML-u u savjetima "
+"o filterima."
+
+#: modules/filter/filter.module:692
+msgid "Spam link deterrent"
+msgstr "Spam link je sprijećen"
+
+#: modules/filter/filter.module:694
+msgid ""
+"If enabled, Drupal will add rel=\"nofollow\" to all links, as a measure to "
+"reduce the effectiveness of spam links. Note: this will also prevent valid "
+"links from being followed by search engines, therefore it is likely most "
+"effective when enabled for anonymous users."
+msgstr ""
+"Ako je uključeno, Drupal će dodati  rel=\"nofollow\" svim linkovima, kao "
+"preventiva za smanjenje spam linkova. Napomena: to će također onemogućiti "
+"ispravnim linkovima da budu pronađeni od strane tražilica, i u tu svrhu je "
+"možda najbolje uključiti ovu opciju samo za anonimne korisnike."
+
+#: modules/filter/filter.module:731
+msgid "Maximum link text length"
+msgstr "Maksimalna dužina teksta linka"
+
+#: modules/filter/filter.module:734
+msgid ""
+"URLs longer than this number of characters will be truncated to prevent long "
+"strings that break formatting. The link itself will be retained; just the "
+"text portion of the link will be truncated."
+msgstr ""
+"URL-ovi koji su duži od unijetog broja znakova biće skraćeni da bi se "
+"sprječilo pojavljivanje dugačkih nizova koji remete prijelom teksta. Sam "
+"link će biti zadržan u unijetom obliku, samo će tekst linka biti skraćen."
+
+#: modules/filter/filter.module:157
+msgid "administer filters"
+msgstr "administriranje filtera"
+
+#: modules/filter/filter.module:71
+msgid "Input formats"
+msgstr "Formati unosa"
+
+#: modules/filter/filter.module:72
+msgid ""
+"Configure how content input by users is filtered, including allowed HTML "
+"tags. Also allows enabling of module-provided filters."
+msgstr ""
+"Konfigurirajte način na koji se ulazni sadržaj filtrira, uključujući "
+"dozvoljene HTML oznake. Također dozvoljava omogućavanje filtera koje pružaju "
+"moduli."
+
+#: modules/filter/filter.module:91
+msgid "Delete input format"
+msgstr "Obriši ulazni format"
+
+#: modules/filter/filter.module:99
+msgid "Compose tips"
+msgstr "Svjeti za pisanje"
+
+#: modules/filter/filter.module:131
+msgid "Rearrange"
+msgstr "Prerasporedi"

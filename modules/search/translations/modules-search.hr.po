@@ -1,0 +1,281 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from files:
+#  search.admin.inc,v 1.4 2008/01/08 10:35:42 goba
+#  search.pages.inc,v 1.4 2007/12/06 09:51:01 goba
+#  search.module,v 1.250.2.6 2009/03/10 17:20:01 goba
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-08-11 15:22+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/search/search.admin.inc:13
+msgid "Are you sure you want to re-index the site?"
+msgstr "Jeste li sigurni da želite reindeksirati site?"
+
+#: modules/search/search.admin.inc:14
+msgid ""
+" The search index is not cleared but systematically updated to reflect the "
+"new settings. Searching will continue to work but new content won't be "
+"indexed until all existing content has been re-indexed. This action cannot "
+"be undone."
+msgstr ""
+" Indeks za pretragu neće biti obrisan već će biti sustavno ažuriran na "
+"osnovu novih postavki. Pretraga će i dalje raditi ali novi sadržaj neće biti "
+"indeksiran dok sav postojeći sadržaj ne bude reindeksiran. Ova akcija ne "
+"može biti opozvana."
+
+#: modules/search/search.admin.inc:14,52,76
+msgid "Re-index site"
+msgstr "Reindeksirajte site"
+
+#: modules/search/search.admin.inc:23,82
+msgid "The index will be rebuilt."
+msgstr "Indeks će biti obnovljen."
+
+#: modules/search/search.admin.inc:49
+msgid "%percentage of the site has been indexed."
+msgstr "%percentage sitea je indeksirano."
+
+#: modules/search/search.admin.inc:50
+msgid "Indexing status"
+msgstr "Status indeksiranja"
+
+#: modules/search/search.admin.inc:57
+msgid "Indexing throttle"
+msgstr "Throttle indeksiranja"
+
+#: modules/search/search.admin.inc:58
+msgid "Number of items to index per cron run"
+msgstr "Broj članaka za indeksiranje po svakom pokretanju crona."
+
+#: modules/search/search.admin.inc:58
+msgid ""
+"The maximum number of items indexed in each pass of a <a href=\"@cron\">cron "
+"maintenance task</a>. If necessary, reduce the number of items to prevent "
+"timeouts and memory errors while indexing."
+msgstr ""
+"Maksimalan broj elemenata koji će biti indeksirani prilikom svakog "
+"pokretanja <a href=\"@cron\">cron procesa</a>. Ako je potrebno smanjite broj "
+"elemenata da bi izbjegli prekide i memorijske greške za vrijeme indeksiranja."
+
+#: modules/search/search.admin.inc:60
+msgid "Indexing settings"
+msgstr "Postavke indeksiranja"
+
+#: modules/search/search.admin.inc:61
+msgid ""
+"<p><em>Changing the settings below will cause the site index to be rebuilt. "
+"The search index is not cleared but systematically updated to reflect the "
+"new settings. Searching will continue to work but new content won't be "
+"indexed until all existing content has been re-indexed.</em></p><p><em>The "
+"default settings should be appropriate for the majority of sites.</em></p>"
+msgstr ""
+"<p><em>Promjena donjih postavki će prouzročiti ponovno formiranje indeksa "
+"sitea. Indeks sitea neće biti obrisan već će sustavno biti osvježen prema "
+"novim postavkama. Pretraga će i dalje raditi ali novi sadržaj neće biti "
+"indeksiran dok sav postojeći sadržaj nije ponovo indeksiran.</em></"
+"p><p><em>Podrazumjevane postavke su odgovarajuće za većinu siteova.</em></p>"
+
+#: modules/search/search.admin.inc:62
+msgid "Minimum word length to index"
+msgstr "Najmanja dužina riječi za indeksiranje"
+
+#: modules/search/search.admin.inc:62
+msgid ""
+"The number of characters a word has to be to be indexed. A lower setting "
+"means better search result ranking, but also a larger database. Each search "
+"query must contain at least one keyword that is this size (or longer)."
+msgstr ""
+"Broj potrebnih znakova koje riječ treba da ima da bi bila indeksirana. Manji "
+"broj znači bolje rezultate pretrage ali i veću bazu. Svaka pretraga mora da "
+"sadrži barem jednu knjučnu riječ koja je ove veličine (ili veća)."
+
+#: modules/search/search.admin.inc:63
+msgid "Simple CJK handling"
+msgstr "Jednostavno rukovanje CJK-om"
+
+#: modules/search/search.admin.inc:63
+msgid ""
+"Whether to apply a simple Chinese/Japanese/Korean tokenizer based on "
+"overlapping sequences. Turn this off if you want to use an external "
+"preprocessor for this instead. Does not affect other languages."
+msgstr ""
+"Želite li promijeniti jednostavni Chinese/Japanese/Korean djelitelj zasnovan "
+"na sekvencama koje se preklapaju. Isključite ako umjesto njega želite "
+"koristiti spoljašnji preprocesor. Ovo nema utjecaja na druge jezike."
+
+#: modules/search/search.admin.inc:47
+msgid "There is 1 item left to index."
+msgid_plural "There are @count items left to index."
+msgstr[0] "1 stavka je ostala za indeksiranje."
+msgstr[1] "Ostale su @count stavke za indeksiranje."
+msgstr[2] "Ostalo je @count stavki za indeksiranje."
+
+#: modules/search/search.pages.inc:29
+msgid "results"
+msgstr "rezultati"
+
+#: modules/search/search.pages.inc:35
+msgid "Search results"
+msgstr "Rezultati pretraživanja"
+
+#: modules/search/search.pages.inc:38
+msgid "Your search yielded no results"
+msgstr "Vaš upit za pretraživanje nije polučio nikakav rezultat."
+
+#: modules/search/search.pages.inc:123
+msgid "Please enter some keywords."
+msgstr "Molim unesite neke ključne riječi."
+
+#: modules/search/search.pages.inc:29
+msgid "search"
+msgstr "traži"
+
+#: modules/search/search.pages.inc:29
+msgid "%keys (@type)."
+msgstr "%keys (@type)."
+
+#: modules/search/search.module:99
+msgid ""
+"The search module adds the ability to search for content by keywords. Search "
+"is often the only practical way to find content on a large site, and is "
+"useful for finding both users and posts."
+msgstr ""
+"Modul za pretraživanje dodaje mogućnost pretraživanja sadržaja po ključnim "
+"riječima. Pretraživanje je često jedini praktičan način da se neki sadržaj "
+"pronađe na velikom siteu, i koristan je za pronalaženje korisnika i poruka."
+
+#: modules/search/search.module:100
+msgid ""
+"To provide keyword searching, the search engine maintains an index of words "
+"found in your site's content. To build and maintain this index, a correctly "
+"configured <a href=\"@cron\">cron maintenance task</a> is required. Indexing "
+"behavior can be adjusted using the <a href=\"@searchsettings\">search "
+"settings page</a>; for example, the <em>Number of items to index per cron "
+"run</em> sets the maximum number of items indexed in each pass of a <a href="
+"\"@cron\">cron maintenance task</a>. If necessary, reduce this number to "
+"prevent timeouts and memory errors when indexing."
+msgstr ""
+"Kako bi pružili pretragu po ključnim riječima sustav održava indeks svih "
+"riječi koje se nalaze na vašem siteu. Da bi ovaj indeks bio izgrađen i "
+"dopunjavan potreban je ispravno konfiguriran <a href=\"@cron\">cron proces</"
+"a>. Ponašanje indeksera se može postaviti na <a href=\"@searchsettings"
+"\">stranici za postavljanje pretrage</a>; npr. <em>Broj elemenata koji će "
+"biti indeksirani prilikom jednog pokretanja cron-a</em> određuje maksimalan "
+"broj elemenata koji će biti indeksirani u svakom prolazu <a href=\"@cron"
+"\">cron procesa</a>. Ako je potrebno smanjite ovaj broj kako bi ste izbjegli "
+"prekide i memorijske greške prilikom indeksiranja."
+
+#: modules/search/search.module:101
+msgid ""
+"For more information, see the online handbook entry for <a href=\"@search"
+"\">Search module</a>."
+msgstr ""
+"Za više informacija, pogledajte online priručnik za <a href=\"@search"
+"\">modul Traži</a>."
+
+#: modules/search/search.module:104
+msgid ""
+"The search engine maintains an index of words found in your site's content. "
+"To build and maintain this index, a correctly configured <a href=\"@cron"
+"\">cron maintenance task</a> is required. Indexing behavior can be adjusted "
+"using the settings below."
+msgstr ""
+"Alat za pretragu održava indeks riječi koji se nalaze u sadržaju vašeg "
+"sitea. Da bi ste napravili i imali indeks potrebno je da imate ispravno "
+"konfiguriran <a href=\"@cron\">cron proces</a>. Ponašanje indeksa može biti "
+"promijenjeno u donjim postavkama."
+
+#: modules/search/search.module:106
+msgid ""
+"<ul>\n"
+"<li>Check if your spelling is correct.</li>\n"
+"<li>Remove quotes around phrases to match each word individually: <em>\"blue "
+"smurf\"</em> will match less than <em>blue smurf</em>.</li>\n"
+"<li>Consider loosening your query with <em>OR</em>: <em>blue smurf</em> will "
+"match less than <em>blue OR smurf</em>.</li>\n"
+"</ul>"
+msgstr ""
+"<ul>\r\n"
+"<li>Proverite da li ste ispravno unijeli riječi.</li>\r\n"
+"<li>Obrišite navodnike oko pojmova da bi ste pronašli pojedinačne riječi: "
+"<em>\"blue smurf\"</em> će imati manje podudaranja od <em>blue smurf</em>.</"
+"li>\r\n"
+"<li>Razmotrite da oslabite pretragu sa <em>OR</em>: <em>blue smurf</em> će "
+"imati manje podudaranja <em>blue OR smurf</em>.</li>\r\n"
+"</ul>"
+
+#: modules/search/search.module:152
+msgid "Search form"
+msgstr "Forma za pretraživanje"
+
+#: modules/search/search.module:922
+msgid ""
+"You must include at least one positive keyword with @count characters or "
+"more."
+msgstr ""
+"Morate uključiti barem jednu pozitivnu ključnu reč sa najmanje @count "
+"karaktera."
+
+#: modules/search/search.module:926
+msgid ""
+"Search for either of the two terms with uppercase <strong>OR</strong>. For "
+"example, <strong>cats OR dogs</strong>."
+msgstr ""
+"Unesite velikim slovima <strong>OR</strong> da bi ste pretražili bilo koji "
+"od dva termina. Npr., <strong>cats OR dogs</strong>."
+
+#: modules/search/search.module:1033
+msgid "Enter your keywords"
+msgstr "Unesite vaše ključne riječi"
+
+#: modules/search/search.module:1067
+msgid "Search this site"
+msgstr "Pretražite ovaj site"
+
+#: modules/search/search.module:1071
+msgid "Enter the terms you wish to search for."
+msgstr "Unesite izraze koje želite pronaći."
+
+#: modules/search/search.module:144
+msgid "search content"
+msgstr "traži sadržaj"
+
+#: modules/search/search.module:144
+msgid "use advanced search"
+msgstr "koristi napredno pretraživanje"
+
+#: modules/search/search.module:144
+msgid "administer search"
+msgstr "upravljanje pretraživanjem"
+
+#: modules/search/search.module:176
+msgid "Search settings"
+msgstr "Postavke pretraživanja"
+
+#: modules/search/search.module:177
+msgid "Configure relevance settings for search and other indexing options"
+msgstr ""
+"Konfigurirajte relevantne postavke za pretragu i ostale opcije za "
+"indeksiranje."
+
+#: modules/search/search.module:185
+msgid "Clear index"
+msgstr "Očisti indeks"
+
+#: modules/search/search.module:193
+msgid "Top search phrases"
+msgstr "Najpopularnije fraze pretraživanja"
+
+#: modules/search/search.module:194
+msgid "View most popular search phrases."
+msgstr "Vidi najpopularnije fraze za pretraživanje."

@@ -1,0 +1,57 @@
+<?php
+/**
+ * @file
+ * Simple, extensible user import from a CSV file.
+ */
+
+/**
+ * Implementation of hook_init()
+ */
+function uif_init() {
+  drupal_add_css(drupal_get_path('module', 'uif') . '/uif.css');
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function uif_menu() {
+  $items = array();
+
+  $items['admin/user/uif'] = array(
+    'title' => 'Import users',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('uif_import_form'),
+    'access arguments' => array('import users'),
+    'file' => 'uif.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implementation of hook_perm().
+ */
+function uif_perm() {
+  return array('import users');
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function uif_theme() {
+  return array(
+    'uif_preview_users' => array(
+      'file' => 'uif.admin.inc',
+      'arguments' => array('data' => NULL, 'limit' => NULL),
+    ),
+    'uif_preview_one_user' => array(
+      'file' => 'uif.admin.inc',
+      'arguments' => array('data' => NULL),
+    ),
+    'uif_form_help' => array(
+      'file' => 'uif.admin.inc',
+      'arguments' => array(),
+    ),
+  );
+}
+

@@ -1,0 +1,47 @@
+<?php
+function bc_panel_bonus_schema() {
+	$schema['minipanel_templates'] = array(
+    	'description' => t('Stores search index correlations for advanced help topics.'),
+    	'fields' => array
+		(
+      		'nid' => array
+			(
+        		'type' => 'int',
+        		'not null' => TRUE,
+        		'description' => t('Node Id.'),
+      		),
+      		'vid' => array
+			(
+        		'type' => 'int',
+        		'not null' => TRUE,
+        		'description' => t('Version Id.'),
+      		),
+      		'page' => array
+			(
+        		'type' => 'varchar',
+				'length' => 128,
+				'default' => '',
+        		'not null' => TRUE,
+        		'description' => t('Store mini panel name for page view.'),
+      		),
+      		'teaser' => array
+			(
+        		'type' => 'varchar',
+				'length' => 128,
+        		'default' => '',
+        		'not null' => TRUE,
+        		'description' => t('Store mini panel name for teaser view.'),
+      		)
+		),
+		'primary key' => array('nid','vid'),
+	);
+	return $schema;
+}
+
+function bc_panel_bonus_install() {
+	drupal_install_schema('bc_panel_bonus');
+}
+
+function bc_panel_bonus_update_6001() {
+	drupal_install_schema('bc_panel_bonus');
+}

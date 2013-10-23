@@ -1,0 +1,12 @@
+name = Node Import Update
+description = Extend Node Import to allow for nodes to be updated.
+
+dependencies[] = node_import
+package = Node Import
+core = 6.x
+; Information added by drupal.org packaging script on 2012-04-21
+version = "6.x-1.x-dev"
+core = "6.x"
+project = "node_import_update"
+datestamp = "1334968264"
+

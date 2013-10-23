@@ -1,0 +1,5 @@
+<?php
+
+function bc_panel_bonus_sites_menu_alter(&$menu) {
+//	drupal_set_message(print_r($menu,true));
+}

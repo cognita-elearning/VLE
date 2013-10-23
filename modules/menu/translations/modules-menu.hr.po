@@ -1,0 +1,394 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from files:
+#  menu.admin.inc,v 1.26.2.4 2009/02/25 13:15:40 goba
+#  menu.module,v 1.157.2.6 2009/04/27 12:50:13 goba
+#  menu.install,v 1.9.2.1 2009/01/06 15:46:37 goba
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-08-11 13:36+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/menu/menu.admin.inc:54
+msgid "There are no menu items yet."
+msgstr "Još nema stavki menija."
+
+#: modules/menu/menu.admin.inc:104
+msgid "reset"
+msgstr "resetiraj"
+
+#: modules/menu/menu.admin.inc:175
+msgid "Menu item"
+msgstr "Stavka menija"
+
+#: modules/menu/menu.admin.inc:177,299
+msgid "Expanded"
+msgstr "Prošireno"
+
+#: modules/menu/menu.admin.inc:260
+msgid ""
+"The path this menu item links to. This can be an internal Drupal path such "
+"as %add-node or an external URL such as %drupal. Enter %front to link to the "
+"front page."
+msgstr ""
+"Putanja na koju ova stavka vodi. Ovo može biti interna Drupalova putanja, "
+"kao što je to %add-node ili spoljni URL kao što je to %drupal. Unesite %"
+"front da biste napravili link na glavnu stranu."
+
+#: modules/menu/menu.admin.inc:281
+msgid ""
+"The link text corresponding to this item that should appear in the menu."
+msgstr "Tekst linka koji odgovara ovoj stavki koja se treba pojaviti u meniju."
+
+#: modules/menu/menu.admin.inc:289
+msgid "The description displayed when hovering over a menu item."
+msgstr ""
+"Opis prikazan tijekom prelaska pokazivača miša preko izborničke stavke."
+
+#: modules/menu/menu.admin.inc:295
+msgid "Menu items that are not enabled will not be listed in any menu."
+msgstr ""
+"Stavke menija koje nisu uključene neće biti prikazane niti u jednom meniju."
+
+#: modules/menu/menu.admin.inc:301
+msgid ""
+"If selected and this menu item has children, the menu will always appear "
+"expanded."
+msgstr ""
+"Ukoliko je odabrano i ova stavka menija ima podstavke, meni će uvijek biti "
+"raširen."
+
+#: modules/menu/menu.admin.inc:403
+msgid "Menu name"
+msgstr "Naziv menija"
+
+#: modules/menu/menu.admin.inc:405
+msgid ""
+"The machine-readable name of this menu. This text will be used for "
+"constructing the URL of the <em>menu overview</em> page for this menu. This "
+"name must contain only lowercase letters, numbers, and hyphens, and must be "
+"unique."
+msgstr ""
+"Strojno čitljivo ime za ovaj meni. Ovaj tekst će biti uzet za konstrukciju "
+"URL-a za <em>meni opći pregled</em> stranu za ovaj meni. Ovaj meni treba da "
+"sadrži samo male brojeve, kratke linije, i treba da je jedinstveno."
+
+#: modules/menu/menu.admin.inc:460
+msgid "Are you sure you want to delete the custom menu %title?"
+msgstr "Da li ste sigurni da želite obrisati korisnički izbornik %title?"
+
+#: modules/menu/menu.admin.inc:492
+msgid "The custom menu %title has been deleted."
+msgstr "Korisnički izbornik %title je obrisan."
+
+#: modules/menu/menu.admin.inc:502
+msgid ""
+"The menu name may only consist of lowercase letters, numbers, and hyphens."
+msgstr "Naziv menija može da sadrži samo mala slova, brojeve i crtice."
+
+#: modules/menu/menu.admin.inc:512
+msgid "The menu already exists."
+msgstr "Meni već postoji."
+
+#: modules/menu/menu.admin.inc:564
+msgid "Are you sure you want to delete the custom menu item %item?"
+msgstr "Da li ste sigurni da želite obrisati stavku %item menija?"
+
+#: modules/menu/menu.admin.inc:574
+msgid "The menu item %title has been deleted."
+msgstr "Stavka %title menija je obrisana."
+
+#: modules/menu/menu.admin.inc:584
+msgid "Are you sure you want to reset the item %item to its default values?"
+msgstr ""
+"Da li ste sigurni da želite vratiti stavku %item na njene podrazumijevane "
+"vrijednosti?"
+
+#: modules/menu/menu.admin.inc:584
+msgid "Any customizations will be lost. This action cannot be undone."
+msgstr ""
+"Bilo kakve korisničke izmjene bićti e izgubljene. Ova radnja ne može biti "
+"poništena."
+
+#: modules/menu/menu.admin.inc:593
+msgid "The menu item was reset to its default settings."
+msgstr "Stavka menija je vraćena na svoju podrazumijevanu vrijednost."
+
+#: modules/menu/menu.admin.inc:603
+msgid ""
+"The menu module allows on-the-fly creation of menu links in the content "
+"authoring forms. The following option sets the default menu in which a new "
+"link will be added."
+msgstr ""
+"Modul Meni omogućuje kreiranje meni hiperlinkova u formi za kreiranje "
+"sadržaja. Slijedeća opcija postavlja podrazumjevani meni u kojem će se "
+"dodati novi link."
+
+#: modules/menu/menu.admin.inc:609
+msgid "Default menu for content"
+msgstr "Podrazumjevani meni za sadržaj"
+
+#: modules/menu/menu.admin.inc:612
+msgid ""
+"Choose the menu to be the default in the menu options in the content "
+"authoring form."
+msgstr ""
+"Izaberite meni koji će biti podrazumjevani u opcijama menija na obrascu za "
+"kreiranje sadržaja."
+
+#: modules/menu/menu.admin.inc:616
+msgid "No primary links"
+msgstr "Nema primarnih linkova"
+
+#: modules/menu/menu.admin.inc:619
+msgid "Source for the primary links"
+msgstr "Izvor za primarne linkove"
+
+#: modules/menu/menu.admin.inc:623
+msgid "Select what should be displayed as the primary links."
+msgstr "Izaberite što će se prikazivati kao primarni linkovi."
+
+#: modules/menu/menu.admin.inc:626
+msgid "No secondary links"
+msgstr "Nema sekundarnih linkova"
+
+#: modules/menu/menu.admin.inc:629
+msgid "Source for the secondary links"
+msgstr "Izvor za sekundarne linkove"
+
+#: modules/menu/menu.admin.inc:633
+msgid ""
+"Select what should be displayed as the secondary links. You can choose the "
+"same menu for secondary links as for primary links (currently %primary). If "
+"you do this, the children of the active primary menu link will be displayed "
+"as secondary links."
+msgstr ""
+"Izaberite šta će biti prikazano u sekundarnim linkovima. Možete odabrati "
+"isti meni za sekundarne linkove kao i za primarne linkove (trenutačno %"
+"primary). Ako ovo uradite, podređene stavke trenutno aktivne stavke "
+"primarnog menija biće prikaze kao sekundarni linkovi."
+
+#: modules/menu/menu.admin.inc:493
+msgid "Deleted custom menu %title and all its menu items."
+msgstr "Obriši korisnički meni %title i sve njegove stavke."
+
+#: modules/menu/menu.admin.inc:575
+msgid "Deleted menu item %title."
+msgstr "Stavka %title menija je obrisana."
+
+#: modules/menu/menu.admin.inc:457
+msgid ""
+"<strong>Warning:</strong> There is currently 1 menu item in %title. It will "
+"be deleted (system-defined items will be reset)."
+msgid_plural ""
+"<strong>Warning:</strong> There are currently @count menu items in %title. "
+"They will be deleted (system-defined items will be reset)."
+msgstr[0] ""
+"<strong>Upozorenje:</strong> Trenutno je 1 stavka menija u %title. Ona će "
+"biti obrisana (stavke definirane od strane sustava bit će resetirane)."
+msgstr[1] ""
+"<strong>Upozorenje:</strong> Trenutno ima @count meni stavke u %title. One "
+"će biti obrisane (stavke definirane od strane sustava bit će resetirane)."
+msgstr[2] ""
+"<strong>Upozorenje:</strong>Trenutno ima @count stavki u %title. One će biti "
+"obrisane (stavke definirane od strane sustava biti će resetirane)."
+
+#: modules/menu/menu.admin.inc:505
+msgid "The menu name can't be longer than 1 character."
+msgid_plural "The menu name can't be longer than @count characters."
+msgstr[0] "Naziv menija ne može biti duži od 1 karaktera."
+msgstr[1] "Naziv menija ne može biti duži od @count karaktera."
+msgstr[2] "Naziv menija ne može biti duži od @count karaktera."
+
+#: modules/menu/menu.module:21
+msgid ""
+"The menu module provides an interface to control and customize Drupal's "
+"powerful menu system. Menus are a hierarchical collection of links, or menu "
+"items, used to navigate a website, and are positioned and displayed using "
+"Drupal's flexible block system. By default, three menus are created during "
+"installation: <em>Navigation</em>, <em>Primary links</em>, and <em>Secondary "
+"links</em>. The <em>Navigation</em> menu contains most links necessary for "
+"working with and navigating your site, and is often displayed in either the "
+"left or right sidebar. Most Drupal themes also provide support for "
+"<em>Primary links</em> and <em>Secondary links</em>, by displaying them in "
+"either the header or footer of each page. By default, <em>Primary links</em> "
+"and <em>Secondary links</em> contain no menu items but may be configured to "
+"contain custom menu items specific to your site."
+msgstr ""
+"Modul Meni osigurava korisničko sučelje za kontrolu i mijenjanje Drupal-ovog "
+"moćnog sustava menija. Meniji su hijerarhijski skupovi linkova, ili stavki "
+"menija, koji se koriste za kretanje po web siteu, i postavljaju se i "
+"prikazuju zahvaljujući Drupal-ovom fleksibilnom sustavu blokova. Početno, "
+"kreiraju se tri menija tijekom instalacije: <em>Navigacija</em>, "
+"<em>Primarni linkovi</em> i <em>Sekundarni linovi</em>. <em>Navigacijski</"
+"em> meni sadrži većinom linkove neophodne za rad i kretanje po siteu, i "
+"često se prikazuje u lijevom ili desnom stupcu. Većina Drupal-ovih tema "
+"osigurava podršku za <em>Primarne linkove</em> i <em>Sekundarne linkove</"
+"em>, tako što ih prikazuje bilo u zaglavlju bilo u podnožju svake stranice. "
+"Početno, <em>Primarni linkovi</em> i <em>Sekundarni linkovi</em> nemaju niti "
+"jednu stavku menija ali se mogu konfigurirati tako da sadrže posebne stavke "
+"menija koje su specifične za vaš site."
+
+#: modules/menu/menu.module:22
+msgid ""
+"The <a href=\"@menu\">menus page</a> displays all menus currently available "
+"on your site. Select a menu from this list to add or edit a menu item, or to "
+"rearrange items within the menu. Create new menus using the <a href=\"@add-"
+"menu\">add menu page</a> (the block containing a new menu must also be "
+"enabled on the <a href=\"@blocks\">blocks administration page</a>)."
+msgstr ""
+"<a href=\"@menu\">Meni stranica</a> vam prikazuje sve menije koji su "
+"trenutno dostupni na vašem siteu. Izaberite meni sa popisa kako bi ste "
+"promijenili ili dodali stavku u meniju, ili kako bi promijenite redoslijed "
+"stavki u meniju.  Novi meni možete kreirati uporabom slijedećeg linka  <a "
+"href=\"@add-menu\">Dodaj meni</a>. Blok koji sadrži ovaj meni također mora "
+"biti omogućen <a href=\"@blocks\">na stranici za administraciju blokova</a>)."
+
+#: modules/menu/menu.module:23
+msgid ""
+"For more information, see the online handbook entry for <a href=\"@menu"
+"\">Menu module</a>."
+msgstr ""
+"Za više informacija, pogledajte online priručnik za <a href=\"@menu\">Meni "
+"modul</a>."
+
+#: modules/menu/menu.module:26
+msgid ""
+"Menus are a collection of links (menu items) used to navigate a website. The "
+"menus currently available on your site are displayed below. Select a menu "
+"from this list to manage its menu items."
+msgstr ""
+"Meniji su kolekcija linkova (stavki u meniju) koje se koriste za navigaciju "
+"kroz site.  Meniji trenutno dostupni na vašem siteu su popisani ispod. "
+"Odaberite meni sa popisa kako bi ga izmijenili."
+
+#: modules/menu/menu.module:28
+msgid ""
+"Enter the name for your new menu. Remember to enable the newly created block "
+"in the <a href=\"@blocks\">blocks administration page</a>."
+msgstr ""
+"Unesite naziv vašeg novog menija. Ne zaboravite omogućiti novonapravljeni "
+"blok na <a href=\"@blocks\">stranici za administriranje blokova</a>."
+
+#: modules/menu/menu.module:30
+msgid ""
+"To rearrange menu items, grab a drag-and-drop handle under the <em>Menu "
+"item</em> column and drag the items (or group of items) to a new location in "
+"the list. (Grab a handle by clicking and holding the mouse while hovering "
+"over a handle icon.) Remember that your changes will not be saved until you "
+"click the <em>Save configuration</em> button at the bottom of the page."
+msgstr ""
+"Za preslagivanje stavki menija, primite i vucite unutar <em>Stavke menija</"
+"em> kolonu i prevucite stavku (ili grupu stavki) na novu lokaciju. "
+"(Prevlačenje se vrši klikom i držanjem miša dok lebdite iznad prevlačeći "
+"ikonu.) Zapamtite da promjene neće biti sačuvane sve dok ne kliknete "
+"<em>Sačuvati konfiguraciju</em> dugme koje se nalazi na dnu stranice."
+
+#: modules/menu/menu.module:32
+msgid "Enter the title and path for your new menu item."
+msgstr "Unesite naslov i putanju vašeg novog menija."
+
+#: modules/menu/menu.module:381
+msgid "Delete this menu item."
+msgstr "Obriši ovu stavku menija."
+
+#: modules/menu/menu.module:396
+msgid ""
+"The link text corresponding to this item that should appear in the menu. "
+"Leave blank if you do not wish to add this post to the menu."
+msgstr ""
+"Tekstualni link koja odgovara ovoj stavci trebalo bi se pojaviti u meniju. "
+"Ostavite prazno ako ne želite dodati ovaj unos u meni."
+
+#: modules/menu/menu.module:40
+msgid "administer menu"
+msgstr "administriraj menija"
+
+#: modules/menu/menu.module:48
+msgid "Menus"
+msgstr "Meniji"
+
+#: modules/menu/menu.module:49
+msgid ""
+"Control your site's navigation menu, primary links and secondary links. as "
+"well as rename and reorganize menu items."
+msgstr ""
+"Upravljajte navigacijskim menijem, glavnim i sporednim linkovima vašeg "
+"sitea, kao i promjenama imena i reorganiziranjem unosa u menijima."
+
+#: modules/menu/menu.module:57
+msgid "List menus"
+msgstr "Listaj menije"
+
+#: modules/menu/menu.module:63
+msgid "Add menu"
+msgstr "Dodaj meni"
+
+#: modules/menu/menu.module:80
+msgid "Customize menu"
+msgstr "Prilagodi meni"
+
+#: modules/menu/menu.module:90
+msgid "List items"
+msgstr "Listaj stavke menija"
+
+#: modules/menu/menu.module:96
+msgid "Add item"
+msgstr "Dodaj stavku"
+
+#: modules/menu/menu.module:104
+msgid "Edit menu"
+msgstr "Uredi meni"
+
+#: modules/menu/menu.module:112
+msgid "Delete menu"
+msgstr "Obriši meni"
+
+#: modules/menu/menu.module:120
+msgid "Edit menu item"
+msgstr "Promijeni stavku menija"
+
+#: modules/menu/menu.module:128
+msgid "Reset menu item"
+msgstr "Resetiraj stavku menija"
+
+#: modules/menu/menu.module:136
+msgid "Delete menu item"
+msgstr "Obriši stavku menija"
+
+#: modules/menu/menu.install:12
+msgid ""
+"The navigation menu is provided by Drupal and is the main interactive menu "
+"for any site. It is usually the only menu that contains personalized links "
+"for authenticated users, and is often not even visible to anonymous users."
+msgstr ""
+"Navigacijski meni pruža Drupal i on je glavni interaktivni meni za site. To "
+"je obično jedini meni koji sadrži personalizirane linkove za prijavljene "
+"korisnike, i često nije vidljiv anonimnim (neprijavljenim) korisnicima."
+
+#: modules/menu/menu.install:13
+msgid ""
+"Primary links are often used at the theme layer to show the major sections "
+"of a site. A typical representation for primary links would be tabs along "
+"the top."
+msgstr ""
+"Primarni linkovi se često koriste u okviru teme za prikazivenje glavnih "
+"dijelova sitea. Tipičan primjer primarnih linkova bili bi tabovi na vrhu."
+
+#: modules/menu/menu.install:14
+msgid ""
+"Secondary links are often used for pages like legal notices, contact "
+"details, and other secondary navigation items that play a lesser role than "
+"primary links"
+msgstr ""
+"Sekundarni linkovi se često koriste za stranice kao što su pravne napomene, "
+"kontakt detalji i druge sekundarne navigacijske stavke koje imaju manju "
+"ulogu nego primarni linkovi."

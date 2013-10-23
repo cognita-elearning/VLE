@@ -1,0 +1,23 @@
+name = Panels Bonus Package
+description = Add bonus package to panels
+core = 6.x
+package = "Panels"
+dependencies[] = ctools
+dependencies[] = panels
+
+; Information added by drupal.org packaging script on 2010-07-27
+version = "6.x-1.0"
+core = "6.x"
+; Information added by drupal.org packaging script on 2010-11-02
+version = "6.x-1.0-beta3"
+core = "6.x"
+project = "bc_panel_bonus"
+datestamp = "1288693543"
+
+
+; Information added by drupal.org packaging script on 2011-04-27
+version = "6.x-1.0-beta4"
+core = "6.x"
+project = "bc_panel_bonus"
+datestamp = "1303894915"
+

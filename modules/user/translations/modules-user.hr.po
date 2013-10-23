@@ -1,0 +1,1522 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from files:
+#  user.admin.inc,v 1.18.2.1 2008/08/13 23:59:14 drumm
+#  user.pages.inc,v 1.11.2.1 2008/10/08 20:12:18 goba
+#  user.module,v 1.892.2.14 2009/07/01 20:51:56 goba
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-08-11 16:07+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/user/user.admin.inc:43
+msgid "Show only users where"
+msgstr "Prikaži samo korisnike gdje"
+
+#: modules/user/user.admin.inc:52
+msgid ""
+"<em>and</em> where <strong>%property</strong> is <strong>%value</strong>"
+msgstr "<em>i</em> gdje <strong>%property</strong> je <strong>%value</strong>"
+
+#: modules/user/user.admin.inc:55
+msgid "<strong>%property</strong> is <strong>%value</strong>"
+msgstr "<em>i</em> gdje <strong>%property</strong> je <strong>%value</strong>"
+
+#: modules/user/user.admin.inc:138,911
+msgid "Last access"
+msgstr "Zadnji pristup"
+
+#: modules/user/user.admin.inc:221
+msgid "No users selected."
+msgstr "Nisu odabrani korisnici."
+
+#: modules/user/user.admin.inc:233
+msgid "User registration settings"
+msgstr "Postavke registracije korisnika"
+
+#: modules/user/user.admin.inc:234
+msgid "Public registrations"
+msgstr "Javne registracije"
+
+#: modules/user/user.admin.inc:234
+msgid "Visitors can create accounts and no administrator approval is required."
+msgstr ""
+"Posjetitelji mogu otvarati korisničke račune i nije potrebno odobrenje "
+"administratora."
+
+#: modules/user/user.admin.inc:234
+msgid "Visitors can create accounts but administrator approval is required."
+msgstr ""
+"Posjetitelji mogu otvarati korisničke račune ali je potrebno odobrenje "
+"administratora."
+
+#: modules/user/user.admin.inc:235
+msgid "Require e-mail verification when a visitor creates an account"
+msgstr "Zahtijevaj e-mail provjeru kada posjetitelj napravi račun"
+
+#: modules/user/user.admin.inc:235
+msgid ""
+"If this box is checked, new users will be required to validate their e-mail "
+"address prior to logging into the site, and will be assigned a system-"
+"generated password. With it unchecked, users will be logged in immediately "
+"upon registering, and may select their own passwords during registration."
+msgstr ""
+"Ako je ovaj kvadratić označen, novim korisnicima će se provjeravati e-mail "
+"adresa prije nego što se prijave na site, i dobiće lozinku generiranu od "
+"strane sustava. Ako on nije označen korisnici će se odmah prijaviti i sami "
+"izabrati lozinku tijekom registracije."
+
+#: modules/user/user.admin.inc:236
+msgid "User registration guidelines"
+msgstr "Smjernice za registraciju"
+
+#: modules/user/user.admin.inc:236
+msgid ""
+"This text is displayed at the top of the user registration form and is "
+"useful for helping or instructing your users."
+msgstr ""
+"Ovaj tekst se prikazuje na vrhu forme za registraciju korisnika i koristan "
+"je za pomaganje ili instrukcije vašim  korisnicima."
+
+#: modules/user/user.admin.inc:241
+msgid "User e-mail settings"
+msgstr "Korisničke postavke e-maila"
+
+#: modules/user/user.admin.inc:242
+msgid ""
+"Drupal sends emails whenever new users register on your site, and "
+"optionally, may also notify users after other account actions. Using a "
+"simple set of content templates, notification e-mails can be customized to "
+"fit the specific needs of your site."
+msgstr ""
+"Drupal šalje e-mail kad god se registrira novi korisnik na portalu, i "
+"opcionalno, može također obavijestiti korisnika poslije drugih radnji na "
+"računu. Korištenjem jednostavnog seta predložaka sadržaja, e-mail obavijesti "
+"mogu biti prilagođene specifičnim potrebama vašeg sitea."
+
+#: modules/user/user.admin.inc:246
+msgid "Available variables are:"
+msgstr "Dostupne varijable su:"
+
+#: modules/user/user.admin.inc:250
+msgid "Welcome, new user created by administrator"
+msgstr "Dobrodošli, novi korisnik kreiran od administratora"
+
+#: modules/user/user.admin.inc:253
+msgid ""
+"Customize welcome e-mail messages sent to new member accounts created by an "
+"administrator."
+msgstr ""
+"Prilagodite poruku dobrodošlice novim korisnicima koje je registrirao "
+"administrator."
+
+#: modules/user/user.admin.inc:270
+msgid "Welcome, no approval required"
+msgstr "Dobrodošli, nije potrebno odobravanje"
+
+#: modules/user/user.admin.inc:273
+msgid ""
+"Customize welcome e-mail messages sent to new members upon registering, when "
+"no administrator approval is required."
+msgstr ""
+"Prilagodi pozdravnu e-mail poruku koja se šalje novim članovima prilikom "
+"registracije, kada nije potrebno odobrenje administratora."
+
+#: modules/user/user.admin.inc:290
+msgid "Welcome, awaiting administrator approval"
+msgstr "Dobrodošli, čeka se odobrenje administratora"
+
+#: modules/user/user.admin.inc:293
+msgid ""
+"Customize welcome e-mail messages sent to new members upon registering, when "
+"administrative approval is required."
+msgstr ""
+"Prilagodite poruku dobrodošlice novim korisnicima kada je potrebno odobrenje "
+"administratora."
+
+#: modules/user/user.admin.inc:310
+msgid "Password recovery email"
+msgstr "E-mail za promjenu lozinke"
+
+#: modules/user/user.admin.inc:313
+msgid "Customize e-mail messages sent to users who request a new password."
+msgstr "Prilagodite poruku korisnicima koji su tražili promjenu lozinke."
+
+#: modules/user/user.admin.inc:330
+msgid "Account activation email"
+msgstr "E-mail za ativiranje korisničkog računa"
+
+#: modules/user/user.admin.inc:333
+msgid ""
+"Enable and customize e-mail messages sent to users upon account activation "
+"(when an administrator activates an account of a user who has already "
+"registered, on a site where administrative approval is required)."
+msgstr ""
+"Omogućava i prilagođava e-mailove poslane korisnicima nakon aktiviranja "
+"računa (kada korisnici otvaraju račun a administrator ga odobrava)."
+
+#: modules/user/user.admin.inc:337
+msgid "Notify user when account is activated."
+msgstr "Obavijesti korisnika kada je račun aktiviran."
+
+#: modules/user/user.admin.inc:355
+msgid "Account blocked email"
+msgstr "Poruka da je korisnički račun blokiran"
+
+#: modules/user/user.admin.inc:358
+msgid ""
+"Enable and customize e-mail messages sent to users when their accounts are "
+"blocked."
+msgstr "Prilagodi poruku korisniku kada mu je račun blokiran."
+
+#: modules/user/user.admin.inc:362
+msgid "Notify user when account is blocked."
+msgstr "Obavijesti korisnika kada je račun blokiran."
+
+#: modules/user/user.admin.inc:380
+msgid "Account deleted email"
+msgstr "Poruka da je korisnički račun obrisan"
+
+#: modules/user/user.admin.inc:383
+msgid ""
+"Enable and customize e-mail messages sent to users when their accounts are "
+"deleted."
+msgstr "Prilagodi poruku korisniku kada mu je račun obrisan."
+
+#: modules/user/user.admin.inc:387
+msgid "Notify user when account is deleted."
+msgstr "Obavjesti korisnika kada mu je račun obrisan."
+
+#: modules/user/user.admin.inc:406
+msgid "Signatures"
+msgstr "Potpisi"
+
+#: modules/user/user.admin.inc:410
+msgid "Signature support"
+msgstr "Podrška za potpis"
+
+#: modules/user/user.admin.inc:423
+msgid "Pictures"
+msgstr "Slike"
+
+#: modules/user/user.admin.inc:428
+msgid "Picture support"
+msgstr "Podrška za slike"
+
+#: modules/user/user.admin.inc:448
+msgid "Picture image path"
+msgstr "Putanja do slike"
+
+#: modules/user/user.admin.inc:452
+msgid "Subdirectory in the directory %dir where pictures will be stored."
+msgstr "Poddirektorij u direktoriju %dir gde će slike biti smještene."
+
+#: modules/user/user.admin.inc:456
+msgid "Default picture"
+msgstr "Uobičajena slika"
+
+#: modules/user/user.admin.inc:460
+msgid ""
+"URL of picture to display for users with no custom picture selected. Leave "
+"blank for none."
+msgstr ""
+"URL slike koja će se prikazati ako korisnik nije izabrao svoju sliku. "
+"Ostavite prazno ukoliko ne želite ovu mogućnost."
+
+#: modules/user/user.admin.inc:464
+msgid "Picture maximum dimensions"
+msgstr "Najveće dimenzije slike"
+
+#: modules/user/user.admin.inc:468
+msgid "Maximum dimensions for pictures, in pixels."
+msgstr "Najveće dimenzije slike, u pikselima."
+
+#: modules/user/user.admin.inc:472
+msgid "Picture maximum file size"
+msgstr "Najveća veličina slike"
+
+#: modules/user/user.admin.inc:476
+msgid "Maximum file size for pictures, in kB."
+msgstr "Najveća veličina za slike, u kB."
+
+#: modules/user/user.admin.inc:480
+msgid "Picture guidelines"
+msgstr "Smjernice za slike"
+
+#: modules/user/user.admin.inc:482
+msgid ""
+"This text is displayed at the picture upload form in addition to the default "
+"guidelines. It's useful for helping or instructing your users."
+msgstr ""
+"Ovaj tekst se prikazuje u obrascu za učitavanje slika kao osnovna smjernica. "
+"Pogodan je za pružanje pomoći ili savjeta vašim korisnicima."
+
+#: modules/user/user.admin.inc:543
+msgid "Save permissions"
+msgstr "Spremi dopuštenja"
+
+#: modules/user/user.admin.inc:595
+msgid "Permission"
+msgstr "Dopuštenje"
+
+#: modules/user/user.admin.inc:624
+msgid "Role name"
+msgstr "Naziv uloge"
+
+#: modules/user/user.admin.inc:629
+msgid ""
+"The name for this role. Example: \"moderator\", \"editorial board\", \"site "
+"architect\"."
+msgstr "Naziv za ovu ulogu. Npr.  \"moderator\", \"urednik\", \"webmaster\"."
+
+#: modules/user/user.admin.inc:637,662,679
+msgid "Save role"
+msgstr "Spremi ulogu"
+
+#: modules/user/user.admin.inc:641,683
+msgid "Delete role"
+msgstr "Obriši ulogu"
+
+#: modules/user/user.admin.inc:652,667,691
+msgid "Add role"
+msgstr "Dodaj ulogu"
+
+#: modules/user/user.admin.inc:664,669
+msgid "The role name %name already exists. Please choose another role name."
+msgstr "Uloga %name već postoji. Odaberite drugo ime."
+
+#: modules/user/user.admin.inc:674
+msgid "You must specify a valid role name."
+msgstr "Morate zadati valjano ime uloge."
+
+#: modules/user/user.admin.inc:681
+msgid "The role has been renamed."
+msgstr "Naziv uloge je promijenjen."
+
+#: modules/user/user.admin.inc:689
+msgid "The role has been deleted."
+msgstr "Uloga je obrisana."
+
+#: modules/user/user.admin.inc:693
+msgid "The role has been added."
+msgstr "Uloga je dodana."
+
+#: modules/user/user.admin.inc:725
+msgid "Save rule"
+msgstr "Spremi pravilo"
+
+#: modules/user/user.admin.inc:741,885
+msgid "Access type"
+msgstr "Tip pristupa"
+
+#: modules/user/user.admin.inc:743
+msgid "Allow"
+msgstr "Dozvoli"
+
+#: modules/user/user.admin.inc:743
+msgid "Deny"
+msgstr "Uskrati"
+
+#: modules/user/user.admin.inc:745
+msgid "Host"
+msgstr "Host"
+
+#: modules/user/user.admin.inc:748,885
+msgid "Rule type"
+msgstr "Tip pravila"
+
+#: modules/user/user.admin.inc:754,885
+msgid "Mask"
+msgstr "Maska"
+
+#: modules/user/user.admin.inc:758
+msgid "Matches any number of characters, even zero characters"
+msgstr "Odgovara bilo kojem broju znakova, čak i nula znakova"
+
+#: modules/user/user.admin.inc:758
+msgid "Matches exactly one character."
+msgstr "Odgovara točno jednom znaku."
+
+#: modules/user/user.admin.inc:774
+msgid "The access rule has been saved."
+msgstr "Pristupno pravilo je spremljeno."
+
+#: modules/user/user.admin.inc:778
+msgid "The access rule has been added."
+msgstr "Pristupno pravilo je dodano."
+
+#: modules/user/user.admin.inc:785
+msgid "No value entered. Please enter a test string and try again."
+msgstr ""
+"Nije unešena vrijednost. Molimo da unesete testni string i pokušate ponovo."
+
+#: modules/user/user.admin.inc:791
+msgid "Enter a username to check if it will be denied or allowed."
+msgstr "Unesite korisničko ime za provjeru je li blokirano ili nije."
+
+#: modules/user/user.admin.inc:793
+msgid "Check username"
+msgstr "Provjerite korisničko ime"
+
+#: modules/user/user.admin.inc:802
+msgid "Enter an e-mail address to check if it will be denied or allowed."
+msgstr "Unesite e-mail adresu za provjeru je li blokirana ili ne."
+
+#: modules/user/user.admin.inc:804
+msgid "Check e-mail"
+msgstr "Provjerite e-mail"
+
+#: modules/user/user.admin.inc:813
+msgid ""
+"Enter a hostname or IP address to check if it will be denied or allowed."
+msgstr ""
+"Unesi ime hosta ili IP adresu da se označi kao dozvoljena ili zabranjena."
+
+#: modules/user/user.admin.inc:815
+msgid "Check hostname"
+msgstr "Provjeri hostname"
+
+#: modules/user/user.admin.inc:826
+msgid "The username %name is not allowed."
+msgstr "Korisničko ime %name nije dozvoljeno."
+
+#: modules/user/user.admin.inc:829
+msgid "The username %name is allowed."
+msgstr "Korisničko ime %name je dozvoljeno."
+
+#: modules/user/user.admin.inc:834
+msgid "The e-mail address %mail is not allowed."
+msgstr "E-mail adresa %mail nije dozvoljena."
+
+#: modules/user/user.admin.inc:837
+msgid "The e-mail address %mail is allowed."
+msgstr "E-mail adresa %mail je dozvoljena."
+
+#: modules/user/user.admin.inc:842
+msgid "The hostname %host is not allowed."
+msgstr "Ime hosta %host nije dozvoljeno."
+
+#: modules/user/user.admin.inc:845
+msgid "The hostname %host is allowed."
+msgstr "Ime hosta %host je dozovoljeno."
+
+#: modules/user/user.admin.inc:860,887
+msgid "username"
+msgstr "korisničko ime"
+
+#: modules/user/user.admin.inc:860,887
+msgid "e-mail"
+msgstr "e-mail adresa"
+
+#: modules/user/user.admin.inc:860,887
+msgid "host"
+msgstr "host"
+
+#: modules/user/user.admin.inc:866
+msgid "Are you sure you want to delete the @type rule for %rule?"
+msgstr "Jeste li sigurni da želite obrisati @type pravilo za %rule?"
+
+#: modules/user/user.admin.inc:876
+msgid "The access rule has been deleted."
+msgstr "Pristupno pravilo je obrisano."
+
+#: modules/user/user.admin.inc:890
+msgid "allow"
+msgstr "dozvoli"
+
+#: modules/user/user.admin.inc:890
+msgid "deny"
+msgstr "uskrati"
+
+#: modules/user/user.admin.inc:893
+msgid "There are currently no access rules."
+msgstr "Nema pristupnih pravila."
+
+#: modules/user/user.admin.inc:930
+msgid "No users available."
+msgstr "Nema korisnika."
+
+#: modules/user/user.admin.inc:951
+msgid "edit permissions"
+msgstr "uredi dopuštenja"
+
+#: modules/user/user.admin.inc:953
+msgid "edit role"
+msgstr "uredi ulogu"
+
+#: modules/user/user.admin.inc:956
+msgid "locked"
+msgstr "zaključano"
+
+#: modules/user/user.pages.inc:34
+msgid "Username or e-mail address"
+msgstr "Korisničko ime ili e-mail adresa"
+
+#: modules/user/user.pages.inc:39
+msgid "E-mail new password"
+msgstr "Pošalji novu lozinku na e-mail"
+
+#: modules/user/user.pages.inc:50
+msgid "%name is not allowed to request a new password."
+msgstr "Korisniku %name nije dozvoljeno da traži novu lozinku."
+
+#: modules/user/user.pages.inc:63
+msgid "Sorry, %name is not recognized as a user name or an e-mail address."
+msgstr "Oprostite, %name nije prepoznato kao korisničko ime ili e-mail adresa."
+
+#: modules/user/user.pages.inc:74
+msgid "Further instructions have been sent to your e-mail address."
+msgstr "Daljnje upute poslane su na Vašu e-mail adresu."
+
+#: modules/user/user.pages.inc:88
+msgid ""
+"You have already used this one-time login link. It is not necessary to use "
+"this link to login anymore. You are already logged in."
+msgstr ""
+"Već ste iskoristili ovaj privremeni link za jednokratni login. Nije ga "
+"potrebno koristiti više puta. Već ste prijavljeni."
+
+#: modules/user/user.pages.inc:99
+msgid ""
+"You have tried to use a one-time login for an account which has been blocked."
+msgstr ""
+"Pokušali ste koristiti jednokratni link za prijavu na sustav za račun koji "
+"je blokiran."
+
+#: modules/user/user.pages.inc:105
+msgid ""
+"You have tried to use a one-time login link that has expired. Please request "
+"a new one using the form below."
+msgstr ""
+"Pokušali ste koristiti jednokratni link za prijavu kojem je istekao rok "
+"važenja. Molimo, zatražite novi pomoću donjeg obrasca."
+
+#: modules/user/user.pages.inc:117
+msgid ""
+"You have just used your one-time login link. It is no longer necessary to "
+"use this link to login. Please change your password."
+msgstr ""
+"Upravo ste iskoristili vaš link za jednokratno prijavljivanje. Više ga nije "
+"potrebno koristiti. Molimo vas da promijenite trenutnu lozinku."
+
+#: modules/user/user.pages.inc:121
+msgid ""
+"<p>This is a one-time login for %user_name and will expire on %"
+"expiration_date.</p><p>Click on this button to login to the site and change "
+"your password.</p>"
+msgstr ""
+"<p>Ovo je jednokratni link za prijavljivanje na sustav za %user_name i "
+"zastarjeva %expiration_date. </p>\r\n"
+"<p>Kliknite na ovo dugme da se prijavite na site i promjenite svoju lozinku."
+"</p>"
+
+#: modules/user/user.pages.inc:122
+msgid "This login can be used only once."
+msgstr "Podaci za prijavu mogu biti korišteni smao jednom."
+
+#: modules/user/user.pages.inc:129
+msgid ""
+"You have tried to use a one-time login link which has either been used or is "
+"no longer valid. Please request a new one using the form below."
+msgstr ""
+"Pokušali ste uporabiti jednokratni link za prijavljivanje koji je već "
+"iskorištn ili je nevažeći. Molimo vas da zatražite novi preko dolje "
+"navedenog obrasca."
+
+#: modules/user/user.pages.inc:321
+msgid "Are you sure you want to delete the account %name?"
+msgstr "Jeste li sigurni da želite obrisati korisnički račun %name?"
+
+#: modules/user/user.pages.inc:323
+msgid ""
+"All submissions made by this user will be attributed to the anonymous "
+"account. This action cannot be undone."
+msgstr ""
+"Sve što je poslao ovaj korisnik biti će pripisano anonimnom korisničkom "
+"računu. Ovu radnju nije moguće poništiti."
+
+#: modules/user/user.pages.inc:332
+msgid "%name has been deleted."
+msgstr "%name je obrisan."
+
+#: modules/user/user.pages.inc:73
+msgid "Password reset instructions mailed to %name at %email."
+msgstr ""
+"Uputa za resetiranje lozinke je poslana korisniku %name na e-mail adresu %"
+"email."
+
+#: modules/user/user.pages.inc:111
+msgid "User %name used one-time login link at time %timestamp."
+msgstr "Korisnik %name je iskoristio jednokratni login link u %timestamp."
+
+#: modules/user/user.pages.inc:147
+msgid "Session closed for %name."
+msgstr "Sesija zatvorena za %name."
+
+#: modules/user/user.module:381
+msgid "You must enter a username."
+msgstr "Morate unijeti korisničko ime."
+
+#: modules/user/user.module:382
+msgid "The username cannot begin with a space."
+msgstr "Korisničko ime ne može početi sa razmakom."
+
+#: modules/user/user.module:383
+msgid "The username cannot end with a space."
+msgstr "Korisničko ime ne može završiti sa razmakom."
+
+#: modules/user/user.module:384
+msgid "The username cannot contain multiple spaces in a row."
+msgstr "Korisničko ime ne može sadržavati višestruke razmake zaredom."
+
+#: modules/user/user.module:385,396
+msgid "The username contains an illegal character."
+msgstr "Korisničko ime sadrži neprimjerene znakove."
+
+#: modules/user/user.module:398
+msgid "The username is not a valid authentication ID."
+msgstr "Korisničko ime nije ispravni autentifikacijski ID."
+
+#: modules/user/user.module:399
+msgid "The username %name is too long: it must be %max characters or less."
+msgstr "Korisničko ime %name je predugačko: mora imati %max znakova ili manje."
+
+#: modules/user/user.module:403
+msgid "You must enter an e-mail address."
+msgstr "Morate upisati e-mail adresu."
+
+#: modules/user/user.module:405
+msgid "The e-mail address %mail is not valid."
+msgstr "E-mail adresa %mail nije valjana."
+
+#: modules/user/user.module:431
+msgid ""
+"Failed to upload the picture image; the %directory directory doesn't exist "
+"or is not writable."
+msgstr ""
+"Postavljenje slike nije uspjelo; direktorij %directory ne postoji ili nema "
+"prava za pisanje."
+
+#: modules/user/user.module:619
+msgid "History"
+msgstr "Povijest"
+
+#: modules/user/user.module:641
+msgid "Account settings"
+msgstr "Postavke korisnički račun"
+
+#: modules/user/user.module:669
+msgid "Create a new user account."
+msgstr "Napravi novi korisnički račun."
+
+#: modules/user/user.module:671,922
+msgid "Request new password"
+msgstr "Zatraži novu lozinku"
+
+#: modules/user/user.module:671
+msgid "Request new password via e-mail."
+msgstr "Zahtjev za novom lozinkom putem e-maila."
+
+#: modules/user/user.module:683,730
+msgid "User login"
+msgstr "Prijava korisnika"
+
+#: modules/user/user.module:692,751
+msgid "Who's new"
+msgstr "Tko je nov"
+
+#: modules/user/user.module:695,790
+msgid "Who's online"
+msgstr "Tko je online"
+
+#: modules/user/user.module:702
+msgid "Number of users to display"
+msgstr "Broj korisnika za prikaz"
+
+#: modules/user/user.module:710
+msgid "User activity"
+msgstr "Aktivnost korisnika"
+
+#: modules/user/user.module:710
+msgid ""
+"A user is considered online for this long after they have last viewed a page."
+msgstr ""
+"Korisnik se smatra prijavljen dugo nakon što zadnji put pregleda stranicu."
+
+#: modules/user/user.module:711
+msgid "User list length"
+msgstr "Dužina popisa korisnika"
+
+#: modules/user/user.module:711
+msgid "Maximum number of currently online users to display."
+msgstr "Maksimalni broj trenutno prijavljenih korisnika za prikaz."
+
+#: modules/user/user.module:778
+msgid "There is currently %members and %visitors online."
+msgstr "Trenutno je %members i %visitors na siteu."
+
+#: modules/user/user.module:781
+msgid "There are currently %members and %visitors online."
+msgstr "Trenutno su online %members i %visitors."
+
+#: modules/user/user.module:787
+msgid "Online users"
+msgstr "Online korisnici"
+
+#: modules/user/user.module:818
+msgid "@user's picture"
+msgstr "Slika korisnika @user's"
+
+#: modules/user/user.module:1182,1052
+msgid "My account"
+msgstr "Moj korisnički račun"
+
+#: modules/user/user.module:1254
+msgid "Enter your @s username."
+msgstr "Unesite svoje @s korisničko ime."
+
+#: modules/user/user.module:1257
+msgid "Enter the password that accompanies your username."
+msgstr "Unesite lozinku koja se odnosi na vaše korisničko ime."
+
+#: modules/user/user.module:1295
+msgid "The username %name has not been activated or is blocked."
+msgstr "Korisničko ime %name ili nije aktivirano ili je blokirano."
+
+#: modules/user/user.module:1299
+msgid "The name %name is a reserved username."
+msgstr "Korisničko ime %name je rezervirano."
+
+#: modules/user/user.module:1319
+msgid ""
+"Sorry, unrecognized username or password. <a href=\"@password\">Have you "
+"forgotten your password?</a>"
+msgstr ""
+"Žao nam je, nismo prepoznali korisničko ime ili lozinku. <a href=\"@password"
+"\">Zaboravili ste lozinku?</a>"
+
+#: modules/user/user.module:1342
+msgid ""
+"The name %name is registered using a reserved e-mail address and therefore "
+"could not be logged in."
+msgstr ""
+"Korisničko ime %name je registrirano sa rezerviranom e-mail adresom i zato "
+"se ne možete prijaviti u sustav."
+
+#: modules/user/user.module:1439
+msgid "Account information"
+msgstr "Informacije o korisničkom računu"
+
+#: modules/user/user.module:1456
+msgid ""
+"A valid e-mail address. All e-mails from the system will be sent to this "
+"address. The e-mail address is not made public and will only be used if you "
+"wish to receive a new password or wish to receive certain news or "
+"notifications by e-mail."
+msgstr ""
+"Valjana adresa e-pošte. Sve poruke e-pošte koje sustav šalje bit će poslane "
+"na ovu adresu. Adresa e-pošte neće biti javno prikazana. Koristit će se samo "
+"ako želite primiti novu lozinku, određene novosti ili obavijesti."
+
+#: modules/user/user.module:1461
+msgid ""
+"To change the current user password, enter the new password in both fields."
+msgstr ""
+"Kako biste promijenili trenutnu loziniku, unesite novu lozinku u oba polja."
+
+#: modules/user/user.module:1468
+msgid "Provide a password for the new account in both fields."
+msgstr "Upišite lozinku za novi račun u oba polja."
+
+#: modules/user/user.module:1478
+msgid "Blocked"
+msgstr "Blokiran"
+
+#: modules/user/user.module:1513
+msgid "Signature settings"
+msgstr "Postavke potpisa"
+
+#: modules/user/user.module:1518
+msgid "Signature"
+msgstr "Potpis"
+
+#: modules/user/user.module:1520
+msgid "Your signature will be publicly displayed at the end of your comments."
+msgstr "Vaš potpis će biti prikazan na kraju vaših komentara."
+
+#: modules/user/user.module:1535
+msgid "Picture"
+msgstr "Slika"
+
+#: modules/user/user.module:1539
+msgid "Delete picture"
+msgstr "Obriši sliku"
+
+#: modules/user/user.module:1539
+msgid "Check this box to delete your current picture."
+msgstr "Označite ovu kućicu kako bi obrisali Vašu sliku."
+
+#: modules/user/user.module:1544
+msgid "Upload picture"
+msgstr "Unesi sliku"
+
+#: modules/user/user.module:1544
+msgid ""
+"Your virtual face or picture. Maximum dimensions are %dimensions and the "
+"maximum size is %size kB."
+msgstr ""
+"Tvoj virtualni lik ili slika. Maksimalne dimenzije su %dimensions a "
+"maksimalna veličina je %size kB."
+
+#: modules/user/user.module:1560
+msgid "The name %name is already taken."
+msgstr "Korisničko ime %name je već zauzeto."
+
+#: modules/user/user.module:1563
+msgid "The name %name has been denied access."
+msgstr "Korisničko ime %name je zabranjeno."
+
+#: modules/user/user.module:1572
+msgid ""
+"The e-mail address %email is already registered. <a href=\"@password\">Have "
+"you forgotten your password?</a>"
+msgstr ""
+"E-mail adresa %email je već korištena za registraciju. <a href=\"@password"
+"\">Jeste li zaboravili lozinku?</a>"
+
+#: modules/user/user.module:1575
+msgid "The e-mail address %email has been denied access."
+msgstr "E-mail adresi %email zabranjen je pristup."
+
+#: modules/user/user.module:1655
+msgid "Account details for !username at !site"
+msgstr "Detalji o korisničkom računu za !username na !site"
+
+#: modules/user/user.module:1657
+msgid ""
+"!username,\n"
+"\n"
+"Thank you for registering at !site. You may now log in to !login_uri using "
+"the following username and password:\n"
+"\n"
+"username: !username\n"
+"password: !password\n"
+"\n"
+"You may also log in by clicking on this link or copying and pasting it in "
+"your browser:\n"
+"\n"
+"!login_url\n"
+"\n"
+"This is a one-time login, so it can be used only once.\n"
+"\n"
+"After logging in, you will be redirected to !edit_uri so you can change your "
+"password.\n"
+"\n"
+"\n"
+"--  !site team"
+msgstr ""
+"!username,\r\n"
+"\r\n"
+"Zahvaljujemo što ste se registrirali na stranicu !site. Možete se odmah "
+"prijaviti na !login_uri koristeći slijedeće korisničko ime i lozinku:\r\n"
+"\r\n"
+"korisničko ime: !username\r\n"
+"lozinka: !password\r\n"
+"\r\n"
+"Također, možete se prijaviti tako što kliknete na sljedeću poveznicu ili ga "
+"iskopirate i zalijepite u vaš preglednik:\r\n"
+"\r\n"
+"!login_url\r\n"
+"\r\n"
+"Ova prijava je jednokratna, može se iskoristiti samo jednom. \r\n"
+"\r\n"
+"Nakon prijave bit ćete preusmjereni na !edit_uri gdje možete promijeniti "
+"vašu lozinku.\r\n"
+"\r\n"
+"--Tim stranice !site"
+
+#: modules/user/user.module:1659
+msgid "An administrator created an account for you at !site"
+msgstr "Administrator je kreirao račun za vas na !site"
+
+#: modules/user/user.module:1661
+msgid ""
+"!username,\n"
+"\n"
+"A site administrator at !site has created an account for you. You may now "
+"log in to !login_uri using the following username and password:\n"
+"\n"
+"username: !username\n"
+"password: !password\n"
+"\n"
+"You may also log in by clicking on this link or copying and pasting it in "
+"your browser:\n"
+"\n"
+"!login_url\n"
+"\n"
+"This is a one-time login, so it can be used only once.\n"
+"\n"
+"After logging in, you will be redirected to !edit_uri so you can change your "
+"password.\n"
+"\n"
+"\n"
+"--  !site team"
+msgstr ""
+"!username,\n"
+"\n"
+"Site administrator za !site je kreirao za vas korisnički račun. MOžete se "
+"odmah prijaviti na !login_uri koristeči slijedeće korisničko ime i lozinku:\n"
+"\n"
+"korisničko ime: !username\n"
+"lozinka: !password\n"
+"\n"
+"Također, možete se prijaviti tako ško kliknete na slijedeći link ili ga copy/"
+"paste u vaš web preglednik:\n"
+"\n"
+"!login_url\n"
+"\n"
+"Na ovaj način se možete prijaviti samo jednom.\n"
+"\n"
+"Poslije prijave bit ćete preusmjereni na !edit_uri gdje možete promijeniti "
+"vašu lozinku.\n"
+"\n"
+"\n"
+"Ugodno druženje s nama !site tim"
+
+#: modules/user/user.module:1664
+msgid "Account details for !username at !site (pending admin approval)"
+msgstr ""
+"Detalji o korisničkom računu !username na siteu !site (čeka na odobrenje "
+"administratora)"
+
+#: modules/user/user.module:1666
+msgid ""
+"!username,\n"
+"\n"
+"Thank you for registering at !site. Your application for an account is "
+"currently pending approval. Once it has been approved, you will receive "
+"another e-mail containing information about how to log in, set your "
+"password, and other details.\n"
+"\n"
+"\n"
+"--  !site team"
+msgstr ""
+"!username,\n"
+"\n"
+"Hvala vam što ste se registrirali na !site. Vaš podnesak za korisnički račun "
+"čeka odobrenje administratora. Kada bude odobren dobit ćete e-mail koji će "
+"sadržavati informacije kako se prijaviti, lozinku i ostale detalje.\n"
+"\n"
+"\n"
+"Ugodno druženje s nama !site tim"
+
+#: modules/user/user.module:1668
+msgid ""
+"!username has applied for an account.\n"
+"\n"
+"!edit_uri"
+msgstr ""
+"!username se prijavio za otvaranje korisničkog računa.\r\n"
+"\r\n"
+"!edit_uri"
+
+#: modules/user/user.module:1670
+msgid "Replacement login information for !username at !site"
+msgstr "Novi podaci za prijavljivanje korisnika !username na siteu !site"
+
+#: modules/user/user.module:1672
+msgid ""
+"!username,\n"
+"\n"
+"A request to reset the password for your account has been made at !site.\n"
+"\n"
+"You may now log in to !uri_brief by clicking on this link or copying and "
+"pasting it in your browser:\n"
+"\n"
+"!login_url\n"
+"\n"
+"This is a one-time login, so it can be used only once. It expires after one "
+"day and nothing will happen if it's not used.\n"
+"\n"
+"After logging in, you will be redirected to !edit_uri so you can change your "
+"password."
+msgstr ""
+"!username,\n"
+"\n"
+"Odgovor na upit o novoj lozinki za vaš korisnički račun na !site.\n"
+"\n"
+"Možete se odmah prijaviti na !uri_brief tako što kliknete na ovaj link !"
+"uri_brief ili ga copy/paste u vaš web preglednik:\n"
+"\n"
+"!login_url\n"
+"\n"
+"Na ovaj način se možete prijaviti samo jednom. On prestaje biti aktivan "
+"nakon jedan dan i poslije toga se nećete moći logirati pomoću njega. Ukoliko "
+"prestane biti aktivan morat ćete ponovo zatražiti novu lozinku.\n"
+"\n"
+"Poslije prijave bit ćete preusmjereni na !edit_uri gdje možete promijeniti "
+"vašu lozinku.\n"
+"\n"
+"Ugodno druženje s nama !site tim"
+
+#: modules/user/user.module:1674
+msgid "Account details for !username at !site (approved)"
+msgstr "Detalji korisničkog računa za !username na !site (odobrenog)"
+
+#: modules/user/user.module:1676
+msgid ""
+"!username,\n"
+"\n"
+"Your account at !site has been activated.\n"
+"\n"
+"You may now log in by clicking on this link or copying and pasting it in "
+"your browser:\n"
+"\n"
+"!login_url\n"
+"\n"
+"This is a one-time login, so it can be used only once.\n"
+"\n"
+"After logging in, you will be redirected to !edit_uri so you can change your "
+"password.\n"
+"\n"
+"Once you have set your own password, you will be able to log in to !"
+"login_uri in the future using:\n"
+"\n"
+"username: !username\n"
+msgstr ""
+"!username,\n"
+"\n"
+"Vaš korisnički račun na !site je aktiviran.\n"
+"\n"
+"Možete se odmah prijaviti klikom na slijedeći link ili ga copy/paste u vaš "
+"web preglednik:\n"
+"\n"
+"!login_url\n"
+"\n"
+"Na ovaj način se možete prijaviti samo jednom.\n"
+"\n"
+"Poslije prijave bit ćete preusmjereni na !edit_uri gdje možete promijeniti "
+"vašu lozinku.\n"
+"\n"
+"Jednom kada postavite vašu lozinku moći ćete se u buduće prijaviti na !"
+"login_uri koristeći:\n"
+"\n"
+"korisničko ime: !username\n"
+
+#: modules/user/user.module:1678
+msgid "Account details for !username at !site (blocked)"
+msgstr "Detalji korisničkog računa za korisnika !username na !site (blokiran)"
+
+#: modules/user/user.module:1680
+msgid ""
+"!username,\n"
+"\n"
+"Your account on !site has been blocked."
+msgstr ""
+"!username,\r\n"
+"\r\n"
+"Vaš račun na !site je blokiran."
+
+#: modules/user/user.module:1682
+msgid "Account details for !username at !site (deleted)"
+msgstr "Detalji korisničkog računa za !username na !site (obrisanog)"
+
+#: modules/user/user.module:1684
+msgid ""
+"!username,\n"
+"\n"
+"Your account on !site has been deleted."
+msgstr ""
+"!username,\r\n"
+"\r\n"
+"Vaš korisnički račun na siteu !site je obrisan."
+
+#: modules/user/user.module:1744
+msgid "Unblock the selected users"
+msgstr "Odblokiraj označene korisnike"
+
+#: modules/user/user.module:1748
+msgid "Block the selected users"
+msgstr "Blokiraj označene korisnike"
+
+#: modules/user/user.module:1752
+msgid "Delete the selected users"
+msgstr "Obriši označene korisnike"
+
+#: modules/user/user.module:1772
+msgid "Add a role to the selected users"
+msgstr "Dodaj ulogu označenim korisnicima"
+
+#: modules/user/user.module:1775
+msgid "Remove a role from the selected users"
+msgstr "Ukloni ulogu označenim korisnicima"
+
+#: modules/user/user.module:1877
+msgid "Are you sure you want to delete these users?"
+msgstr "Jeste li sigurni da želite obrisati ove korisnike?"
+
+#: modules/user/user.module:1887
+msgid "The users have been deleted."
+msgstr "Korisnici su obrisani."
+
+#: modules/user/user.module:1901
+msgid ""
+"The user module allows users to register, login, and log out. Users benefit "
+"from being able to sign on because it associates content they create with "
+"their account and allows various permissions to be set for their roles. The "
+"user module supports user roles which establish fine grained permissions "
+"allowing each role to do only what the administrator wants them to. Each "
+"user is assigned to one or more roles. By default there are two roles "
+"<em>anonymous</em> - a user who has not logged in, and <em>authenticated</"
+"em> a user who has signed up and who has been authorized."
+msgstr ""
+"Modul za korisnike omogućava korisnicima da se registriraju, prijave i "
+"odjave. U interesu je korisnika da se mogu prijaviti zato što će svaki "
+"sadržaj koji oni postave biti vezan za njihov račun, a to će im omogućiti i "
+"da dobiju izvjesne dozvole u ovisnosti od njihovih uloga. Korisnički modul "
+"omogućava postavljanje uloga koje omogućavaju precizno određivanje dozvola "
+"koje administratori žele dodjeliti korisnicima odgovarajućih uloga. Svakom "
+"korisniku se dodjeljuje jedna ili više uloga. Po podrazumjevanim postavkama "
+"postoje dvije uloge: <em>anonimni korisnik</em> - korisnik koji nije "
+"prijavljen i <em>prijavljen korisnik</em>, korisnik koji je registriran i "
+"prijavljen."
+
+#: modules/user/user.module:1902
+msgid ""
+"Users can use their own name or handle and can specify personal "
+"configuration settings through their individual <em>My account</em> page. "
+"Users must authenticate by supplying a local username and password or "
+"through their OpenID, an optional and secure method for logging into many "
+"websites with a single username and password. In some configurations, users "
+"may authenticate using a username and password from another Drupal site, or "
+"through some other site-specific mechanism."
+msgstr ""
+"Korisnici mogu koristiti svoje ime ili 'handle' i mogu precizirati osobne "
+"konfiguracijske postavke preko svoje <em> Moj korisnički račun <!-- em--> "
+"stranice. Korisnici moraju ustanoviti autentičnost putem lokalnog "
+"korisničkog imena i lozinke ili preko svojih OpenID, jedan opcionani i "
+"siguran način prijavljivanja na mnoge web stranice s jednim imenom i "
+"lozinkom. U nekim konfiguracijama, korisnici mogu potvrditi svoju "
+"autentičnost koristeći korisničko ime i lozinku od druge Drupalove web "
+"stranice, ili preko nekog drugog specifičnog mehanizma za neki site.</em>"
+
+#: modules/user/user.module:1903
+msgid ""
+"A visitor accessing your website is assigned a unique ID, or session ID, "
+"which is stored in a cookie. The cookie does not contain personal "
+"information, but acts as a key to retrieve information from your site. Users "
+"should have cookies enabled in their web browser when using your site."
+msgstr ""
+"Posjtitelj vašeg sitea dobija jedinstveni ID ili sesijski ID, koji se čuva "
+"kao cookie. Cookie ne sadrži osobne informacije ali se ponaša kao ključ za "
+"dobijanje informacija sa vašeg web sitea. Korisnici bi trebali imati "
+"uključene cookie-je u svojim pretraživačima."
+
+#: modules/user/user.module:1904
+msgid ""
+"For more information, see the online handbook entry for <a href=\"@user"
+"\">User module</a>."
+msgstr ""
+"Za više informacija, pogledajte online priručnik za <a href=\"@user"
+"\">Korisnik modul</a>."
+
+#: modules/user/user.module:1907
+msgid ""
+"Drupal allows users to register, login, log out, maintain user profiles, "
+"etc. Users of the site may not use their own names to post content until "
+"they have signed up for a user account."
+msgstr ""
+"Drupal omogućava korisnicima da se registriraju, ulogiraju, odlogiraju, "
+"uređuju svoj profil itd. Korisnici koji nemaju korisnički račun ne mogu "
+"objaviti sadržaj."
+
+#: modules/user/user.module:1910
+msgid ""
+"This web page allows administrators to register new users. Users' e-mail "
+"addresses and usernames must be unique."
+msgstr ""
+"Ova web stranica omogućava administratorima registraciju novih korisnika. "
+"Korisničke adrese i imena moraju biti jedinstveni."
+
+#: modules/user/user.module:1912
+msgid ""
+"Set up username and e-mail address access rules for new <em>and</em> "
+"existing accounts (currently logged in accounts will not be logged out). If "
+"a username or e-mail address for an account matches any deny rule, but not "
+"an allow rule, then the account will not be allowed to be created or to log "
+"in. A host rule is effective for every page view, not just registrations."
+msgstr ""
+"Postavite pristupna prava korisničkih računa i e-mail adresa za nove <em>i</"
+"em> postojeće račune (trenutno prijavljeni korisnici neće biti odjavljeni). "
+"Ukoliko se korisničko ime ili e-adresa nekog računa poklapa sa bilo kojim "
+"osporenim pravilom, ali ne i sa nekim pristupnim pravilom, onda neće biti "
+"dozvoljeno otvaranje novog računa ili njegovo prijavljivanje. Ovo pravilo je "
+"važeće za svaki prikaz stranice, ne samo za registraciju."
+
+#: modules/user/user.module:1914
+msgid ""
+"Permissions let you control what users can do on your site. Each user role "
+"(defined on the <a href=\"@role\">user roles page</a>) has its own set of "
+"permissions. For example, you could give users classified as \"Administrators"
+"\" permission to \"administer nodes\" but deny this power to ordinary, "
+"\"authenticated\" users. You can use permissions to reveal new features to "
+"privileged users (those with subscriptions, for example). Permissions also "
+"allow trusted users to share the administrative burden of running a busy "
+"site."
+msgstr ""
+"Dozvole vam omogućavaju da kontrolirate što koji korisnik može raditi na "
+"vašem siteu. Svaka korisnička uloga (definirana na <a href=\"@role"
+"\">stranici za korisničke uloge</a>) ima svoje komplete dozvole. Npr., "
+"korisnicima koji imaju ulogu \"Administrator\" možete dodijeliti dozvolu da "
+"\"administriraju node-ove\", ali ovu dozvolu ne morate dati i \"prijavljenim"
+"\" korisnicima. Dozvole možete koristiti kako bi ste dodjeljivali nove "
+"mogućnosti privilegiranim korisnicima (onima koji plaćaju pretplatu, na "
+"primjer). Dozvole vam omogućavaju i da dio administriranja prebacite na "
+"korisnike u koje imate povjerenja."
+
+#: modules/user/user.module:1916
+msgid ""
+"<p>Roles allow you to fine tune the security and administration of Drupal. A "
+"role defines a group of users that have certain privileges as defined in <a "
+"href=\"@permissions\">user permissions</a>. Examples of roles include: "
+"anonymous user, authenticated user, moderator, administrator and so on. In "
+"this area you will define the <em>role names</em> of the various roles. To "
+"delete a role choose \"edit\".</p><p>By default, Drupal comes with two user "
+"roles:</p>\n"
+"      <ul>\n"
+"      <li>Anonymous user: this role is used for users that don't have a user "
+"account or that are not authenticated.</li>\n"
+"      <li>Authenticated user: this role is automatically granted to all "
+"logged in users.</li>\n"
+"      </ul>"
+msgstr ""
+"<p>Uloge vam omogućuju fino postavljanje sigurnosti i administriranje "
+"Drupala. Uloga određuje grupu korisnika koji imaju određena prava definirana "
+"na stranici <a href=\"@permissions\">prava korisnika</a>. Primjeri uloga: "
+"nepoznat korisnik, prijavljeni korisnik, moderator, administrator i td. U "
+"ovom dijelu sitea možete definirati <em>nazive uloga</em> različitih uloga. "
+"Da biste obrisali ulogu, odaberite link \"promjeni\".</p><p>Drupal dolazi sa "
+"dvije podrazumjevane uloge korisnika:</p>\r\n"
+"      <ul>\r\n"
+"      <li>Nepoznati korisnik: ova uloga se koristi za korisnike koji nemaju "
+"korisnički račun ili nisu prijavljeni.</li>\r\n"
+"      <li>Prijavljeni korisnik: ova uloga se automatski dodjeljuje svim "
+"prijavljenim korisnicima.</li>\r\n"
+"      </ul>"
+
+#: modules/user/user.module:1922
+msgid ""
+"Enter a simple pattern (\"*\" may be used as a wildcard match) to search for "
+"a username or e-mail address. For example, one may search for \"br\" and "
+"Drupal might return \"brian\", \"brad\", and \"brenda@example.com\"."
+msgstr ""
+"Unesite jednostavan obrazac (\"*\" može se koristi kao džoker) za traženje "
+"koriničkog imena ili e-mail adrese. Npr. jedna mogućnost traženja za  \"br\" "
+"i Drupal vraća rezultate \"brian\", \"brad\", i \"brenda@example.com\"."
+
+#: modules/user/user.module:1959
+msgid "role"
+msgstr "uloga"
+
+#: modules/user/user.module:1977
+msgid "permission"
+msgstr "dozvola"
+
+#: modules/user/user.module:2179
+msgid "Password strength:"
+msgstr "Sigurnost lozinke:"
+
+#: modules/user/user.module:2180
+msgid "Low"
+msgstr "Mala"
+
+#: modules/user/user.module:2182
+msgid "High"
+msgstr "Visoka"
+
+#: modules/user/user.module:2183
+msgid ""
+"It is recommended to choose a password that contains at least six "
+"characters. It should include numbers, punctuation, and both upper and "
+"lowercase letters."
+msgstr ""
+"Preporučuje se odabir lozinke koja sadrži najmanje šest znakova. Lozinka bi "
+"morala sadržavati brojke, interpunkciju, te velika i mala slova."
+
+#: modules/user/user.module:2184
+msgid "The password does not include enough variation to be secure. Try:"
+msgstr ""
+"Lozinka ne sadrži dovoljno varijacija kako bi bila sigurna. Pokušajte "
+"sljedeće:"
+
+#: modules/user/user.module:2185
+msgid "Adding both upper and lowercase letters."
+msgstr "Dodavanje velikih i malih slova."
+
+#: modules/user/user.module:2186
+msgid "Adding numbers."
+msgstr "Dodavanje brojki."
+
+#: modules/user/user.module:2187
+msgid "Adding punctuation."
+msgstr "Dodavanje interpunkcije."
+
+#: modules/user/user.module:2188
+msgid "It is recommended to choose a password different from the username."
+msgstr "Preporučuje se odabir lozinke koja se razlikuje od korisničkog imena."
+
+#: modules/user/user.module:2191
+msgid "Passwords match:"
+msgstr "Podudaranje lozinki:"
+
+#: modules/user/user.module:2206
+msgid "After a user account has been created"
+msgstr "Korisnički račun je napravljen"
+
+#: modules/user/user.module:2209
+msgid "After a user's profile has been updated"
+msgstr "Nakon što je korisnički profil osvježen"
+
+#: modules/user/user.module:2212
+msgid "After a user has been deleted"
+msgstr "Nakon što je korisnik obrisan"
+
+#: modules/user/user.module:2215
+msgid "After a user has logged in"
+msgstr "Nakon što se korisnik prijavio"
+
+#: modules/user/user.module:2218
+msgid "After a user has logged out"
+msgstr "Nakon što se korisnik odjavio"
+
+#: modules/user/user.module:2221
+msgid "When a user's profile is being viewed"
+msgstr "Kad je korisnikov profil pregledan"
+
+#: modules/user/user.module:2234
+msgid "Block current user"
+msgstr "Blokiraj trenutnog korisnika"
+
+#: modules/user/user.module:2240
+msgid "Ban IP address of current user"
+msgstr "Blokiraj IP adresu trenutnog korisnika"
+
+#: modules/user/user.module:2333
+msgid ""
+"Welcome to Drupal. You are now logged in as user #1, which gives you full "
+"control over your website."
+msgstr ""
+"Dobrodošli na Drupal. Sada ste prijavljeni kao korisnik broj 1, što vam daje "
+"potpunu kontrolu nad stranicom."
+
+#: modules/user/user.module:2335
+msgid ""
+"</p><p> Your password is <strong>%pass</strong>. You may change your "
+"password below.</p>"
+msgstr ""
+"</p><p> Jakost vaše lozinke <strong>%pass</strong>. Možete promjeniti vašu "
+"lozinku.</p>"
+
+#: modules/user/user.module:2347
+msgid ""
+"Created a new user account for <a href=\"@url\">%name</a>. No e-mail has "
+"been sent."
+msgstr ""
+"Kreiran je novi korisnički račun za <a href=\"@url\">%name</a>. E-mail nije "
+"poslan."
+
+#: modules/user/user.module:2354
+msgid "Registration successful. You are now logged in."
+msgstr "Registracija uspješna. Sada ste prijavljeni."
+
+#: modules/user/user.module:2364
+msgid ""
+"Password and further instructions have been e-mailed to the new user <a href="
+"\"@url\">%name</a>."
+msgstr ""
+"Lozinka i daljnje upute su poslane novom korisniku <a href=\"@url\">%name</"
+"a>."
+
+#: modules/user/user.module:2367
+msgid ""
+"Your password and further instructions have been sent to your e-mail address."
+msgstr "Vaša lozinka i daljnje instrukcije su poslane na vašu e-mail adresu."
+
+#: modules/user/user.module:2375
+msgid ""
+"Thank you for applying for an account. Your account is currently pending "
+"approval by the site administrator.<br />In the meantime, a welcome message "
+"with further instructions has been sent to your e-mail address."
+msgstr ""
+"Hvala na prijavi za korisnički račun. Vaš korisnički račun čeka odobrenje "
+"administratora.<br>U međuvremenu, poruka dodrodošlice sa danjim "
+"instrukcijama poslana je na vaš e-mail."
+
+#: modules/user/user.module:2412
+msgid "Notify user of new account"
+msgstr "Obavijesti korisnika o novom računu"
+
+#: modules/user/user.module:1320
+msgid "Login attempt failed for %user."
+msgstr "Neuspjeo pokušaj prijave od %user."
+
+#: modules/user/user.module:1366
+msgid "Session opened for %name."
+msgstr "Sesija otvorena za %name."
+
+#: modules/user/user.module:1420
+msgid "New external user: %name using module %module."
+msgstr "Novi spoljašnji korisnik: %name koristi modul %module."
+
+#: modules/user/user.module:1607
+msgid "Deleted user: %name %email."
+msgstr "Obrisan korisnik: %name %email."
+
+#: modules/user/user.module:2265
+msgid "Blocked user %name."
+msgstr "Blokirani korisnik %name."
+
+#: modules/user/user.module:2275
+msgid "Banned IP address %ip"
+msgstr "Blokirana IP adresa %ip"
+
+#: modules/user/user.module:2329
+msgid "New user: %name (%email)."
+msgstr "Novi korisnik: %name (%email)."
+
+#: modules/user/user.module:778,781
+msgid "1 guest"
+msgid_plural "@count guests"
+msgstr[0] "@count gost"
+msgstr[1] "@count gosta"
+msgstr[2] "@count gostiju"
+
+#: modules/user/user.module:546
+msgid "administer permissions"
+msgstr "administriraj dozvole"
+
+#: modules/user/user.module:546
+msgid "administer users"
+msgstr "administriranje korisnika"
+
+#: modules/user/user.module:546
+msgid "access user profiles"
+msgstr "pristup korisničkim profilima"
+
+#: modules/user/user.module:546
+msgid "change own username"
+msgstr "promijeni osobno korisničko ime"
+
+#: modules/user/user.module:889
+msgid "User autocomplete"
+msgstr "Korisničko automatsko dopunjavanje"
+
+#: modules/user/user.module:899
+msgid "User account"
+msgstr "Korisnički račun"
+
+#: modules/user/user.module:930
+msgid "Reset password"
+msgstr "Resetiraj lozinku"
+
+#: modules/user/user.module:940
+msgid "User management"
+msgstr "Upravljanje korisnicima"
+
+#: modules/user/user.module:941
+msgid "Manage your site's users, groups and access to site features."
+msgstr ""
+"Upravljajte korisnicima, grupama i pristupom mogućnostima web lokacije."
+
+#: modules/user/user.module:950
+msgid "List, add, and edit users."
+msgstr "Prikaži, dodaj i uredi korisnike."
+
+#: modules/user/user.module:962
+msgid "Add user"
+msgstr "Dodaj korisnika"
+
+#: modules/user/user.module:969
+msgid "User settings"
+msgstr "Postavke korisnika"
+
+#: modules/user/user.module:970
+msgid ""
+"Configure default behavior of users, including registration requirements, e-"
+"mails, and user pictures."
+msgstr ""
+"Konfigurirajte podrazumjevano ponašanje korisnika, uključujući tu i stavke "
+"neophodne za registraciju, e-adrese i slike korisnika."
+
+#: modules/user/user.module:979
+msgid "Permissions"
+msgstr "Dopuštenja"
+
+#: modules/user/user.module:980
+msgid "Determine access to features by selecting permissions for roles."
+msgstr "Odretite pristup dijelovima sitea birajući dozvole za pojedine uloge."
+
+#: modules/user/user.module:988
+msgid "List, edit, or add user roles."
+msgstr "Prikaži, uredi i dodaj uloge korisnika."
+
+#: modules/user/user.module:995
+msgid "Edit role"
+msgstr "Uredi ulogu"
+
+#: modules/user/user.module:1002
+msgid "Access rules"
+msgstr "Pravila pristupa"
+
+#: modules/user/user.module:1003
+msgid ""
+"List and create rules to disallow usernames, e-mail addresses, and IP "
+"addresses."
+msgstr ""
+"Pregled i stvaranje pravila za zabranu korisničkih imena, e-mail i IP adresa."
+
+#: modules/user/user.module:1021
+msgid "Check rules"
+msgstr "Provjeri pravila"
+
+#: modules/user/user.module:1028
+msgid "Edit rule"
+msgstr "Uredi pravilo"
+
+#: modules/user/user.module:1035
+msgid "Delete rule"
+msgstr "Ukloni pravilo"
+
+#: modules/user/user.module:1044
+msgid "Log out"
+msgstr "Odjava"
+
+#: modules/user/user.module:1091
+msgid "Account"
+msgstr "Račun"
+
+#: modules/user/user.module:0
+msgid "anonymous user"
+msgstr "anonimni korisnik"
+
+#: modules/user/user.module:0
+msgid "authenticated user"
+msgstr "autentificirani korisnik"
+
+#: modules/user/user.module:1526
+msgid ""
+"The signature input format has been set to a format you don't have access "
+"to. It will be changed to a format you have access to when you save this "
+"page."
+msgstr ""
+"Format unosa potpisa je postavljen na format za koji nemate privilegiju "
+"korištenja. Biti će promijenjen u format za koji imate privilegiju "
+"korištenja, nakon što spremite promjene na ovoj stranici."

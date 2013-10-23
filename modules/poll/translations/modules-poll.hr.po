@@ -1,0 +1,224 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from files:
+#  poll.pages.inc,v 1.4 2007/12/14 09:50:41 goba
+#  poll.module,v 1.263.2.3 2008/12/18 15:46:20 dries
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-08-11 15:21+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/poll/poll.pages.inc:20
+msgid "open"
+msgstr "otvorena"
+
+#: modules/poll/poll.pages.inc:20
+msgid "closed"
+msgstr "zatvorena"
+
+#: modules/poll/poll.pages.inc:32
+msgid ""
+"This table lists all the recorded votes for this poll. If anonymous users "
+"are allowed to vote, they will be identified by the IP address of the "
+"computer they used when they voted."
+msgstr ""
+"Ova tabela sadrži popis svih sačuvanih glasova za ovu anketu. Ako je "
+"anonimnim korisnicima dozvoljeno da glasuju oni će biti identificirani prema "
+"svojoj IP adresi računala sa kojeg su glasovali."
+
+#: modules/poll/poll.module:16
+msgid ""
+"The poll module can be used to create simple polls for site users. A poll is "
+"a simple, multiple choice questionnaire which displays the cumulative "
+"results of the answers to the poll. Having polls on the site is a good way "
+"to receive feedback from community members."
+msgstr ""
+"Modul ankete može biti iskorišten za jednostavno anketiranje vaših "
+"korisnika. Anketa je jednostavan, upitni listić koji kumulativno prikazuje "
+"rezultate odgovora na anketi. Imati ankete na siteu je dobar način da "
+"dobijete mišljenja od vaših članova."
+
+#: modules/poll/poll.module:17
+msgid ""
+"When creating a poll, enter the question being posed, as well as the "
+"potential choices (and beginning vote counts for each choice). The status "
+"and duration (length of time the poll remains active for new votes) can also "
+"be specified. Use the <a href=\"@poll\">poll</a> menu item to view all "
+"current polls. To vote in or view the results of a specific poll, click on "
+"the poll itself."
+msgstr ""
+"Kada kreirate anketu, unesite pitanje, kao i potencijalne odgovore (i "
+"početni broj glasova za svaki odgovor). Status i trajanje (dužina vremena "
+"koliko anketa ostaje aktivna za sve nove glasove) također može biti "
+"navedeno. Iskoristite mini <a href=\"@poll\">anketu</a> menu stavku kako bi "
+"pogledali sve trenutne ankete. Za glasovanje ili pregled rezultata odaberite "
+"samu anketu."
+
+#: modules/poll/poll.module:18
+msgid ""
+"For more information, see the online handbook entry for <a href=\"@poll"
+"\">Poll module</a>."
+msgstr ""
+"Za više informacija, pogledajte online priručnik za <a href=\"@poll\">Anketa "
+"modul</a>."
+
+#: modules/poll/poll.module:133
+msgid "Most recent poll"
+msgstr "Najnovija anketa"
+
+#: modules/poll/poll.module:174
+msgid ""
+"A <em>poll</em> is a question with a set of possible responses. A <em>poll</"
+"em>, once created, automatically provides a simple running count of the "
+"number of votes received for each response."
+msgstr ""
+"<em>Anketa</em> je pitanje sa više mogućih odgovora. <em>Anketa</em>, jednom "
+"kad se kreira, omogućava automatsko brojanje glasova primljenih za svaki "
+"odgovor."
+
+#: modules/poll/poll.module:175
+msgid "Question"
+msgstr "Pitanje"
+
+#: modules/poll/poll.module:237
+msgid "More choices"
+msgstr "Više izbora"
+
+#: modules/poll/poll.module:238
+msgid ""
+"If the amount of boxes above isn't enough, click here to add more choices."
+msgstr "Ako količina boksova nije dovoljna, kliknite ovdje za više izbora."
+
+#: modules/poll/poll.module:251
+msgid "Closed"
+msgstr "Zatvoreno"
+
+#: modules/poll/poll.module:257
+msgid "Poll settings"
+msgstr "Postavke ankete"
+
+#: modules/poll/poll.module:263
+msgid "Poll status"
+msgstr "Status ankete"
+
+#: modules/poll/poll.module:266
+msgid "When a poll is closed, visitors can no longer vote for it."
+msgstr "Kada je anketa zatvorena, gosti ne mogu više glasovati u njoj."
+
+#: modules/poll/poll.module:271
+msgid "Poll duration"
+msgstr "Trajanje ankete"
+
+#: modules/poll/poll.module:274
+msgid "After this period, the poll will be closed automatically."
+msgstr "Poslije ovog vremenskog perioda, anketa će se automatski zatvoriti."
+
+#: modules/poll/poll.module:307
+msgid "Choice @n"
+msgstr "Izbor @n"
+
+#: modules/poll/poll.module:315
+msgid "Votes for choice @n"
+msgstr "Glasovi za izbor @n"
+
+#: modules/poll/poll.module:380
+msgid "Negative values are not allowed."
+msgstr "Negativni brojevi nisu dozvoljeni."
+
+#: modules/poll/poll.module:385
+msgid "You must fill in at least two choices."
+msgstr "Morate unijeti barem dva izbora."
+
+#: modules/poll/poll.module:506
+msgid "Older polls"
+msgstr "Starije ankete"
+
+#: modules/poll/poll.module:506
+msgid "View the list of polls on this site."
+msgstr "Vidi popis anketa na ovom siteu."
+
+#: modules/poll/poll.module:508,98
+msgid "Results"
+msgstr "Rezultati"
+
+#: modules/poll/poll.module:508
+msgid "View the current poll results."
+msgstr "Vidi trenutne rezultate ankete."
+
+#: modules/poll/poll.module:588
+msgid ""
+"Your vote could not be recorded because you did not select any of the "
+"choices."
+msgstr "Vaš glas neće biti prihvaćen jer niste odabrali nijedan odgovor."
+
+#: modules/poll/poll.module:611
+msgid "Your vote was recorded."
+msgstr "Vaš glas je snimljen."
+
+#: modules/poll/poll.module:667
+msgid "Add another choice"
+msgstr "Dodati drugi izbor"
+
+#: modules/poll/poll.module:671
+msgid "Choice"
+msgstr "Izbor"
+
+#: modules/poll/poll.module:672
+msgid "Vote count"
+msgstr "Brojač glasova"
+
+#: modules/poll/poll.module:754
+msgid "Cancel your vote"
+msgstr "Poništite vaš glas."
+
+#: modules/poll/poll.module:57
+msgid "create poll content"
+msgstr "kreiraj sadržaj ankete"
+
+#: modules/poll/poll.module:57
+msgid "delete own poll content"
+msgstr "obriši sadržaj bilo koje ankete"
+
+#: modules/poll/poll.module:57
+msgid "delete any poll content"
+msgstr "obriši sadržaj bilo koje ankete"
+
+#: modules/poll/poll.module:57
+msgid "edit any poll content"
+msgstr "uredi sadržaj bilo koje ankete"
+
+#: modules/poll/poll.module:57
+msgid "edit own poll content"
+msgstr "uredi sadržaj svoje ankete"
+
+#: modules/poll/poll.module:57
+msgid "vote on polls"
+msgstr "glasuj na anketama"
+
+#: modules/poll/poll.module:57
+msgid "cancel own vote"
+msgstr "povuci svoj glas"
+
+#: modules/poll/poll.module:57
+msgid "inspect all votes"
+msgstr "pregledaj sve glasove"
+
+#: modules/poll/poll.module:79
+msgid "Polls"
+msgstr "Ankete"
+
+#: modules/poll/poll.module:87
+msgid "Votes"
+msgstr "Glasova"
+
+#: modules/poll/poll.module:109
+msgid "Javascript Choice Form"
+msgstr "Javaskript izborni red"

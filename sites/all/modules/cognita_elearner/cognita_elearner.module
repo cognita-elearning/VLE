@@ -1,0 +1,221 @@
+<?php
+
+/**
+ * Implementation of hook_block()
+ */
+function cognita_elearner_block($op='list', $delta=array(), $edit=array()) {
+ switch ($op) {
+ case 'list':
+	 $blocks[0]['info'] = t('Cognita eLearner LMS My Courses');
+	 $blocks[1]['info'] = t('Cognita eLearner LMS SCO block');
+	 $blocks[2]['info'] = t('Cognita eLearner LMS Course block');
+	 return $blocks;
+ case 'view':
+  switch($delta) {
+  case 0:
+	 $block['subject'] = t('My eLearner LMS courses');
+	 $uid = 1;
+	 $u = user_load($uid);
+	 profile_load_profile($u);
+	 $lmsid = $u->profile_elearner_userid;
+	 $content = file_get_contents(variable_get('cognita_elearner_url','') . '?userid=' . $lmsid . '&lms=' . variable_get('cognita_elearner_app_url',''));
+	 if( $content == FALSE ) {
+	   // add your JS into $content
+	   $content = t('Invalid settings');
+	 }
+
+	 $block['content'] = $content;
+  break;
+  case 1:
+	 
+	 global $user;
+	 $uid = $user->uid;
+	 $u = user_load($uid);
+	 profile_load_profile($u);
+	 $lmsid = $u->profile_elearner_userid;
+	 
+	 $node = node_load(arg(1));
+	 $idccd=$node->field_elearner_idccd['0']['value'];
+	 $idscodynamics=$node->field_elearner_idscodynamics['0']['value'];
+
+	 if ($idccd == '' || $idscodynamics =='' || $lmsid == '')
+		break;	 
+
+	$content = file_get_contents(variable_get('cognita_elearner_startsco_url','') . '?userid=' . $lmsid . '&idccd=' . $idccd . '&idscodynamics=' . $idscodynamics . '&lms=' . variable_get('cognita_elearner_app_url',''));
+	 //drupal_set_message(variable_get('cognita_elearner_startsco_url','') . '?userid=' . $lmsid . '&idccd=' . $idccd . '&idscodynamics=' . $idscodynamics . '&lms=' . variable_get('cognita_elearner_app_url',''));
+	 if( $content == FALSE ) {
+	   // add your JS into $content
+	   $content = t('Invalid settings');
+	 }
+
+	 $block['subject'] = t('Lekcija');
+	 $block['content'] = $content;  
+  break;
+  case 2:
+	 
+	 global $user;
+	 $uid = $user->uid;
+	 $u = user_load($uid);
+	 profile_load_profile($u);
+	 $lmsid = $u->profile_elearner_userid;
+	 //drupal_set_message($lmsid,'warning');
+	 
+	 $node = node_load(arg(1));
+	 $idccd=$node->field_elearner_idccd['0']['value'];
+
+	 if ($idccd == '' || $lmsid == '')
+		break;	 
+
+	$content = file_get_contents(variable_get('cognita_elearner_courseprogress_url','') . '?userid=' . $lmsid . '&idccd=' . $idccd . '&lms=' . variable_get('cognita_elearner_app_url',''));
+	 //drupal_set_message(variable_get('cognita_elearner_courseprogress_url','') . '?userid=' . $lmsid . '&idccd=' . $idccd . '&lms=' . variable_get('cognita_elearner_app_url',''));
+	 if( $content == FALSE ) {
+	   // add your JS into $content
+	   $content = t('Invalid settings');
+	 }
+
+	 $block['subject'] = t('Tečaj');
+	 $block['content'] = $content;  
+
+  break;  
+
+ }
+  return $block;
+ }
+}
+
+function cognita_elearner_menu() {
+
+  $items = array();
+
+  $items['admin/settings/cognitaelearner'] = array(
+    'title' => t('Cognita eLearner LMS'),
+    'description' => t('Description of your Cognita eLearner LMS settings page'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('cognita_elearner_admin'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_NORMAL_ITEM,
+   );
+  return $items;
+}
+
+function cognita_elearner_admin() {
+  $form = array();
+  
+  $form['URLsettings'] = array(
+      '#type' => 'fieldset', 
+      '#title' => t('Elearner LMS'), 
+      '#collapsible' => TRUE, 
+      '#collapsed' => true,
+
+    );
+	$form['roleSettings'] = array(
+      '#type' => 'fieldset', 
+      '#title' => t('Quiz'), 
+      '#collapsible' => TRUE, 
+      '#collapsed' => true,
+
+    );
+  $form['URLsettings']['cognita_elearner_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Cognita eLearner LMS mycourses.asp URL'),
+    '#default_value' => variable_get('cognita_elearner_url', array(NULL)),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t("For example http://lms.cognita.hr/external/mycourses.asp"),
+    '#required' => TRUE,
+
+      '#collapsible' => TRUE, 
+
+      '#collapsed' => FALSE, 
+  );
+  
+  $form['URLsettings']['cognita_elearner_startsco_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Cognita eLearner LMS startsco.asp URL'),
+    '#default_value' => variable_get('cognita_elearner_startsco_url', array(NULL)),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t("For example http://lms.cognita.hr/external/startsco.asp"),
+    '#required' => TRUE,
+  );
+  
+  $form['URLsettings']['cognita_elearner_courseprogress_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Cognita eLearner LMS courseprogress.asp URL'),
+    '#default_value' => variable_get('cognita_elearner_courseprogress_url', array(NULL)),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t("For example http://lms.cognita.hr/external/courseprogress.asp"),
+    '#required' => TRUE,
+  );  
+  $form['URLsettings']['cognita_elearner_courseprogress_simple_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Cognita eLearner LMS courseprogress.asp URL'),
+    '#default_value' => variable_get('cognita_elearner_courseprogress_simple_url', array(NULL)),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t("For example http://lms.cognita.hr/external/courseprogress_simple.asp"),
+    '#required' => TRUE,
+  );  
+  
+  $form['URLsettings']['cognita_elearner_app_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Cognita eLearner LMS URL'),
+    '#default_value' => variable_get('cognita_elearner_app_url', array(NULL)),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t("For example http://lms.cognita.hr"),
+    '#required' => TRUE,
+  ); 
+  $form['URLsettings']['cognita_elearner_updatescostatus_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Cognita eLearner Update Sco Status URL'),
+    '#default_value' => variable_get('cognita_elearner_updatescostatus_url', array(NULL)),
+    '#size' => 100,
+    '#maxlength' => 100,
+    '#description' => t("For example http://lms.cognita.hr/external/updatescosession.asp"),
+    '#required' => TRUE,
+  ); 
+  $roleKorisnika=array(		
+		'editor' => t('editor'), 
+		'lecturer' => t('lecturer'), 
+		'student' => t('student'),
+	);
+  $form['roleSettings']['cognita_elearner_role_check'] = array(
+	'#type' => 'checkboxes',
+	'#title' => t('Select roles'), 
+	'#default_value' => variable_get('cognita_elearner_role_check_values', array(NULL)),
+	'#options' => $roleKorisnika,
+   '#description' => t('Users with checked roles will not be able to view question nodes.'),
+  );
+  $form['#submit'][] = 'tester_admin_input_field_submit';
+  
+  return system_settings_form($form);
+}
+
+function tester_admin_input_field_submit($form, $form_state) {
+    variable_set('cognita_elearner_url', $form_state['values']['cognita_elearner_url']);
+    variable_set('cognita_elearner_startsco_url', $form_state['values']['cognita_elearner_startsco_url']);
+    variable_set('cognita_elearner_courseprogress_url', $form_state['values']['cognita_elearner_courseprogress_url']);
+    variable_set('cognita_elearner_courseprogress_simple_url', $form_state['values']['cognita_elearner_courseprogress_simple_url']);
+    variable_set('cognita_elearner_app_url', $form_state['values']['cognita_elearner_app_url']);
+    variable_set('cognita_elearner_role_check_values', $form_state['values']['cognita_elearner_role_check']);
+}
+function cognita_elearner_perm() {
+  return array('can_view_question_direct');
+}
+
+function cognita_elearner_init() {
+	if (arg(0) == 'node' && is_numeric(arg(1))) $nid = arg(1);
+	$node=node_load($nid, NULL, TRUE);
+	$tipovi = array('multichoice', 'truefalse', 'short_answer', 'scale', 'long_answer', 'matching', 'quiz_directions');
+	
+	if(in_array($node->type, $tipovi)){
+		if(!user_access('can_view_question_direct')){
+			drupal_access_denied();
+			module_invoke_all('exit');
+			exit();
+		}
+	}
+}
+?>

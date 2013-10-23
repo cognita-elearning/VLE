@@ -1,0 +1,496 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from files:
+#  update.compare.inc,v 1.8.2.5 2009/06/09 11:08:32 goba
+#  update.fetch.inc,v 1.7.2.6 2009/06/09 11:08:32 goba
+#  update.report.inc,v 1.10.2.4 2009/06/09 11:08:32 goba
+#  update.settings.inc,v 1.3.2.1 2009/04/29 17:17:21 goba
+#  update.module,v 1.17.2.5 2009/06/09 11:08:32 goba
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-08-11 15:40+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/update/update.compare.inc:166
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: modules/update/update.compare.inc:279
+msgid "Project not secure"
+msgstr "Projekt nije siguran"
+
+#: modules/update/update.compare.inc:280
+msgid ""
+"This project has been labeled insecure by the Drupal security team, and is "
+"no longer available for download. Immediately disabling everything included "
+"by this project is strongly recommended!"
+msgstr ""
+"Ovaj projekt je označen kao nesiguran od strane sigurnosnog tima Drupala i "
+"nije ga više moguće preuzeti. Preporučljivo je odmah isključiti sve module "
+"što ovaj projekt pruža."
+
+#: modules/update/update.compare.inc:291
+msgid "Project revoked"
+msgstr "Projekt je opozvan"
+
+#: modules/update/update.compare.inc:292
+msgid ""
+"This project has been revoked, and is no longer available for download. "
+"Disabling everything included by this project is strongly recommended!"
+msgstr ""
+"Ovaj projekt je opozvan i više nije na raspolaganju za preuzimanje. Toplo "
+"preporučamo da isključite i deinstalirate sve što je vezano za ovaj projekat!"
+
+#: modules/update/update.compare.inc:302
+msgid "Project not supported"
+msgstr "Projekat nema podršku"
+
+#: modules/update/update.compare.inc:303
+msgid ""
+"This project is no longer supported, and is no longer available for "
+"download. Disabling everything included by this project is strongly "
+"recommended!"
+msgstr ""
+"Dalji razvoj i podrška projektu su obustavljeni. Projekt više nije "
+"raspoloživ za dalje preuzimanje. Savjetujemo da isključite sve servise "
+"vezane za ovaj projekt."
+
+#: modules/update/update.compare.inc:374,523,572
+msgid "No available releases found"
+msgstr "Nema raspoloživih izdanja"
+
+#: modules/update/update.compare.inc:391
+msgid "Release revoked"
+msgstr "Verzija je opozvana"
+
+#: modules/update/update.compare.inc:392
+msgid ""
+"Your currently installed release has been revoked, and is no longer "
+"available for download. Disabling everything included in this release or "
+"upgrading is strongly recommended!"
+msgstr ""
+"Vaša trenuto instalirana verzija je opozvana, i nije više na raspolaganju za "
+"preuzimanje. Isključivanje i deinstalacija svega što je sadržano u ovoj "
+"verziji ili njezina nadogradnja se toplo preporučuje!"
+
+#: modules/update/update.compare.inc:403
+msgid "Release not supported"
+msgstr "Izdanje nije podržano"
+
+#: modules/update/update.compare.inc:404
+msgid ""
+"Your currently installed release is now unsupported, and is no longer "
+"available for download. Disabling everything included in this release or "
+"upgrading is strongly recommended!"
+msgstr ""
+"Vaša trenuto instalirana verzija sada nije podržana, i nije više na "
+"raspolaganju za preuzimanje. Isključivanje i deinstalacija svega što je "
+"sadržano u ovoj verziji ili njezina nadogradnja se toplo preporučuje!"
+
+#: modules/update/update.compare.inc:555
+msgid "Unknown release date"
+msgstr "Nepoznat datum izdanja"
+
+#: modules/update/update.compare.inc:567
+msgid "Invalid info"
+msgstr "Pogrešne informacije"
+
+#: modules/update/update.fetch.inc:17,85
+msgid ""
+"Unable to fetch any information about available new releases and updates."
+msgstr ""
+"Onemogućeno preuzimanje bilo koje informacije o novim verzijama i "
+"ažuriranjima."
+
+#: modules/update/update.fetch.inc:82,85
+msgid "update"
+msgstr "ažuriraj"
+
+#: modules/update/update.report.inc:30
+msgid "Last checked: @time ago"
+msgstr "Zadnja provjera: prije @time"
+
+#: modules/update/update.report.inc:30
+msgid "Last checked: never"
+msgstr "Zadnja provjera: nikad"
+
+#: modules/update/update.report.inc:31
+msgid "Check manually"
+msgstr "Provjeri ručno"
+
+#: modules/update/update.report.inc:48
+msgid "ok"
+msgstr "ok"
+
+#: modules/update/update.report.inc:72
+msgid "Security update required!"
+msgstr "Potrebna je sigurnosna nadogradnja!"
+
+#: modules/update/update.report.inc:78
+msgid "Not supported!"
+msgstr "Nije podržano!"
+
+#: modules/update/update.report.inc:81
+msgid "Update available"
+msgstr "Ažuriranje je na raspolaganju"
+
+#: modules/update/update.report.inc:139
+msgid "Recommended version:"
+msgstr "Preporučena verzija:"
+
+#: modules/update/update.report.inc:145
+msgid "Security update:"
+msgstr "Sigurnosna nadogradnja:"
+
+#: modules/update/update.report.inc:151
+msgid "Latest version:"
+msgstr "Posljednja verzija:"
+
+#: modules/update/update.report.inc:157
+msgid "Development version:"
+msgstr "Radna verzija:"
+
+#: modules/update/update.report.inc:163
+msgid "Also available:"
+msgstr "Također dostupno:"
+
+#: modules/update/update.report.inc:183
+msgid "Includes: %includes"
+msgstr "Uključuje: %includes"
+
+#: modules/update/update.report.inc:198
+msgid "Drupal core"
+msgstr "Drupal jezgra"
+
+#: modules/update/update.report.inc:201
+msgid "Disabled modules"
+msgstr "Onemogućeni moduli"
+
+#: modules/update/update.report.inc:202
+msgid "Disabled themes"
+msgstr "Onemogućene teme"
+
+#: modules/update/update.report.inc:231
+msgid "Download"
+msgstr "Preuzimanje"
+
+#: modules/update/update.report.inc:235
+msgid "Release notes"
+msgstr "Napomene za verziju"
+
+#: modules/update/update.settings.inc:18
+msgid "E-mail addresses to notify when updates are available"
+msgstr "E-mail adresa za primanje obavijesti o raspoloživim nadogradnjama"
+
+#: modules/update/update.settings.inc:21
+msgid ""
+"Whenever your site checks for available updates and finds new releases, it "
+"can notify a list of users via e-mail. Put each address on a separate line. "
+"If blank, no e-mails will be sent."
+msgstr ""
+"Kad vaša web lokacija provjerava dostupnost raspoloživih nadogradnji i nađe "
+"ih, u mogućnosti je obavijestiti korisnike e-mailom. Upišite svaku email "
+"adresu u novu liniju. Ako je prazno, e-mail obavijesti neće biti poslane."
+
+#: modules/update/update.settings.inc:26
+msgid "Check for updates"
+msgstr "Provjeri za nadogradnje"
+
+#: modules/update/update.settings.inc:29
+msgid "Daily"
+msgstr "Dnevno"
+
+#: modules/update/update.settings.inc:30
+msgid "Weekly"
+msgstr "Tjedno"
+
+#: modules/update/update.settings.inc:32
+msgid ""
+"Select how frequently you want to automatically check for new releases of "
+"your currently installed modules and themes."
+msgstr ""
+"Odaberite koliko često želite automatsku provjeru novih izdanja trenutno "
+"instaliranih modula i tema."
+
+#: modules/update/update.settings.inc:37
+msgid "E-mail notification threshold"
+msgstr "Ograničenja e-mail obavijesti"
+
+#: modules/update/update.settings.inc:40
+msgid "All newer versions"
+msgstr "Sve novije verzije"
+
+#: modules/update/update.settings.inc:41
+msgid "Only security updates"
+msgstr "Samo sigurnosne nadogradnje"
+
+#: modules/update/update.settings.inc:43
+msgid ""
+"You can choose to send e-mail only if a security update is available, or to "
+"be notified about all newer versions. If there are updates available of "
+"Drupal core or any of your installed modules and themes, your site will "
+"always print a message on the <a href=\"@status_report\">status report</a> "
+"page, and will also display an error message on administration pages if "
+"there is a security update."
+msgstr ""
+"Možete izabrati da pošaljete e-mail samo ako su sigurnosna ažuriranja "
+"dostupna, ili da budu obaviješteni o svim novijim verzijama. Ako postoje "
+"ažuriranja dostupna u Drupal jezgri ili bilo koji od vaših instaliranih "
+"modula i tema, Vaše stranice uvijek će ispisati poruku na <a href="
+"\"@status_report\">status izvještaj</a>, a također će prikazati poruku o "
+"pogrešci na administracijskim stranicama ako su dostupna nova sigurnosna "
+"ažuriranja."
+
+#: modules/update/update.settings.inc:80
+msgid "%email is not a valid e-mail address."
+msgstr "%email nije ispravna e-mail adresa."
+
+#: modules/update/update.settings.inc:83
+msgid "%emails are not valid e-mail addresses."
+msgstr "%emails nisu ispravne e-mail adrese."
+
+#: modules/update/update.module:70
+msgid ""
+"Here you can find information about available updates for your installed "
+"modules and themes. Note that each module or theme is part of a \"project\", "
+"which may or may not have the same name, and might include multiple modules "
+"or themes within it."
+msgstr ""
+"Ovdje možete pronaći informacije o dostupnim ažurnijim verzijama "
+"instaliranih modula i tema. Svaki modul ili tema je dio \"projekta\" koji "
+"može ili ne mora imati isto ime i može uključivati više modula i tema u "
+"okviru sebe."
+
+#: modules/update/update.module:71
+msgid ""
+"To extend the functionality or to change the look of your site, a number of "
+"contributed <a href=\"@modules\">modules</a> and <a href=\"@themes\">themes</"
+"a> are available."
+msgstr ""
+"Kako bi proširili funkcionalnost ili promijenili izgled vašeg sitea, "
+"dostupni su brojni <a href=\"@modules\">moduli</a> i <a href=\"@themes"
+"\">theme</a>."
+
+#: modules/update/update.module:88
+msgid ""
+"See the <a href=\"@available_updates\">available updates</a> page for "
+"information on installed modules and themes with new versions released."
+msgstr ""
+"Pogledajte link <a href=\"@available_updates\">raspoloživost novih verzija</"
+"a> da biste saznali nove informacije o instaliranim modulima i temama, te "
+"uporedili instalirane verzije sa najnovijim."
+
+#: modules/update/update.module:96
+msgid ""
+"The Update status module periodically checks for new versions of your site's "
+"software (including contributed modules and themes), and alerts you to "
+"available updates."
+msgstr ""
+"Izvješće o statusu modul provjerava periodično dostupnost novih verzija "
+"softwarea na vešem siteu (uključujuči module i teme) i upozorava vas u "
+"slučaju da su nove verzije raspoložive za ažuriranje."
+
+#: modules/update/update.module:97
+msgid ""
+"The <a href=\"@update-report\">report of available updates</a> will alert "
+"you when new releases are available for download. You may configure options "
+"for update checking frequency and notifications at the <a href=\"@update-"
+"settings\">Update status module settings page</a>."
+msgstr ""
+"<a href=\"@update-report\">Izvešće o raspoloživosti novih verzija</a> će vas "
+"obavjestiti kada nove verzije budu raspložive za preuzimanje. Frekvenciju "
+"provjere i obavještavanja o novim verzijama možete postaviti na <a href="
+"\"@update-settings\">stranici sa postavkama modula za ažuriranje</a>."
+
+#: modules/update/update.module:98
+msgid ""
+"Please note that in order to provide this information, anonymous usage "
+"statistics are sent to drupal.org. If desired, you may disable the Update "
+"status module from the <a href=\"@modules\">module administration page</a>."
+msgstr ""
+"Napomena: da bi ova statistika bila na raspolaganju, potrebno je "
+"proslijediti anoniminu statistiku korištenja na drupal.org. Ukoliko želite "
+"možete isključiti modul Provjera statusa na stranici za <a href=\"@modules"
+"\">administraciju modula</a>."
+
+#: modules/update/update.module:99
+msgid ""
+"For more information, see the online handbook entry for <a href=\"@update"
+"\">Update status module</a>."
+msgstr ""
+"Za više informacija, pogledajte online priručnik za <a href=\"@update"
+"\">Status ažuriranja modul</a>."
+
+#: modules/update/update.module:220,252
+msgid "Drupal core update status"
+msgstr "Ažurnost Drupal jezgre"
+
+#: modules/update/update.module:221
+msgid "No update data available"
+msgstr "Nema podataka o nadogadnjama"
+
+#: modules/update/update.module:255
+msgid "Module and theme update status"
+msgstr "Ažurnost modula i tema"
+
+#: modules/update/update.module:265
+msgid "Not secure!"
+msgstr "Nije sigurno!"
+
+#: modules/update/update.module:271
+msgid "Unsupported release"
+msgstr "Nepodržana verzija"
+
+#: modules/update/update.module:280
+msgid "Can not determine status"
+msgstr "Nije moguće utvrditi status"
+
+#: modules/update/update.module:287
+msgid "(version @version available)"
+msgstr "(verzija @version je dostupna)"
+
+#: modules/update/update.module:326
+msgid ""
+"No information is available about potential new releases for currently "
+"installed modules and themes. To check for updates, you may need to <a href="
+"\"@run_cron\">run cron</a> or you can <a href=\"@check_manually\">check "
+"manually</a>. Please note that checking for available updates can take a "
+"long time, so please be patient."
+msgstr ""
+"Nema informacija o potencijalnim nadogradnjama za trenutno instalirane "
+"module i teme. Kako bi provjerili postoje li nadogradnje možete <a href="
+"\"@run_cron\">pokrenuti cron</a> ili <a href=\"@check_manually\">provjeriti "
+"ručno</a>. Provjera može trajati neko vrijeme, stoga budite strpljivi."
+
+#: modules/update/update.module:408
+msgid "New release(s) available for !site_name"
+msgstr "Nove nadogradnje raspoložive za !site_name"
+
+#: modules/update/update.module:412
+msgid "See the available updates page for more information:"
+msgstr "Za više informacija pogledaj stranicu sa ažuriranjima:"
+
+#: modules/update/update.module:441
+msgid ""
+"There is a security update available for your version of Drupal. To ensure "
+"the security of your server, you should update immediately!"
+msgstr ""
+"Postoje sigurnosni dodaci dostupni za vašu verziju Drupal-a. Kako bi "
+"osigurali sigurnost vašeg poslužitelja, trebali bi odmah ažurirati sustav!"
+
+#: modules/update/update.module:444
+msgid ""
+"There are security updates available for one or more of your modules or "
+"themes. To ensure the security of your server, you should update immediately!"
+msgstr ""
+"Postoje sigurnosne nadogradnje za jedan ili više modula ili tema. Kako bi "
+"osigurali sigurnost vašeg poslužitelja, trebali bi odmah ažurirati sustav!"
+
+#: modules/update/update.module:450
+msgid ""
+"Your version of Drupal has been revoked and is no longer available for "
+"download. Upgrading is strongly recommended!"
+msgstr ""
+"Vaša verzija Drupal-a je povučena i nije više dostupna za preuzimanje. "
+"Nadogradnja ili isključivanje je strogo preporučeno!"
+
+#: modules/update/update.module:453
+msgid ""
+"The installed version of at least one of your modules or themes has been "
+"revoked and is no longer available for download. Upgrading or disabling is "
+"strongly recommended!"
+msgstr ""
+"Instalirana verzija za najmanje jedan od vaših modula ili tema je povučen i "
+"nije više dostupan za preuzimanje. Nadogradnja ili isključivanje je strogo "
+"preporučeno!"
+
+#: modules/update/update.module:459
+msgid ""
+"Your version of Drupal is no longer supported. Upgrading is strongly "
+"recommended!"
+msgstr ""
+"Vaša verzija Drupal-a nije više podržana. Nadogradnja je strogo preporučena!"
+
+#: modules/update/update.module:462
+msgid ""
+"The installed version of at least one of your modules or themes is no longer "
+"supported. Upgrading or disabling is strongly recommended! Please see the "
+"project homepage for more details."
+msgstr ""
+"Instalirana verzija za najmanje jedan od vaših modula nema više podršku. "
+"Nadogradnja ili isključivanje je strogo preporučeno! Pogledajte glavnu "
+"stranu projekta za više detalja."
+
+#: modules/update/update.module:468
+msgid ""
+"There are updates available for your version of Drupal. To ensure the proper "
+"functioning of your site, you should update as soon as possible."
+msgstr ""
+"Nove verzije ažuriranja Drupala. Instalirajte nove verzije što prije, da "
+"biste osigurali pravilno funkcioniranje vašeg sitea."
+
+#: modules/update/update.module:471
+msgid ""
+"There are updates available for one or more of your modules or themes. To "
+"ensure the proper functioning of your site, you should update as soon as "
+"possible."
+msgstr ""
+"Nova ažuriranja za jedan ili više modula i tema su raspložive za "
+"preuzimanje. Instalirajte nove verzije što je prije moguće, da biste "
+"osigurali pravilno funkcioniranje vašeg sitea."
+
+#: modules/update/update.module:479
+msgid ""
+"There was a problem determining the status of available updates for your "
+"version of Drupal."
+msgstr ""
+"Problem u procesu provjere statusa rasploživosti novih ažuriranja vaše "
+"verzije Drupala."
+
+#: modules/update/update.module:482
+msgid ""
+"There was a problem determining the status of available updates for one or "
+"more of your modules or themes."
+msgstr ""
+"Problem u procesu provjere statusa rasploživosti novih ažuriranja modula i "
+"tema."
+
+#: modules/update/update.module:488
+msgid ""
+"See the <a href=\"@available_updates\">available updates</a> page for more "
+"information."
+msgstr ""
+"Za više informacija pogledajte stranicu s <a href=\"@available_updates"
+"\">dostupnim nadogradnjama</a>."
+
+#: modules/update/update.module:129
+msgid "Available updates"
+msgstr "Raspoložive nadogradnje"
+
+#: modules/update/update.module:130
+msgid ""
+"Get a status report about available updates for your installed modules and "
+"themes."
+msgstr "Izviješće o dostupnim ažuriranjima za vaše instalirane module i teme."
+
+#: modules/update/update.module:152
+msgid "Manual update check"
+msgstr "Ručna provjera nadogradnji"
+
+#: modules/update/update.compare.inc:308
+msgid "Failed to fetch available update data"
+msgstr "Neuspješno dohvaćanje podataka o raspoloživim nadogradnjama"
+
+#: modules/update/update.fetch.inc:14,82
+msgid ""
+"Attempted to fetch information about all available new releases and updates."
+msgstr ""
+"Dohvaćane su informacije o svim raspoloživim nadogradnjama i novim verzijama."

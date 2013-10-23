@@ -1,0 +1,388 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from files:
+#  book-navigation.tpl.php,v 1.1 2007/11/04 14:29:09 goba
+#  book.admin.inc,v 1.8.2.3 2008/10/22 19:26:01 goba
+#  book.pages.inc,v 1.5.2.1 2008/08/13 23:59:13 drumm
+#  book.module,v 1.454.2.6 2009/02/25 11:47:37 goba
+#  book.install,v 1.20.2.1 2009/01/06 15:46:36 goba
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-07-31 15:34+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/book/book-navigation.tpl.php:40
+msgid "‹ "
+msgstr "‹ "
+
+#: modules/book/book-navigation.tpl.php:43
+msgid "Go to parent page"
+msgstr "Idi na nadređenu stranicu"
+
+#: modules/book/book-navigation.tpl.php:43
+msgid "up"
+msgstr "gore"
+
+#: modules/book/book-navigation.tpl.php:46
+msgid " ›"
+msgstr " ›"
+
+#: modules/book/book.admin.inc:15
+msgid "edit order and titles"
+msgstr "uredi redoslijed i naslove"
+
+#: modules/book/book.admin.inc:33
+msgid "Allowed book outline types"
+msgstr "Dozvoli tipove nacrta knjige"
+
+#: modules/book/book.admin.inc:36
+msgid ""
+"Select content types which users with the %add-perm permission will be "
+"allowed to add to the book hierarchy. Users with the %outline-perm "
+"permission can add all content types."
+msgstr ""
+"Selektirajte tipove sadržaja koji će korisnici sa %add-perm dozvolama biti u "
+"mogućnosti dodati hijerarhiji knjige. Korisnici sa %outline-perm dozvolama "
+"mogu dodati sve tipove sadržaja."
+
+#: modules/book/book.admin.inc:41
+msgid "Default child page type"
+msgstr "Zadani tip podstranice"
+
+#: modules/book/book.admin.inc:44,60
+msgid ""
+"The content type for the %add-child link must be one of those selected as an "
+"allowed book outline type."
+msgstr ""
+"Tip sadržaja za link %add-child treba biti jedan od selektiranih i "
+"dozvoljenih tipova nacrta knjiga."
+
+#: modules/book/book.admin.inc:78
+msgid "Save book pages"
+msgstr "Sačuvaj stranice knjige"
+
+#: modules/book/book.admin.inc:90
+msgid ""
+"This book has been modified by another user, the changes could not be saved."
+msgstr ""
+"Ova knjiga je modificirana od strane drugog korisnika, promijene neće biti "
+"sačuvane."
+
+#: modules/book/book.admin.inc:128
+msgid "Title changed from %original to %current."
+msgstr "Naslov je promijenjen iz %original u %current."
+
+#: modules/book/book.admin.inc:135
+msgid "Updated book %title."
+msgstr "Knjiga %title je ažurirana."
+
+#: modules/book/book.admin.inc:130
+msgid "book: updated %title."
+msgstr "knjiga: ažurirana %title."
+
+#: modules/book/book.pages.inc:52
+msgid "Unknown export format."
+msgstr "Nepoznat izvozni format."
+
+#: modules/book/book.pages.inc:126
+msgid "Update book outline"
+msgstr "Ažuriraj nacrt knjige."
+
+#: modules/book/book.pages.inc:126
+msgid "Add to book outline"
+msgstr "Dodaj u nacrt knjige"
+
+#: modules/book/book.pages.inc:132
+msgid "Remove from book outline"
+msgstr "Ukloni iz nacrta knjige"
+
+#: modules/book/book.pages.inc:160
+msgid "No changes were made"
+msgstr "Nema napravljenih promijena"
+
+#: modules/book/book.pages.inc:169
+msgid ""
+"The post has been added to the selected book. You may now position it "
+"relative to other pages."
+msgstr ""
+"Sadržaj je dodan u izabranu knjigu. Sada ga možete postaviti u odnosu na "
+"druge stranice."
+
+#: modules/book/book.pages.inc:173
+msgid "The book outline has been updated."
+msgstr "Nacrt knjige je ažuriran."
+
+#: modules/book/book.pages.inc:177
+msgid "There was an error adding the post to the book."
+msgstr "Došlo je do pogreške prilikom dodavanja sadržaja u knjigu."
+
+#: modules/book/book.pages.inc:193
+msgid ""
+"%title has associated child pages, which will be relocated automatically to "
+"maintain their connection to the book. To recreate the hierarchy (as it was "
+"before removing this page), %title may be added again using the Outline tab, "
+"and each of its former child pages will need to be relocated manually."
+msgstr ""
+"%title je pridružen podstranicama, koje će biti premještene automatski u "
+"čuvanju njihove povezanosti s knjigom. Za ponovno stvaranje hijerarhije (kao "
+"što je bila prije uklanjanja stranice), %title možete dodati ponovo uporabom "
+"tab-a Nacrt, i svaka od njihovih bivših podstranica mora biti ručno "
+"premještena."
+
+#: modules/book/book.pages.inc:196
+msgid "%title may be added to hierarchy again using the Outline tab."
+msgstr "%title može biti ponovo dodan u hijerarhiju uporabom tab-a Nacrt."
+
+#: modules/book/book.pages.inc:199
+msgid "Are you sure you want to remove %title from the book hierarchy?"
+msgstr "Jeste li sigurni da želite ukloniti %tile iz hijerarhije knjige?"
+
+#: modules/book/book.pages.inc:199
+msgid "Remove"
+msgstr "Ukloni"
+
+#: modules/book/book.pages.inc:213
+msgid "The post has been removed from the book."
+msgstr "Post je uklonjen iz knjige."
+
+#: modules/book/book.module:64
+msgid "Printer-friendly version"
+msgstr "Prilagođeno za ispis"
+
+#: modules/book/book.module:66
+msgid "Show a printer-friendly version of this book page and its sub-pages."
+msgstr ""
+"Prikazuje oblik prilagođen za ispis ove stranice knjige i njenih podstranica."
+
+#: modules/book/book.module:180,189
+msgid "Book navigation"
+msgstr "Navigacija po knjizi"
+
+#: modules/book/book.module:223
+msgid "Show block on all pages"
+msgstr "Prikaži blok na svim stranicima"
+
+#: modules/book/book.module:224
+msgid "Show block only on book pages"
+msgstr "Prikaži blok samo na stranicama knjige"
+
+#: modules/book/book.module:228
+msgid "Book navigation block display"
+msgstr "Prikaz bloka za navigaciju knjigom"
+
+#: modules/book/book.module:231
+msgid ""
+"If <em>Show block on all pages</em> is selected, the block will contain the "
+"automatically generated menus for all of the site's books. If <em>Show block "
+"only on book pages</em> is selected, the block will contain only the one "
+"menu corresponding to the current page's book. In this case, if the current "
+"page is not in a book, no block will be displayed. The <em>Page specific "
+"visibility settings</em> or other visibility settings can be used in "
+"addition to selectively display this block."
+msgstr ""
+"Ako je označeno <em>Prikaži blokove na svim stranicama</em>, blok će "
+"automatski generirati meni za sve blokove na siteu. Ako je označeno "
+"<em>Prikaži blokove samo na stranicama knjige</em>, blok će prikazati samo "
+"jedan meni koji odgovara trenutnoj stranici knjige. U tom slučaju, ako "
+"trenutna stranica nije knjiga, neće se prikazati nijedan blok. <em>Posebna "
+"stranica za postavljanje vidjivosti</em> ili druge postavke vidljivosti mogu "
+"biti korišteni kao dopuna za označeno prikazivanje bloka."
+
+#: modules/book/book.module:302
+msgid "Change book (update list of parents)"
+msgstr "Promijeni knjigu (ažuriati popis nadstranica)"
+
+#: modules/book/book.module:337
+msgid "This is the top-level page in this book."
+msgstr "Ovo je prva-glavna strana ove knjige."
+
+#: modules/book/book.module:340
+msgid "This will be the top-level page in this book."
+msgstr "Ovo će biti prva-glavna strana ove knjige."
+
+#: modules/book/book.module:344
+msgid "No book selected."
+msgstr "Niti jedna knjiga nije odabrana."
+
+#: modules/book/book.module:351
+msgid ""
+"The parent page in the book. The maximum depth for a book and all child "
+"pages is !maxdepth. Some pages in the selected book may not be available as "
+"parents if selecting them would exceed this limit."
+msgstr ""
+"Nadređena stranica u knjizi. Maksimalna dubina za knjigu i njene podređene "
+"stranice iznosi !maxdepth. Neke stranice u odabranoj knjizi neće biti "
+"dostupne kao nadređene ako njihovim odabirom pređete ovu granicu."
+
+#: modules/book/book.module:369
+msgid "Book outline"
+msgstr "Nacrt knjige"
+
+#: modules/book/book.module:391
+msgid "Pages at a given level are ordered first by weight and then by title."
+msgstr ""
+"Stranice na nekom nivou se najprije redaju po težini, a zatim po naslovu."
+
+#: modules/book/book.module:408
+msgid "create a new book"
+msgstr "kreiraj novu knjigu"
+
+#: modules/book/book.module:422
+msgid "Your page will be a part of the selected book."
+msgstr "Vaša stranica će biti dio odabrane knjige."
+
+#: modules/book/book.module:763
+msgid ""
+"%title is part of a book outline, and has associated child pages. If you "
+"proceed with deletion, the child pages will be relocated automatically."
+msgstr ""
+"%title će biti dio nacrta knjige, sa svim pripadajućim podstranicama. Ako "
+"nastavite s brisanjem, podstranice će biti premještene automatski."
+
+#: modules/book/book.module:1006
+msgid ""
+"The book module is suited for creating structured, multi-page hypertexts "
+"such as site resource guides, manuals, and Frequently Asked Questions "
+"(FAQs). It permits a document to have chapters, sections, subsections, etc. "
+"Authors with suitable permissions can add pages to a collaborative book, "
+"placing them into the existing document by adding them to a table of "
+"contents menu."
+msgstr ""
+"Modul knjiga je prikladan za kreiranje strukturiranih višestraničnih "
+"hipertekstova kao što je priručnik za uporabu site-a, uputa, i često "
+"postavljanih pitanja (FAQs). Omogućuje dokumentu da ima poglavlja, sekcije, "
+"podsekcije, itd. Autori sa propisnim dozvolama mogu dodati stranicu u "
+"postojeću knjigu, postavljajući ih u već postojeći dokument dodajući tablice "
+"sadržaja u meni."
+
+#: modules/book/book.module:1007
+msgid ""
+"Pages in the book hierarchy have navigation elements at the bottom of the "
+"page for moving through the text. These links lead to the previous and next "
+"pages in the book, and to the level above the current page in the book's "
+"structure. More comprehensive navigation may be provided by enabling the "
+"<em>book navigation block</em> on the <a href=\"@admin-block\">blocks "
+"administration page</a>."
+msgstr ""
+"Stranice u hijerarhiji knjige imaju elemente navigacije na dnu stranice za "
+"kretanje kroz tekst. Ovi linkovi vode do prethodne ili slijedeće stranice u "
+"knjizi, i do nivoa iznad trenutne stranice u strukturi knjige. Opsežnija  "
+"navigacija može biti pružena tako da omogućite <em>blok za navigaciju u "
+"knjigama</em> na  <a href=\"@admin-block\">administratorskoj stranici za "
+"blokove</a>."
+
+#: modules/book/book.module:1008
+msgid ""
+"Users can select the <em>printer-friendly version</em> link visible at the "
+"bottom of a book page to generate a printer-friendly display of the page and "
+"all of its subsections. "
+msgstr ""
+"Korisnici mogu odabrati link <em>prilagođeno za ispis</em> koji se vidi na "
+"dnu stranice knjige kako bi dobili oblik prilagođen za ispis stranice i svih "
+"njenih podređenih stranica. "
+
+#: modules/book/book.module:1009
+msgid ""
+"Users with the <em>administer book outlines</em> permission can add a post "
+"of any content type to a book, by selecting the appropriate book while "
+"editing the post or by using the interface available on the post's "
+"<em>outline</em> tab."
+msgstr ""
+"Korisnici sa dozvolom <em>administriraj nacrte knjige</em> mogu da dodaju "
+"bilo kakav tip sadržaja u knjigu, tako što odaberu odgovarajuću knjigu dok "
+"mijenjaju poruku ili uporabom postojećeg korisničkog sučelja u <em>nacrti</"
+"em> tab-u."
+
+#: modules/book/book.module:1010
+msgid ""
+"Administrators can view a list of all books on the <a href=\"@admin-node-book"
+"\">book administration page</a>. The <em>Outline</em> page for each book "
+"allows section titles to be edited or rearranged."
+msgstr ""
+"Administratori mogu pregledati popis svih knjiga na <a href=\"@admin-node-"
+"book\">stranici za administriranje knjige</a>. Stranica <em>nacrt</em> sa "
+"svaku knjigu dozvoljava da sekcije naslova budu promijenjene ili preuređene."
+
+#: modules/book/book.module:1011
+msgid ""
+"For more information, see the online handbook entry for <a href=\"@book"
+"\">Book module</a>."
+msgstr ""
+"Za više informacija, pogledajte online priručnik za <a href=\"@book\">Knjiga "
+"modul</a>."
+
+#: modules/book/book.module:1014
+msgid ""
+"The book module offers a means to organize a collection of related posts, "
+"collectively known as a book. When viewed, these posts automatically display "
+"links to adjacent book pages, providing a simple navigation system for "
+"creating and reviewing structured content."
+msgstr ""
+"Knjiga modul nudi mogućnost da se razim sredstvima organiziraju kolekcije "
+"ili slični sadržaji, pod zajedničkim nazivom knjiga. Po pregledu, ovi "
+"sadržaji automatski prokazuju linkove ka najbližoj stranici knjige, "
+"omogućavajući jednostavan navigacijski sustav za kreiranje i reviziju "
+"strukture sadržaja."
+
+#: modules/book/book.module:1016
+msgid ""
+"The outline feature allows you to include posts in the <a href=\"@book"
+"\">book hierarchy</a>, as well as move them within the hierarchy or to <a "
+"href=\"@book-admin\">reorder an entire book</a>."
+msgstr ""
+"Karakteristike nacrta omogućavaju uključivanje sadržaja u <a href=\"@book"
+"\">hijerarhiju knjige</a> kao i da ih pomičete unutar hijerarhije ili da <a "
+"href=\"@book-admin\">presložite cijelu knjigu</a>."
+
+#: modules/book/book.module:43
+msgid "create new books"
+msgstr "kreiraj nove knjige"
+
+#: modules/book/book.module:43
+msgid "access printer-friendly version"
+msgstr "pristupi verziji prilagođenoj za ispis"
+
+#: modules/book/book.module:79,108
+msgid "Books"
+msgstr "Knjige"
+
+#: modules/book/book.module:80
+msgid "Manage your site's book outlines."
+msgstr "Upravljanje nacrtima knjiga na vašem site-u."
+
+#: modules/book/book.module:99
+msgid "Re-order book pages and change titles"
+msgstr "Preuredi stranice knjige i promijeni naslove"
+
+#: modules/book/book.module:122
+msgid "Outline"
+msgstr "Nacrt"
+
+#: modules/book/book.module:132
+msgid "Remove from outline"
+msgstr "Ukloni iz nacrta"
+
+#: modules/book/book.install:29
+msgid "Book page"
+msgstr "Stranica knjige"
+
+#: modules/book/book.install:31
+msgid ""
+"A <em>book page</em> is a page of content, organized into a collection of "
+"related entries collectively known as a <em>book</em>. A <em>book page</em> "
+"automatically displays links to adjacent pages, providing a simple "
+"navigation system for organizing and reviewing structured content."
+msgstr ""
+"<em>Stranica knjige</em> je stranica sa sadržajem koja organizira povezane "
+"unose u kolekciju kolokvijalno poznatu kao <em>knjiga</em>. <em>Stranica "
+"knjige</em> automatski prikazuje linkove susjednih stranica u knjizi, "
+"omogučavajući na taj način jednostavan navigacijski sustav za organiziranje "
+"i pregled strukturiranih informacija."

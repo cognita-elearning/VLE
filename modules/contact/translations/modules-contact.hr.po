@@ -1,0 +1,410 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from files:
+#  contact.admin.inc,v 1.3 2007/11/09 07:55:13 dries
+#  contact.pages.inc,v 1.6.2.2 2009/04/27 14:48:21 goba
+#  contact.module,v 1.103.2.1 2008/04/09 21:11:46 goba
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-08-11 16:05+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/contact/contact.admin.inc:18,47
+msgid "Recipients"
+msgstr "Primatelji"
+
+#: modules/contact/contact.admin.inc:43
+msgid "Example: 'website feedback' or 'product information'."
+msgstr "Npr: 'tehnička podrška' ili 'informacije o proizvodima'."
+
+#: modules/contact/contact.admin.inc:49
+msgid ""
+"Example: 'webmaster@example.com' or 'sales@example.com,support@example.com'. "
+"To specify multiple recipients, separate each e-mail address with a comma."
+msgstr ""
+"Npr: 'webmaster@example.com' ili 'sales@example.com, support@example.com'. "
+"Da navedete više primatelja, odvojite svaku e-mail adresu zarezom."
+
+#: modules/contact/contact.admin.inc:53
+msgid "Auto-reply"
+msgstr "Automatksi odgovor"
+
+#: modules/contact/contact.admin.inc:55
+msgid ""
+"Optional auto-reply. Leave empty if you do not want to send the user an auto-"
+"reply message."
+msgstr ""
+"Opcionalni automatski odgovor. Ostavite prazno ako ne želite slati korisniku "
+"poruku sa automatskim odgovorom."
+
+#: modules/contact/contact.admin.inc:60
+msgid ""
+"When listing categories, those with lighter (smaller) weights get listed "
+"before categories with heavier (larger) weights. Categories with equal "
+"weights are sorted alphabetically."
+msgstr ""
+"Kada listate kategorije, oni sa manjom težinom biće iznad onih sa večom "
+"težinom. Kategorije koje su jednake težibe biće složene po abecenom redu."
+
+#: modules/contact/contact.admin.inc:66
+msgid ""
+"Set this to <em>Yes</em> if you would like this category to be selected by "
+"default."
+msgstr ""
+"Postavite na <em>Da</em> ako želite da ova kategorija bude označena kao "
+"podrazumijevana."
+
+#: modules/contact/contact.admin.inc:86
+msgid "You must enter one or more recipients."
+msgstr "Morate unijeti jednog ili više primatelja."
+
+#: modules/contact/contact.admin.inc:92
+msgid "%recipient is an invalid e-mail address."
+msgstr "%recipient ima neispravnu e-mail adresu."
+
+#: modules/contact/contact.admin.inc:114
+msgid "Category %category has been added."
+msgstr "Kategorija %category je dodana."
+
+#: modules/contact/contact.admin.inc:120
+msgid "Category %category has been updated."
+msgstr "Kategorija %category je ažurirana."
+
+#: modules/contact/contact.admin.inc:138
+msgid "Are you sure you want to delete %category?"
+msgstr "Jeste li ste sigurni da želite obrisati kategoriju %category?"
+
+#: modules/contact/contact.admin.inc:147
+msgid "Category %category has been deleted."
+msgstr "Kategorija %category je obrisana."
+
+#: modules/contact/contact.admin.inc:156
+msgid "Additional information"
+msgstr "Dodatne informacije"
+
+#: modules/contact/contact.admin.inc:158
+msgid ""
+"Information to show on the <a href=\"@form\">contact page</a>. Can be "
+"anything from submission guidelines to your postal address or telephone "
+"number."
+msgstr ""
+"Informacije koje će biti prikazane na <a href=\"@form\">kontakt stranici</"
+"a>. Kontakt stranica može uključivati informacije kao što su: upute za "
+"slanje poruke, adresu ili broj telefona."
+
+#: modules/contact/contact.admin.inc:161
+msgid "Hourly threshold"
+msgstr "Vremenski prag"
+
+#: modules/contact/contact.admin.inc:164
+msgid ""
+"The maximum number of contact form submissions a user can perform per hour."
+msgstr "Maksimalni broj poruka koje korisnik može poslati u jednom satu."
+
+#: modules/contact/contact.admin.inc:168
+msgid "Enable personal contact form by default"
+msgstr "Uključi osobnu kontakt formu kao podrazumijevano."
+
+#: modules/contact/contact.admin.inc:170
+msgid "Default status of the personal contact form for new users."
+msgstr "Podrazumijevani status osobne kontakt forme za nove korisnike."
+
+#: modules/contact/contact.admin.inc:115
+msgid "Contact form: category %category added."
+msgstr "Kontakt forma: kategorija %category je dodana."
+
+#: modules/contact/contact.admin.inc:121
+msgid "Contact form: category %category updated."
+msgstr "Kontakt forma: kategorija %category je ažurirana."
+
+#: modules/contact/contact.admin.inc:148
+msgid "Contact form: category %category deleted."
+msgstr "Kontakt forma: kategorija %category je obrisana."
+
+#: modules/contact/contact.pages.inc:17
+msgid ""
+"You cannot send more than %number messages per hour. Please try again later."
+msgstr ""
+"Ne možete poslati više od %number poruka za sat vremena. Molim, pokušajte "
+"opet kasnije."
+
+#: modules/contact/contact.pages.inc:49
+msgid "Your e-mail address"
+msgstr "Vaša e-mail adresa"
+
+#: modules/contact/contact.pages.inc:88,197
+msgid "Send yourself a copy."
+msgstr "Pošaljite i sebi kopiju poruke."
+
+#: modules/contact/contact.pages.inc:99
+msgid ""
+"The contact form has not been configured. <a href=\"@add\">Add one or more "
+"categories</a> to the form."
+msgstr ""
+"Kontakt forma još nije konfigurirana. <a href=\"@add\">Dodaj jednu ili više "
+"kategorija</a> u formu."
+
+#: modules/contact/contact.pages.inc:109
+msgid "You must select a valid category."
+msgstr "Morate obilježiti važeću kategoriju."
+
+#: modules/contact/contact.pages.inc:112
+msgid "You must enter a valid e-mail address."
+msgstr "Morate upisati važeću e-mail adresu."
+
+#: modules/contact/contact.pages.inc:147
+msgid "Your message has been sent."
+msgstr "Vaša poruka je poslana."
+
+#: modules/contact/contact.pages.inc:161
+msgid ""
+"You need to provide a valid e-mail address to contact other users. Please "
+"update your <a href=\"@url\">user information</a> and try again."
+msgstr ""
+"Vi morate omogućiti ispravnu e-mail adresu kako bi ste kontaktirali druge "
+"korisnike. Molimo osvježite vaše <a href=\"@url\">korisničke informacije</a> "
+"i pokušajte ponovo."
+
+#: modules/contact/contact.pages.inc:164
+msgid ""
+"You cannot contact more than %number users per hour. Please try again later."
+msgstr ""
+"Ne možete kontaktirati više od %number korisnika po satu. Molim pokušajte "
+"ponovo kasnije."
+
+#: modules/contact/contact.pages.inc:179
+msgid "From"
+msgstr "Od"
+
+#: modules/contact/contact.pages.inc:183
+msgid "To"
+msgstr "Za"
+
+#: modules/contact/contact.pages.inc:232
+msgid "The message has been sent."
+msgstr "Poruka je poslana."
+
+#: modules/contact/contact.pages.inc:146
+msgid "%name-from sent an e-mail regarding %category."
+msgstr "%name-from poslao/la је e-mail u vezi sa %category."
+
+#: modules/contact/contact.pages.inc:231
+msgid "%name-from sent %name-to an e-mail."
+msgstr "%name-from poslao %name-to e-mail poruku."
+
+#: modules/contact/contact.module:15
+msgid ""
+"The contact module facilitates communication via e-mail, by allowing your "
+"site's visitors to contact one another (personal contact forms), and by "
+"providing a simple way to direct messages to a set of administrator-defined "
+"recipients (the <a href=\"@contact\">contact page</a>). With either form, "
+"users specify a subject, write their message, and (optionally) have a copy "
+"of their message sent to their own e-mail address."
+msgstr ""
+"Kontakt modul omogućuje komunikaciju putem e-maila, omogućavajući vašim "
+"posjetiteljima da ostvare međusobni kontakt (putem osobne kontakt forme). "
+"Također pruža jednostavan način za slanje direktnih poruka na adrese koje je "
+"administrator odredio (na <a href=\"@contact\">kontakt strani</a>). Istom "
+"formom korisnik može označiti temu, napisati poruku, i (opcionalno) "
+"napraviti kopiju svoje pooruke koju će poslati na svoju e-mail adresu."
+
+#: modules/contact/contact.module:16
+msgid ""
+"Personal contact forms allow users to be contacted via e-mail, while keeping "
+"recipient e-mail addresses private. Users may enable or disable their "
+"personal contact forms by editing their <em>My account</em> page. If "
+"enabled, a <em>Contact</em> tab leading to their personal contact form is "
+"available on their user profile. Site administrators have access to all "
+"personal contact forms (even if they have been disabled). The <em>Contact</"
+"em> tab is only visible when viewing another user's profile (users do not "
+"see their own <em>Contact</em> tab)."
+msgstr ""
+"Osobna kontakt forma omogućuje korisnicima da budu kontaktirani putem "
+"elektronske pošte, a da adresa e-pošte ostane privatna (nepoznata "
+"pošiljatelju). Korisnici mogu omogućiti slanje poruka putem osobne kontakt "
+"forme na stranici <em>Moj korisnički račun</em>. Ukoliko je slanje "
+"omogućeno, <em>Kontakt</em> tab vodi na osobnu kontakt formu, čak i kada "
+"korisnik onemogući pristup. <em>Kontakt</em> tab je vidljiv samo onda kada "
+"pristupate drugim korisničkim profilima (korisnici ne vide svoj osobni "
+"<em>Kontakt</em> tab)."
+
+#: modules/contact/contact.module:17
+msgid ""
+"The <a href=\"@contact\">contact page</a> provides a simple form for "
+"visitors to leave comments, feedback, or other requests. Messages are routed "
+"by selecting a category from a list of administrator-defined options; each "
+"category has its own set of e-mail recipients. Common categories for a "
+"business site include, for example, \"Website feedback\" (messages are "
+"forwarded to web site administrators) and \"Product information\" (messages "
+"are forwarded to members of the sales department). The actual e-mail "
+"addresses defined within a category are not displayed. Only users in roles "
+"with the <em>access site-wide contact form</em> permission may access the <a "
+"href=\"@contact\">contact page</a>."
+msgstr ""
+"<a href=\"@contact\">Kontakt strana</a> omogućava posjetiteljima site-a da "
+"na jednostavan način pošalju svoj komentar, ili stupe u kontakt s vama. "
+"Poruke će biti proslijeđene dalje u skladu sa popisom kategorija definiranim "
+"od strane administratora. Svaka kategorija ima svoj vlasititi skup "
+"primatelja elektronskih poruka. Uobičajene kategorije na site-u jedne tvrtke "
+"uključuju, npr. \"Website feedback\" (poruka proslijeđena web site "
+"administratoru) i \"Product information\" (poruka proslijeđena komercijalnom "
+"odjelu u tvrtci). Adrese primatelja definirane kategorijama nisu prikazane. "
+"Samo korisnici koji imaju ulogu <em>pristupa glavnoj kontakt formi</em> mogu "
+"pristupiti <a href=\"@contact\">kontakt stranici</a>."
+
+#: modules/contact/contact.module:18
+msgid ""
+"A link to your site's <a href=\"@contact\">contact page</a> from the main "
+"<em>Navigation</em> menu is created, but is disabled by default. Create a "
+"similar link on another menu by adding a menu item pointing to the path "
+"\"contact\""
+msgstr ""
+"Link ka <a href=\"@contact\">kontakt stranici</a> vašeg sitea u glavnom "
+"<em>Navigacijskom</em> meniju je napravljen, ali je za sada isključen. "
+"Napravite sličan link ili drugi meni tako što ćete dodati stavku u meni koja "
+"pokazuje putanju \"contact\""
+
+#: modules/contact/contact.module:19
+msgid ""
+"Customize the <a href=\"@contact\">contact page</a> with additional "
+"information (like physical location, mailing address, and telephone number) "
+"using the <a href=\"@contact-settings\">contact form settings page</a>. The "
+"<a href=\"@contact-settings\">settings page</a> also provides configuration "
+"options for the maximum number of contact form submissions a user may "
+"perform per hour, and the default status of users' personal contact forms."
+msgstr ""
+"Prilagodite <a href=\"@contact\">kontakt stranu</a> postavljenjem dodatnih "
+"informacija (kao što su fizička lokacija, poštanska adresa, broj telefona) "
+"koristeći <a href=\"@contact-settings\">stranicu sa postavkama kontakt "
+"forme</a>.<a href=\"@contact-settings\">Stranica sa postavkama</a> također "
+"omogućuje da odredite maksimalnu vrijednost podataka koje korisnik može "
+"poslati putem kontakt forme po satu, kao i podrazumijevani status osobnih "
+"kotakt formi korisnika."
+
+#: modules/contact/contact.module:20
+msgid ""
+"For more information, see the online handbook entry for <a href=\"@contact"
+"\">Contact module</a>."
+msgstr ""
+"Za više informacija, pogledajte online priručnik za <a href=\"@contact"
+"\">Kontakt modul</a>."
+
+#: modules/contact/contact.module:23
+msgid ""
+"This page lets you set up <a href=\"@form\">your site-wide contact form</a>. "
+"To do so, add one or more categories. You can associate different recipients "
+"with each category to route e-mails to different people. For example, you "
+"can route website feedback to the webmaster and direct product information "
+"requests to the sales department. On the <a href=\"@settings\">settings "
+"page</a>, you can customize the information shown above the contact form. "
+"This can be useful to provide additional contact information such as your "
+"postal address and telephone number."
+msgstr ""
+"Na ovoj stranici možete podesiti <a href=\"@form\">glavni kontakt obrazac "
+"stranice</a>. Prvo morate dodati jednu ili više kategorija. Možete dodati "
+"različite primatelje za svaku kategoriju kako biste preusmjerili poruke "
+"razlilčitim osobama. Npr. možete preusmjeriti povratne informacije sa "
+"stranice ka administratoru a zahtjeve o informacijama o proizvodima "
+"odjeljenju za prodaju. Na <a href=\"@settings\">stranici za konfiguraciju</"
+"a> možete postaviti informacije koje se prikazuju unutar kontakt obrasca. "
+"Ovo može biti zgodno ako želite na kontakt obrascu prikazate dodatne podatke "
+"kao što su adresa ili broj telefona."
+
+#: modules/contact/contact.module:25
+msgid ""
+"The menu item can be customized and configured only once the menu module has "
+"been <a href=\"@modules-page\">enabled</a>."
+msgstr ""
+"Stavka menija se može prilagoditi i konfigurirati samo kada je meni modul  "
+"<a href=\"@modules-page\">uključen</a>."
+
+#: modules/contact/contact.module:30
+msgid ""
+"The contact module also adds a <a href=\"@menu-settings\">menu item</a> "
+"(disabled by default) to the navigation block."
+msgstr ""
+"Kontakt modul isto tako dodaje <a href=\"@menu-settings\">menu stavku</a> "
+"(onemogućena u obliku zadane postavke) u blok za navigaciju."
+
+#: modules/contact/contact.module:144
+msgid "Contact settings"
+msgstr "Postavke kontakta"
+
+#: modules/contact/contact.module:149
+msgid "Personal contact form"
+msgstr "Osobna kontakt forma"
+
+#: modules/contact/contact.module:151
+msgid ""
+"Allow other users to contact you by e-mail via <a href=\"@url\">your "
+"personal contact form</a>. Note that while your e-mail address is not made "
+"public to other members of the community, privileged users such as site "
+"administrators are able to contact you even if you choose not to enable this "
+"feature."
+msgstr ""
+"Dozvoli ostalim korisnicima da te kontaktiraju putem e-maila <a href=\"@url"
+"\">preko vaše osobne kontakt forme</a>. Napomena: Iako vaša e-mail adresa "
+"nije javna za ostale članove zajednice, privilegirani korisnici kao što su "
+"site administratori, bez obzira na ovu mogućnost, mogu vas kontaktirati na "
+"vašu e-mail adresu."
+
+#: modules/contact/contact.module:172,178
+msgid "[!category] !subject"
+msgstr "[!category] !subject"
+
+#: modules/contact/contact.module:173
+msgid "!name sent a message using the contact form at !form."
+msgstr "!name vam je posalo poruku uporabom kontakt forme na !form."
+
+#: modules/contact/contact.module:187
+msgid ""
+"!name (!name-url) has sent you a message via your contact form (!form-url) "
+"at !site."
+msgstr ""
+"!name (!name-url) vam je poslao poruku preko kontakt forme (!form-url) sa !"
+"site."
+
+#: modules/contact/contact.module:188
+msgid ""
+"If you don't want to receive such e-mails, you can change your settings at !"
+"url."
+msgstr ""
+"Ako ne želite primati ovakve e-mailove promijenite vaše postavke na !url."
+
+#: modules/contact/contact.module:189
+msgid "Message:"
+msgstr "Poruka:"
+
+#: modules/contact/contact.module:39
+msgid "access site-wide contact form"
+msgstr "pristupite glavnoj kontakt formi na siteu"
+
+#: modules/contact/contact.module:39
+msgid "administer site-wide contact form"
+msgstr "administrirajte glavnu kontakt formu na siteu"
+
+#: modules/contact/contact.module:46
+msgid "Contact form"
+msgstr "Kontakt forma"
+
+#: modules/contact/contact.module:47
+msgid "Create a system contact form and set up categories for the form to use."
+msgstr ""
+"Kreirajte kontakt formu sustava za kontakt i postavite kategorije koje će "
+"koristiti ovu kontakt formu."
+
+#: modules/contact/contact.module:68
+msgid "Edit contact category"
+msgstr "Uredi kategoriju kontakta"
+
+#: modules/contact/contact.module:76
+msgid "Delete contact"
+msgstr "Obriši kontakt"

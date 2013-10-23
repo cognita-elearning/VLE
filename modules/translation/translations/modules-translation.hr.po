@@ -1,0 +1,237 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from files:
+#  translation.pages.inc,v 1.2.2.1 2008/09/30 10:50:43 goba
+#  translation.module,v 1.23.2.4 2009/01/14 23:34:07 goba
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-08-11 13:43+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/translation/translation.pages.inc:41
+msgid "outdated"
+msgstr "zastario"
+
+#: modules/translation/translation.pages.inc:43
+msgid "<strong>@language_name</strong> (source)"
+msgstr "<strong>@language_name</strong> (izvor)"
+
+#: modules/translation/translation.pages.inc:50
+msgid "add translation"
+msgstr "dodaj prijevod"
+
+#: modules/translation/translation.pages.inc:52
+msgid "Not translated"
+msgstr "Nije prevedeno"
+
+#: modules/translation/translation.pages.inc:57
+msgid "Translations of %title"
+msgstr "Prijevod %title"
+
+#: modules/translation/translation.module:34
+msgid ""
+"The content translation module allows content to be translated into "
+"different languages. Working with the <a href=\"@locale\">locale module</a> "
+"(which manages enabled languages and provides translation for the site "
+"interface), the content translation module is key to creating and "
+"maintaining translated site content."
+msgstr ""
+"Modul za prevođenje sadržaja omogućava da sadržaj bude preveden na različite "
+"jezike. Radi sa <a href=\"@locale\">locale modulom</a> (koji upravlja "
+"instaliranim jezicima i osiguerava prijevode za okruženje sitea), ovaj modul "
+"je ključni za održavanje višejezičnog sitea."
+
+#: modules/translation/translation.module:35
+msgid "Configuring content translation and translation-enabled content types:"
+msgstr ""
+"Konfiguriranje prevođenja sadržaja i tipova sadržaja koji se mogu prevoditi:"
+
+#: modules/translation/translation.module:36
+msgid ""
+"Assign the <em>translate content</em> permission to the appropriate user "
+"roles at the <a href=\"@permissions\">Permissions configuration page</a>."
+msgstr ""
+"Pridruži <em>prevedi sadržaj</em> dozvolu odgovarajućoj korisničkoj ulozi na "
+"<a href=\"@permissions\">Stranica za konfiguriranje dozvola</a>."
+
+#: modules/translation/translation.module:37
+msgid ""
+"Add and enable desired languages at the <a href=\"@languages\">Languages "
+"configuration page</a>."
+msgstr ""
+"Dodaj i uključi željene jezike na <a href=\"@languages\">Stranica za "
+"konfiguriranje jezika</a>."
+
+#: modules/translation/translation.module:38
+msgid ""
+"Determine which <a href=\"@content-types\">content types</a> should support "
+"translation features. To enable translation support for a content type, edit "
+"the type and at the <em>Multilingual support</em> drop down, select "
+"<em>Enabled, with translation</em>. (<em>Multilingual support</em> is "
+"located within <em>Workflow settings</em>.) Be sure to save each content "
+"type after enabling multilingual support."
+msgstr ""
+"Odredi koji <a href=\"@content-types\">tip sadržaja</a> treba da se prevodi. "
+"Da uključite podršku za prevođenje za tip sadržaja, izmjenite tip i na "
+"<em>Višejezična podrška</em> padajućem meniju odaberite <em>Uključena, sa "
+"prijevodom</em>. (<em>Višejezična podrška</em> se nalazi unutar<em>Workflow "
+"settings</em>.) Ne zaboravite da sačuvate svaki tip sadržaja kada mu "
+"uključite višejezičnu podršku."
+
+#: modules/translation/translation.module:39
+msgid "Working with translation-enabled content types:"
+msgstr "Rad sa tipovima sadržaja koji će se prevoditi."
+
+#: modules/translation/translation.module:40
+msgid ""
+"Use the <em>Language</em> drop down to select the appropriate language when "
+"creating or editing posts."
+msgstr ""
+"Koristite padajući meni <em>Jezik</em> da odaberete odgovarajući jezik kada "
+"kreirate ili mijenjate poruke."
+
+#: modules/translation/translation.module:41
+msgid ""
+"Provide new or edit current translations for existing posts via the "
+"<em>Translation</em> tab. Only visible while viewing a post as a user with "
+"the <em>translate content</em> permission, this tab allows translations to "
+"be added or edited using a specialized editing form that also displays the "
+"content being translated."
+msgstr ""
+"Omogućite nove ili uređujte trenutne prijevode za postojeće poruke preko "
+"taba <em>Prijevod</em>. Vidljivo jedino kada gleda korisnik koji ima "
+"dozvolu<em>prevedi sadržaj</em>, ovaj tab omogućava da se prijevodi dodaju "
+"ili mijenjaju korištenjem specijalnog obrasca koji također prikazuje sadržaj "
+"koji se prevodi."
+
+#: modules/translation/translation.module:42
+msgid ""
+"Update translations as needed, so that they accurately reflect changes in "
+"the content of the original post. The translation status flag provides a "
+"simple method for tracking outdated translations. After editing a post, for "
+"example, select the <em>Flag translations as outdated</em> check box to mark "
+"all of its translations as outdated and in need of revision. Individual "
+"translations may be marked for revision by selecting the <em>This "
+"translation needs to be updated</em> check box on the translation editing "
+"form."
+msgstr ""
+"Ažuriranje prijevoda po potrebi, tako da se odražavaju na promjene u "
+"sadržaju originalnog posta. Status zastavica prijevoda pruža jednostavan "
+"način za praćenje zastarjelih prijevoda. Nakon uređivanja posta, npr, "
+"odaberite <em> Obilježi kućicu kao zastarjeli prijevod </ em> da biste "
+"označili sve svoje prijevode kao zastarjeli i koje je potrebno revidirati. "
+"Individualni prijevodi mogu biti označen za reviziju odabirom <em>Ovaj "
+"prijevod mora biti ažuriran</ em> kućica na formi za izmjenu prijevoda."
+
+#: modules/translation/translation.module:43
+msgid ""
+"The <a href=\"@content-node\">Content management administration page</a> "
+"displays the language of each post, and also allows filtering by language or "
+"translation status."
+msgstr ""
+"<a href=\"@content-node\">Stranica za administraciju upravljanja sadržajem</"
+"a> prikazuje jezik svake poruke, i omogućava filtriranje po jeziku ili "
+"statusu prijevoda."
+
+#: modules/translation/translation.module:44
+msgid ""
+"Use the <a href=\"@blocks\">language switcher block</a> provided by locale "
+"module to allow users to select a language. If available, both the site "
+"interface and site content are presented in the language selected."
+msgstr ""
+"Koristite <a href=\"@blocks\">blok za prebacivanje jezika</a> koji omogućava "
+"locale modul da omogućite korisnicima da biraju jezik. Ako je raspoloživ, i "
+"sučelje sitea i njegov sadržaj biće prezentovani u odabranom jeziku."
+
+#: modules/translation/translation.module:45
+msgid ""
+"For more information, see the online handbook entry for <a href="
+"\"@translation\">Translation module</a>."
+msgstr ""
+"Za više informacija,  pogledajte online priručnik za <a href=\"@translation"
+"\">Translation modul</a>."
+
+#: modules/translation/translation.module:48
+msgid ""
+"Translations of a piece of content are managed with translation sets. Each "
+"translation set has one source post and any number of translations in any of "
+"the <a href=\"!languages\">enabled languages</a>. All translations are "
+"tracked to be up to date or outdated based on whether the source post was "
+"modified significantly."
+msgstr ""
+"Prijevodom dijela sadržaja se upravlja pomoću seta za prevođenje. Svaki skup "
+"prijevoda ima jednu izvornu poruku i bilo koji broj prijevoda u bilo koji od "
+"<a href=\"!languages\">raspoloživih jezika</a>. Svi prijevodi se prate jesu "
+"li ažurni ili ne na osnovu toga je li izvorna poruka pretrpila značajne "
+"izmjene."
+
+#: modules/translation/translation.module:99
+msgid "Enabled, with translation"
+msgstr "Omogućeno, s prijevodom"
+
+#: modules/translation/translation.module:101
+msgid ""
+"Enable multilingual support for this content type. If enabled, a language "
+"selection field will be added to the editing form, allowing you to select "
+"from one of the <a href=\"!languages\">enabled languages</a>. You can also "
+"turn on translation for this content type, which lets you have content "
+"translated to any of the enabled languages. If disabled, new posts are saved "
+"with the default language. Existing content will not be affected by changing "
+"this option."
+msgstr ""
+"Uključi višejezičnu podršku za ovaj tip sadržaja. Ako je uključena, polje za "
+"odabir jezika biće dodano na obrazac čime će vam omogućiti da odaberete "
+"jedan od<a href=\"!languages\">raspoloživih jezika</a>. Također možete "
+"uključiti prevođenje za ovaj tip sadržaja, čime ćete dobiti sadržaj preveden "
+"na bilo koji od raspoloživih jezika. Ako je isključena, nove poruke će se "
+"čuvati samo u podrazumjevanom jeziku. Na postojeći sadržaj neće uticati "
+"mijenjanje ove opcije."
+
+#: modules/translation/translation.module:124
+msgid "Translation settings"
+msgstr "Postavke prijevoda"
+
+#: modules/translation/translation.module:135
+msgid "Flag translations as outdated"
+msgstr "Označi prijevode kao zastarijele"
+
+#: modules/translation/translation.module:137
+msgid ""
+"If you made a significant change, which means translations should be "
+"updated, you can flag all translations of this post as outdated. This will "
+"not change any other property of those posts, like whether they are "
+"published or not."
+msgstr ""
+"Ako ste napravili značajne promjene, to znači da se prijevodi moraju "
+"ažurirati, možete obilježiti sve svoje prijevode ovog unosa kao zastarjele. "
+"Ovo neće promijeniti nijedno drugo svojstvo ovih unosa, kao npr. jesu li "
+"objavljene ili ne."
+
+#: modules/translation/translation.module:144
+msgid "This translation needs to be updated"
+msgstr "Prijevod treba ažurirati"
+
+#: modules/translation/translation.module:146
+msgid ""
+"When this option is checked, this translation needs to be updated because "
+"the source post has changed. Uncheck when the translation is up to date "
+"again."
+msgstr ""
+"Kada je uključena ova opcija, ovaj prijevod mora se ažurirati jer je izvorna "
+"poruka promijenjena. Isključi kada prijevod bude opet ažuran."
+
+#: modules/translation/translation.module:86
+msgid "translate content"
+msgstr "prevedi sadržaj"
+
+#: modules/translation/translation.module:59
+msgid "Translate"
+msgstr "Prevedi"

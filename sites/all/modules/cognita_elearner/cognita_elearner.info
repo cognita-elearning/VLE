@@ -1,0 +1,5 @@
+;$Id$
+name = Cognita eLearner LMS
+description = Cognita eLearner LMS integration.
+core = 6.x
+

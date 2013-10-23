@@ -1,0 +1,13 @@
+core = "6.x"
+dependencies[] = "uif"
+dependencies[] = "og"
+description = "Extends the User Import Framework (UIF) to support Organic Groups (OG)"
+name = "Organic groups support for user import framework"
+package = "Other"
+
+; Information added by drupal.org packaging script on 2012-06-05
+version = "6.x-1.0"
+core = "6.x"
+project = "uif_og"
+datestamp = "1338923834"
+

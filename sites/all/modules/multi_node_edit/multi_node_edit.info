@@ -1,0 +1,11 @@
+name = "Multi-Node-Edit"
+description = "An API designed to be passed multiple nodes and display edit screen for all of them as a single form."
+core = 6.x
+package = Multi Node Edit Tools
+
+; Information added by drupal.org packaging script on 2011-02-25
+version = "6.x-1.x-dev"
+core = "6.x"
+project = "multi_node_edit"
+datestamp = "1298619692"
+
