@@ -88,7 +88,7 @@
  *   $db_url = 'mysqli://username:password@localhost/databasename';
  *   $db_url = 'pgsql://username:password@localhost/databasename';
  */
-$db_url = 'mysql://root:q1w2e3r4t56@localhost/infobip_elearning_hr';
+$db_url = 'mysql://username:password@localhost/databasename';
 $db_prefix = '';
 
 /**
