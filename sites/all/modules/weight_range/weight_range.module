@@ -1,0 +1,64 @@
+<?php
+// $Id: weight_range.module,v 1.0 2009/07/15 15:027:00 BenStallings $
+
+/**
+ * @file
+ * Allow the administrator to change the range of available weights for ordering elements in a form.
+ *
+ */
+
+/**
+ * Implementation of hook_menu().
+ */
+function weight_range_menu() {
+  $items   = array();
+
+  $items['admin/settings/weight_range'] = array(
+    'title' => 'Settings',
+    'description' => 'Increase weight range',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('weight_range_admin_form'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  return $items;
+}
+
+/**
+ * Display a form at /admin/settings/weight_range to allow the range extension factor to be specified.
+ */
+
+function weight_range_admin_form() {
+  $form = array();
+
+  $form['weight_range_factor'] = array(
+    '#type' => 'select',
+    '#title' => t('Increase weight ranges by a factor of'),
+    '#default_value' => variable_get('weight_range_factor', 3),
+    '#options' => array(1 => 1, 2 => 2, 3 => 3, 5 => 5, 10 => 10),
+    '#description' => t('Setting this factor to 1 effectively disables the module, since weight ranges will be unchanged. ') . t('Note that you may not see the effect of changing this factor until the next time you save a form that uses weights.'),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_elements() to use our custom process function for weight elements.
+ */
+function weight_range_elements() {
+  return array(
+    'weight' => array(
+      '#process' => 'weight_range_process_weight'
+    )
+  );	
+}
+
+/**
+ * Multiply the existing weight by 5, then pass the element on to the default process function.
+ */
+function weight_range_process_weight ($element) {
+  // increase range
+  $element['#delta'] = $element['#delta'] * variable_get('weight_range_factor', 3);
+  return process_weight($element);
+}

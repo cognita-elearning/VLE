@@ -1,0 +1,685 @@
+<?php
+/**
+ * @file
+ * SCORM: SCORM module.
+ *
+ */
+ 
+/*
+All code of the SCORM Module is Copyright 2009 by Servit Open Source Solutions (www.servit.ch)
+
+Except re-used code from the following sources:
+Moodle SCORM Module (http://cvs.moodle.org/moodle/mod/scorm/), GPL
+SCORM Module for Drupal (http://drupal.org/project/scorm), GPL
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program as the file LICENSE.txt; if not, please see
+http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
+*/
+
+
+
+
+/**
+ * Implementation of hook_install().
+ */
+function SCORM_install() {
+  drupal_install_schema('SCORM');
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function SCORM_uninstall() {
+  drupal_uninstall_schema('SCORM');
+}
+
+function SCORM_schema() {
+  $schema = array();
+// first table
+  $schema['scorm'] = array(
+    'description' => t('Main table of SCORM module'),
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'course' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'name' => array( 
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+      ),
+        // DCH: 'nodereference' is a poor choice of name, as this word has its own meaning in drupal.
+        // It is the id of the node that it is connected to.  Convention would call this 'nid'.
+       'nodereference' => array(
+        'type' => 'int',
+        'size' => 'big',
+      ),
+      'reference' => array( 
+        'type' => 'varchar',
+      'length' => 255,
+      ),
+      'summary' => array( 
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+      'version' => array( 
+        'type' => 'varchar',
+      'length' => 9,
+        'not null' => TRUE,
+      ),
+      'maxgrade' => array( 
+        'type' => 'float',
+        'not null' => TRUE,
+       'default' => 0,
+      ),
+      'grademethod' => array( 
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+       'default' => 0,
+      ),
+      'whatgrade' => array( 
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => TRUE,
+       'default' => 0,
+      ),
+      'maxattempt' => array( 
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => TRUE,
+       'default' => 1,
+      ),
+       'updatefreq' => array( 
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+        'unsigned' => TRUE,
+      ),
+      
+         'md5hash' => array( 
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ),
+      'launch' => array( 
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+        'default' => 0,
+      ),
+      'skipview' => array( 
+        'type' => 'int',
+         'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 1,
+        'unsigned' => TRUE,
+      ),
+       'hidebrowse' => array( 
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+       'default' => 0,
+      ),
+         'hidetoc' => array( 
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+       'default' => 0,
+      ),
+      'hidenav' => array( 
+        'type' => 'int',
+         'size' => 'tiny',
+        'not null' => TRUE,
+       'default' => 0,
+      ),
+      'auto' => array( 
+        'type' => 'int',
+         'size' => 'tiny',
+        'not null' => TRUE,
+       'default' => 0,
+       'unsigned' => TRUE,
+      ),
+       'popup' => array( 
+        'type' => 'int',
+         'size' => 'tiny',
+        'not null' => TRUE,
+       'default' => 0,
+       'unsigned' => TRUE,
+      ),
+
+      'options' => array( 
+        'type' => 'varchar',
+      'length' => 255,
+        'not null' => TRUE,
+      ),
+      'width' => array( 
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => TRUE,
+        'default' => 100,
+        'unsigned' => TRUE,
+      ),
+       'height' => array( 
+        'type' => 'int',
+       'size' => 'big',
+        'not null' => TRUE,
+        'default' => 600,
+        'unsigned' => TRUE,
+      ),
+         'timemodified' => array( 
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => TRUE,
+        'default' => 0,
+        'unsigned' => TRUE,
+      ),
+
+     ),  
+    'primary key' => array('id'),
+  );        
+     
+// mdl_scorm_scoes Table
+
+$schema['scorm_scoes'] = array(
+    'description' => t('mdl_scorm_scoes table'),
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'scorm' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,   
+      ),
+      'manifest' => array( 
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+      ),
+      'organization' => array( 
+        'type' => 'varchar',
+      'length' => 255,
+        'not null' => TRUE,
+      ),
+      'parent' => array( 
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'identifier' => array( 
+        'type' => 'varchar',
+      'length' => 255,
+        'not null' => TRUE,
+      ),
+      'launch' => array( 
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+       
+      ),
+      'scormtype' => array( 
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+       
+      ),
+      'title' => array( 
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+       
+      ),
+      ),
+    'primary key' => array('id'),
+  );        
+    
+//mdl_scorm_scoes_track Table
+
+$schema['scorm_scoes_track'] = array(
+    'description' => t('mdl_scorm_scoes_track table'),
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'userid' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'scormid' => array( 
+       'type' => 'int',
+        'size' => 'big',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'scoid' => array( 
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'attempt' => array( 
+         'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+      'element' => array( 
+        'type' => 'varchar',
+      'length' => 255,
+        'not null' => TRUE,
+      ),
+      'value' => array( 
+        'type' => 'text',
+        'not null' => TRUE,
+       
+      ),
+      'timemodified' => array( 
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+       
+      ),
+      ),
+      
+    'primary key' => array('id'),
+  );        
+
+ // mdl_scorm_seq_objective table
+ 
+ $schema['scorm_seq_objective'] = array(
+    'description' => t('mdl_scorm_seq_objective table'),
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'scoid' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'primaryobj' => array( 
+       'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'objectiveid' => array( 
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'satisfiedbymeasure' => array( 
+         'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+      'minnormalizedmeasure' => array( 
+        'type' => 'float',
+      'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0.0000,
+      ),
+      ),
+      
+      'primary key' => array('id'),
+      );  
+      
+     //mdl_scorm_seq_rolluprulecond  
+     
+     $schema['scorm_seq_rolluprulecond'] = array(
+    'description' => t('mdl_scorm_seq_rolluprulecond table'),
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'scoid' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'rollupruleid' => array( 
+       'type' => 'int',
+        'size' => 'big',
+        'not null' => TRUE,
+       'unsigned' => TRUE,
+        'default' => 0,
+      ),
+      'operator' => array( 
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+        'default' => 'noOp',
+      ),
+      'cond' => array( 
+         'type' => 'varchar',
+        'length' => 25,
+        'not null' => TRUE,
+        
+      ), ),
+      'primary key' => array('id'),
+      );  
+      
+      //mdl_scorm_seq_ruleconds table
+      
+      $schema['scorm_seq_ruleconds'] = array(
+    'description' => t('mdl_scorm_seq_ruleconds table'),
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'scoid' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'conditioncombination' => array( 
+       'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+        'default' => 'all',
+      ),
+      'ruletype' => array( 
+        'type' => 'int',
+        'size' => 'tiny',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'action' => array( 
+         'type' => 'varchar',
+        'length' => 25,
+        'not null' => TRUE,
+        
+      ),
+      ),
+      'primary key' => array('id'),
+      );  
+      
+      // *****************************************************************************************
+      
+      $schema['scorm_scoes_data'] = array(
+    'description' => t('scoes data table of SCORM module'),
+    'fields' => array(
+    'id' => array(
+        'type' => 'serial',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ), 
+ 'scoid' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+  'default' => 0,
+      ),  
+ 'name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),  
+ 'value' => array(
+        'type' => 'text',
+        'not null' => TRUE,
+      ), 
+      ),
+    'primary key' => array('id'),
+         );  
+
+$schema['scorm_seq_mapinfo'] = array(
+    'description' => t('seq mapinfo table of SCORM module'),
+    'fields' => array(
+    'id' => array(
+        'type' => 'serial',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ), 
+    'scoid' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      'default' => 0,
+      ), 
+    'objectiveid' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      'default' => 0,
+      ),
+    'targetobjectiveid' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      'default' => 0,
+      ), 
+    'readsatisfiedstatus' => array(
+        'type' => 'int',
+        'size' => 'tiny',
+        'default' => 1,
+        'not null' => TRUE,
+      ), 
+    'readnormalizemeasure' => array(
+        'type' => 'int',
+        'size' => 'tiny',
+        'default' => 1,
+        'not null' => TRUE,
+      ), 
+    'writesatisfiedstatus' => array(
+        'type' => 'int',
+        'size' => 'tiny',
+        'default' => 0,
+        'not null' => TRUE,
+      ), 
+    'writenormalizemeasure' => array(
+        'type' => 'int',
+        'size' => 'tiny',
+        'default' => 0,
+        'not null' => TRUE,
+      ),
+      ),
+    'primary key' => array('id'),
+         );  
+
+$schema['scorm_seq_rolluprule'] = array(
+    'description' => t('seq  roluprule table of SCORM module'),
+    'fields' => array(
+    'id' => array(
+        'type' => 'serial',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ), 
+    'scoid' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+  'default' => 0,
+      ), 
+    'childactivityset' => array(
+        'type' => 'varchar',
+        'length' => 15,
+        'not null' => TRUE,
+      ),
+    'minimumcount' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+  'default' => 0,
+      ), 
+    'minimumpercent' => array(
+        'type' => 'float',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+  'default' => 0.0000,  
+      ),   
+    'conditioncombination' => array(
+        'type' => 'varchar',
+        'length' => 3,
+        'not null' => TRUE,
+  'default' => 'all',
+      ), 
+    'action' => array(
+        'type' => 'varchar',
+        'length' => 15,
+        'not null' => TRUE,
+      ),
+      ),
+    'primary key' => array('id'),   
+     );  
+  
+$schema['scorm_seq_rulecond'] = array(
+    'description' => t('seq rulecond table of SCORM module'),
+    'fields' => array(
+    'id' => array(
+        'type' => 'serial',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ), 
+    'scoid' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+  'default' => 0,
+      ),
+    'ruleconditionsid' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+  'default' => 0,
+      ), 
+    'refrencedobjective' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+    'measurethreshold' => array(
+        'type' => 'float',
+        'not null' => TRUE,
+  'default' => 0.0000,
+      ),   
+    'operator' => array(
+        'type' => 'varchar',
+        'length' => 5,
+        'not null' => TRUE,
+  'default' => 'noOp',
+      ),  
+    'cond' => array(
+        'type' => 'varchar',
+        'length' => 30,
+        'not null' => TRUE,
+  'default' => 'always',
+      ),   
+     ),
+    'primary key' => array('id'),   
+   );
+  
+
+$schema['scorm_grades'] = array(
+    'description' => t('Grades table of SCORM module'),
+    'fields' => array(
+    'scormid' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ), 
+      'scoid' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ), 
+    'userid' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+    'reachedpoints' => array(
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'nodereference' => array(
+        'type' => 'int',
+        'size' => 'big',
+        'not null' => TRUE,
+      ),
+   'starttime' => array( 
+        'type' => 'int',
+        'size' => 'big',
+        'default' => 0,
+        'unsigned' => TRUE,
+      ),
+      'endtime' => array( 
+        'type' => 'int',
+        'size' => 'big',
+        'default' => 0,
+        'unsigned' => TRUE,
+      ),
+     ),
+    'primary key' => array('scoid', 'userid'),   
+   );
+  return $schema;
+}

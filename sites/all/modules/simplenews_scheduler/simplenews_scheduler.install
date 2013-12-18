@@ -1,0 +1,259 @@
+<?php
+
+/**
+ * @file
+ * Install and uninstall functions for the Simplenews Scheduler module.
+ */
+
+/**
+ * Implementation of hook_install().
+ */
+function simplenews_scheduler_install() {
+  drupal_install_schema('simplenews_scheduler');
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function simplenews_scheduler_schema() {
+  $schema['simplenews_scheduler'] = array(
+    'description' => 'Scheduled newsletter data.',
+    'fields' => array(
+      'nid' => array(
+        'description' => 'The node id for a scheduled newsletter.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'last_run' => array(
+        'description' => 'The timestamp the scheduled newsletter was last sent.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'next_run' => array(
+        'description' => 'The future timestamp the next scheduled newsletter is due to be sent.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'activated' => array(
+        'description' => 'Whether the schedule is active.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'send_interval' => array(
+        'description' => 'The interval at which to send, as a text string.',
+        'type' => 'varchar',
+        'length' => 10,
+      ),
+      'start_date' => array(
+        'description' => 'The timestamp at which to start sending editions.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'stop_type' => array(
+        'description' => 'How to determine when to stop sending editions.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'stop_date' => array(
+        'description' => 'The timestamp at which to stop sending editions.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 1388447999,
+      ), // Default is Mon, 31 Dec 2013 23:59:59 GMT
+      'stop_edition' => array(
+        'description' => 'The edition count at which to stop sending editions.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'php_eval' => array(
+        'description' => 'PHP code to evaluate to determine whether to send an edition.',
+        'type' => 'blob',
+        'not null' => TRUE,
+      ),
+      'title' => array(
+        'description' => 'The title of new edition nodes.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'primary key' => array('nid'),
+  );
+
+  $schema['simplenews_scheduler_editions'] = array(
+    'description' => 'Stores data for each edition of a scheduled newsletter.',
+    'fields' => array(
+      'eid' => array(
+        'description' => 'The node id for the edition.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'pid' => array(
+        'description' => 'The node id for the parent scheduled newsletter node.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'date_issued' => array(
+        'description' => 'The timestamp on which this edition was sent.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('eid'),
+  );
+  return $schema;
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function simplenews_scheduler_uninstall() {
+  // Remove tables.
+  drupal_uninstall_schema('simplenews_scheduler');
+}
+
+/**
+ * Implementation of hook_update_N().
+ */
+function simplenews_scheduler_update_6000() {
+  $ret = array();
+  db_add_field($ret, 'simplenews_scheduler', 'stop', array('type' => 'int', 'length' => 1, 'not null' => TRUE));
+  db_add_field($ret, 'simplenews_scheduler', 'stop_date', array('type' => 'int', 'length' => 11, 'not null' => TRUE, 'default' => 1577923199));
+  db_add_field($ret, 'simplenews_scheduler', 'stop_edition', array('type' => 'int', 'length' => 10, 'not null' => TRUE, 'default' => 0));
+  $ret[] = update_sql("ALTER TABLE {simplenews_scheduler} CHANGE sched_interval interval VARCHAR(10) NOT NULL DEFAULT '0'");
+  $ret[] = update_sql("ALTER TABLE {simplenews_scheduler} CHANGE sched_start start_date INT(11) NOT NULL DEFAULT '0'");
+  return $ret;
+}
+
+/**
+ * Implementation of hook_update_N().
+ */
+function simplenews_scheduler_update_6001() {
+  $ret = array();
+  db_drop_field($ret, 'simplenews_scheduler', 'sid');
+  db_add_field($ret, 'simplenews_scheduler', 'activated', array('type' => 'int', 'size' => 'tiny', 'not null' => TRUE, 'default' => 0));
+  $ret[] = update_sql("ALTER IGNORE TABLE {simplenews_scheduler} CHANGE snid nid INT(11) NOT NULL DEFAULT '0', ADD PRIMARY KEY (nid)");
+  $ret[] = update_sql("ALTER TABLE {simplenews_scheduler_editions} CHANGE edition_snid eid INT(11) NOT NULL DEFAULT '0'");
+  $ret[] = update_sql("ALTER TABLE {simplenews_scheduler_editions} CHANGE snid pid INT(11) NOT NULL DEFAULT '0'");
+  return $ret;
+}
+
+/**
+ * Implementation of hook_update_N().
+ */
+function simplenews_scheduler_update_6002() {
+  $ret = array();
+  db_drop_field($ret, 'simplenews_scheduler', 'run_limit');
+  db_drop_field($ret, 'simplenews_scheduler', 'run_count');
+  return $ret;
+}
+
+/**
+ * Implementation of hook_update_N().
+ */
+function simplenews_scheduler_update_6003() {
+  $ret = array();
+  db_add_primary_key($ret, 'simplenews_scheduler_editions', array('eid'));
+  return $ret;
+}
+
+/**
+ * Implementation of hook_update_N().
+ */
+function simplenews_scheduler_update_6004() {
+  $ret = array();
+  db_add_field($ret, 'simplenews_scheduler', 'php_eval', array('type' => 'blob'));
+  return $ret;
+}
+/**
+ * Implementation of hook_update_N().
+  // attempt to change to pgsql compatible strings
+  // #970942
+ */
+function simplenews_scheduler_update_6005() {
+  $ret = array();
+
+  db_change_field($ret, 'simplenews_scheduler', 'stop', 'stop_type', array(
+    'type' => 'int',
+    'not null' => TRUE,
+    )
+  );
+  db_change_field($ret, 'simplenews_scheduler', 'interval', 'send_interval', array(
+	'type' => 'varchar',
+	'length' => 10,
+    )
+  );
+
+
+  return $ret;
+}
+
+/**
+ * Add the title field to the scheduler table.
+ */
+function simplenews_scheduler_update_6006() {
+  $ret = array();
+
+  $field = array(
+    'description' => 'The title of new edition nodes.',
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => TRUE,
+    'default' => '',
+    'initial' => '[title]', // Set existing schedules to just use the node title.
+  );
+  db_add_field($ret, 'simplenews_scheduler', 'title', $field);
+
+  return $ret;
+}
+
+/**
+ * Implementation of hook_update_N().
+ *
+ * Add the next_run field to the scheduler table and populate it.
+ *
+ * Equivalent to simplenews_scheduler_update_7001().
+ */
+function simplenews_scheduler_update_6007() {
+  $ret = array();
+
+  // Add the field.
+  $field = array(
+    'description' => 'The future timestamp the next scheduled newsletter is due to be sent.',
+    'type' => 'int',
+    'not null' => TRUE,
+    'default' => 0,
+    'initial' => 0,
+  );
+  db_add_field($ret, 'simplenews_scheduler', 'next_run', $field);
+
+  // Populate the new field with each schedule's next run time.
+  // Retrieve all records into an associative array keyed by nid.
+  $result = db_query("SELECT * FROM {simplenews_scheduler}");
+  while ($schedule = db_fetch_object($result)) {
+    // Clear last_run to force the next_run calculation to work from the
+    // start_date. This ensures that any error in previous edition dates due to
+    // bugs with month length is ignored.
+    // @see http://drupal.org/node/1364784
+    $schedule->last_run = 0;
+
+    // Get the next run time relative to the request time.
+    $next_run = simplenews_scheduler_calculate_next_run_time($schedule, REQUEST_TIME);
+
+    // Don't use drupal_write_record() in a hook_update_N().
+    db_query("UPDATE {simplenews_scheduler} SET next_run = %d WHERE nid = %d", $next_run, $schedule->nid);
+  }
+
+  return $ret;
+}
+

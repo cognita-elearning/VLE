@@ -1,0 +1,5 @@
+; $Id: $
+name = Webform Node Reference
+description = Enables a nodereference field for webforms. 
+core = 6.x
+package = Webform

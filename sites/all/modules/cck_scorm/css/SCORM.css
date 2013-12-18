@@ -1,0 +1,284 @@
+Div{
+/*background-color:transparent !important;
+background-color:#F7F5EE;*/
+background-color:#F7F5EE;
+}
+
+ div.Titles {
+display:none;
+}
+
+div#InstructionsDiv {
+background:#F7F5EE url(../images/bg_instructions.png) repeat-x scroll center bottom;
+color:#FF7402;
+font-weight:bold;
+padding:15px 0;
+text-align:left;
+width:100%;
+border:none;
+}
+
+div.floater-r {
+float:right;
+}
+
+div#badge-points {
+background:transparent url(../images/badge_points.png) no-repeat scroll left top;
+color:#F7F5EE;
+font-size:12px;
+font-weight:bold;
+height:54px;
+line-height:14px;
+margin:0 50px -70px auto;
+padding:18px 0 0;
+text-align:center;
+width:72px;
+}
+
+div#InstructionsDiv div#Instructions {
+color:#FF7402;
+margin:0 auto;
+padding:0 10% 0 0;
+width:80%;
+background-color:transparent;
+}
+
+ .content-content div#ClueEntry {
+margin:15px auto 30px;
+text-align:center;
+width:90%;
+}
+
+ .content-content table.CrosswordGrid {
+background-color:#3C3A34;
+border-collapse:collapse;
+margin:auto auto 1em;
+padding:0;
+}
+
+ .content-content table {
+width:auto;
+}
+
+ .content-content table.CrosswordGrid td.NumLetterCell {
+background-color:#FFFFFF;
+color:#000000;
+font-weight:bold;
+padding:1px;
+text-align:left;
+vertical-align:top;
+}
+
+ .content-content table.CrosswordGrid tbody tr td {
+border:1px solid #3C3A34;
+color:#000000;
+font-size:140%;
+height:1.5em;
+margin:0;
+padding:1px;
+text-align:center;
+vertical-align:middle;
+width:1.5em;
+}
+
+ .content-content .GridNum {
+color:#FF7402;
+font-size:66%;
+font-weight:bold;
+text-decoration:none;
+vertical-align:super;
+}
+
+ .content-content table.CrosswordGrid span {
+color:#000000;
+}
+
+ .content-content table.CrosswordGrid td.LetterOnlyCell {
+background-color:#FFFFFF;
+color:#000000;
+font-weight:bold;
+text-align:center;
+vertical-align:middle;
+}
+
+ .content-content table.CrosswordGrid td.BlankCell {
+background-color:#3C3A34;
+color:#000000;
+}
+
+ .content-content table.ClueList {
+margin:auto;
+}
+
+ .content-content table#Clues td {
+vertical-align:top;
+}
+
+ .content-content table#Clues {
+margin:auto;
+vertical-align:top;
+}
+
+ div.Feedback {
+background-color:#F7F5EE;
+border:1px solid #FF7402;
+color:#3C3A34;
+display:none;
+font-size:100%;
+left:33%;
+padding:5px;
+position:absolute;
+text-align:center;
+top:33%;
+width:34%;
+}
+
+#MainDiv  button {
+background:transparent url(../images/check_btn.png) no-repeat scroll left top;
+color:#F7F5EE;
+cursor:pointer;
+font-size:12px;
+font-weight:bold;
+height:40px;
+margin:0;
+padding:0;
+text-align:center;
+width:104px;
+}
+
+button.FuncButton, button.FuncButtonUp, button.FuncButtonDown {
+background-color:#E8E2CF;
+border:0 none;
+height:30px;
+margin:0 0 0 5px;
+min-width:50px;
+}
+
+div#WordsDiv {
+border:medium none;
+margin:0;
+padding:15px 0;
+width:100%;
+background-color:transparent;
+border:none;
+}
+
+div.ClozeBody {
+margin:30px auto 0;
+text-align:left;
+width:90%;
+}
+
+ div.Feedback {
+background-color:#F7F5EE;
+border:1px solid #FF7402;
+color:#3C3A34;
+display:none;
+font-size:100%;
+left:33%;
+padding:5px;
+position:absolute;
+text-align:center;
+top:33%;
+width:34%;
+}
+
+button.FuncButton, button.FuncButtonUp, button.FuncButtonDown {
+background-color:#E8E2CF;
+border:0 none;
+height:30px;
+margin:0 0 0 5px;
+min-width:50px;
+}
+
+#MainDiv div#SegmentDiv a.ExSegment {
+background-color:#E8E2CF;
+border:1px solid #FF6600;
+padding:7px;
+display:inline-block;
+margin-bottom:0.5em;
+line-height:1.2em;
+}
+
+a.ExSegment {
+color:#ABA284;
+font-size:120%;
+font-weight:bold;
+text-decoration:none;
+}
+div#SegmentDiv {
+line-height:42px;
+
+}
+
+div#GuessDiv {
+border-color:#ABA284 -moz-use-text-color;
+border-style:solid none;
+border-width:1px medium;
+margin:0 auto;
+padding:15px;
+width:80%;
+background-color:transparent;
+}
+
+#MainDiv{
+background-color:transparent;
+border:none;
+}
+
+#ClozeDiv .GapSpan input {
+border:1px solid #3C3A34;
+font-size:12px;
+height:15px;
+}
+
+.popup-result-div
+{
+  background:#F7F5EE;
+  font-family:Helvetica,Arial,sans-serif;
+  font-weight:bold;
+  width:408px;
+}
+
+.popup-result-div .exercise-finished
+{
+  width:400px;
+  background:#3C3A34;
+  color:white;
+  text-align:center;
+  height:47px;
+  font-size:18px;
+  display:table-cell;
+  vertical-align:middle
+}
+
+.popup-result-div .scorm-result
+{
+  color:#3C3A34;
+  font-family:Helvetica,Arial,sans-serif;
+  font-weight:bold
+}
+
+.popup-result-div .scorm-result .passes-or-failed
+{
+  color:#FF7C00;
+  font-weight:bold;
+  font-size:18px;
+}
+
+.popup-result-div .popup-button
+{
+  background:transparent url(../images/popup_button.png) no-repeat;
+  color:#F7F5EE;
+  font-size:14px;
+  font-weight:bold;
+  font-family:Arial;
+  width:140px;
+  height:37px;
+  text-align:center;
+}
+
+body
+{
+  background-color:#F7F5EE;
+}

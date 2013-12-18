@@ -1,0 +1,6 @@
+; $Id: weight_range.info,v 1.0 2009/07/14 Exp $
+name = Weight Range
+description = Extends the range of weights available for ordering elements in a form.
+package = Administration
+core = 6.x
+php = 5.0

@@ -1,0 +1,17 @@
+; $Id:
+name = SCORM
+description = SCORM module.
+dependencies[] = content
+dependencies[] = filefield
+core = 6.x
+version = "6.x-1.0-dev"
+
+
+
+
+; Information added by drupal.org packaging script on 2012-03-01
+version = "6.x-1.3"
+core = "6.x"
+project = "cck_scorm"
+datestamp = "1330606837"
+

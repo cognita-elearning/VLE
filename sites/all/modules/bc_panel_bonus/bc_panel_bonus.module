@@ -1,0 +1,305 @@
+<?php
+
+define('BC_PANELS_BONUS_REQUIRED_CTOOLS_API', '1.7');
+define('BC_PANELS_BUILD_MODE_PREFIX','build_mode_mini_') ;
+
+function bc_panel_bonus_ctools_plugin_directory($module, $plugin) {
+  if ( $module == 'ctools' && ($plugin == 'relationships' || $plugin == 'content_types')  ) {
+  		return 'plugins/' . $plugin;  		
+   } 
+  if ($module == 'panels' && ($plugin == 'styles' || $plugin == 'layouts' ) ) {
+    return 'plugins/' . $plugin;
+  }
+}
+
+function bc_panel_bonus_perm() {
+	return array('administer ministyle');
+}
+
+function bc_panel_bonus_ctools_plugin_api($module, $api) {
+  if ($module == 'panels' && $api == 'styles') {
+    return array('version' => 2);
+  }
+}
+
+function bc_panel_bonus_views_api() {
+  return array(
+    'api' => 2,
+  );
+}
+
+/** Helper function for retrieve title **/
+
+function bc_panel_bonus_panels_pane_content_alter($content, $pane, $args, $context) {
+  $pane->content_title = $content->title ;
+}
+
+/**
+ * check all mini panels with node as required context 
+ */
+function bc_panel_bonus_content_build_modes() {
+  if (!defined('BC_PANELS_BONUS_REQUIRED_CTOOLS_API') || !module_invoke('ctools', 'api_version', PANELS_REQUIRED_CTOOLS_API)) {
+    return;
+  }
+  $minis = bc_panel_bonus_get_mini_panels();
+  $modes = array();
+  foreach ( $minis as $name => $title ) {
+  	 $modes[ BC_PANELS_BUILD_MODE_PREFIX . $name ] = array
+  	 (
+  	 	'title' => $title ,
+  	 	'build modes' => array
+  	 	(
+  	 		'build_mode_mini_' . $name => array 
+  	 		(
+  	 			'title' => $title,
+  	 			'views style' => true 
+  	 		)
+  	 	)
+  	 );
+  }
+  return $modes ;
+}
+
+function bc_debug($var,$withValues = false ) {
+	if ( $withValues == false ) drupal_set_message(print_r(array_keys((array)$var),true));
+	else drupal_set_message('<pre>'.print_r(($var),true).'</pre>');
+}
+
+/**
+ * find all mini panels with required node context
+ */
+
+function bc_panel_bonus_get_mini_panels( $includeDefault = false ) {
+	$minis = panels_mini_load_all();
+	$opts = array();
+
+	foreach ( $minis as $mini ) {
+		if ( !is_array($mini->requiredcontexts) ) continue ;
+		$found = false ;
+		foreach ( $mini->requiredcontexts as $context ) {			
+			if ( $context['name'] == 'node' ) {
+				$found = true ;
+				break ;
+			}
+		}
+		if ( $found == true ) $opts[$mini->name] = $mini->admin_title ;
+	}
+	if ( $includeDefault == true ) array_unshift($opts,t('System default')) ;
+	return $opts;
+}
+
+function bc_panel_bonus_form_alter( &$form, $form_state, $form_id ) {
+	if ( !user_access('administer ministyle') || !defined('BC_PANELS_BONUS_REQUIRED_CTOOLS_API') || !module_invoke('ctools', 'api_version', PANELS_REQUIRED_CTOOLS_API)) {
+		return;
+	}
+	if ( 'node_type_form' == $form_id ) {
+		$options[0] = t('System default');
+		$minis =  bc_panel_bonus_get_mini_panels(true);
+		
+		$form['workflow']['node_default_display_page'] = array(
+			'#type' => 'select',
+			'#title' => t('Default Page View'),
+			'#name' => 'node_default_display_page',
+			'#default_value' => variable_get('node_default_display_page_'.$form['#node_type']->type,'0'),
+			'#options' => $minis 
+		);
+		$form['workflow']['node_default_display_teaser'] = array(
+			'#type' => 'select',
+			'#name' => 'node_default_display_teaser',
+			'#title' => t('Default Teaser View'),
+			'#default_value' => variable_get('node_default_display_teaser_'.$form['#node_type']->type,'0'),
+			'#options' => $minis 
+		);
+
+	} elseif ( 'content_display_overview_form' == $form_id ) {
+		ctools_include('context');
+  		ctools_include('context-task-handler');
+		ctools_include('content');
+		
+    	ctools_include('ajax');
+    	ctools_include('plugins', 'panels');
+    	ctools_include('display-edit', 'panels');
+    	ctools_include('context');
+
+		// got mini panel
+		$mini =  bc_panel_bonus_get_panel_from_build_mode($form['#contexts']);
+		
+		// no mini panel for this build mode
+		if ( !is_object($mini) ) return ;
+
+		//Get regions from mini panel
+		$info = ctools_get_context('node');
+		
+		$context = $info['context'](true) ;
+		ctools_include('common', 'panels');
+
+		$context = ctools_context_match_required_contexts($mini->requiredcontexts, array($context));
+		
+		$mini->context = $mini->display->context = ctools_context_load_contexts($mini, true);
+		$content_types = panels_common_get_allowed_types('panels_mini', $mini->display->context,true,$context);
+		$mini->content_types = $content_types;
+
+		$regions = $mini->display->panels ;
+		$form['#prefix'] = '<div style="display:none">' ;
+		$form['#suffix'] = '</div>' ;
+		$form['#suffix'] .= panels_edit($mini->display, $_GET['q'], $content_types);
+		$links[] = l(t('Edit Context'),'admin/build/mini-panels/list/' . $mini->name . '/edit/context') ;
+		$links[] = l(t('Edit Layout'),'admin/build/mini-panels/list/' . $mini->name . '/edit/layout') ;
+		$form['#suffix'] .= '<div class="edit-panel-button">' . theme('item_list',$links) .'</div>' ;
+	} elseif (isset($form['type']) && isset($form['#node']) && $form['type']['#value'] .'_node_form' == $form_id) {
+	    // Add elements to the node form
+	    $node = $form['#node'];
+	    $form['panel_build_mode_info'] = array
+	    (
+	   		'#type' => 'fieldset',
+	    	'#tree' => true ,
+	    	'#title' => t('Build mode settings')
+	   );
+	   $opts = bc_panel_bonus_get_mini_panels(true);
+	   $form['panel_build_mode_info']['page'] = array
+	   (
+	   		'#type' => 'select',
+	   		'#tree' => true ,
+	   		'#title' => t('Page'),
+	   		'#options' => $opts,
+	   		'#default_value' => $node->panel_build_mode_info['page']
+	   );
+	   $form['panel_build_mode_info']['teaser'] = array
+	   (
+	   		'#type' => 'select',
+	   		'#tree' => true ,
+	   		'#title' => t('Teaser'),
+	   		'#options' => $opts,
+	   		'#default_value' => $node->panel_build_mode_info['teaser']
+	   );
+	}
+}
+
+function bc_panel_bonus_settings_type_submit( $form , &$form_state ) {
+	
+	variable_set('node_default_display_page_'.$form_state['values']['type'],$form_state['values']['node_default_display_page_'.$form_state['values']['type']]);
+	variable_set('node_default_display_teaser_'.$form_state['values']['type'],$form_state['values']['node_default_display_teaser_'.$form_state['values']['type']]);
+}
+
+function bc_panel_bonus_get_panel_from_build_mode( $str ) {
+	 $mini = drupal_substr($str,drupal_strlen(BC_PANELS_BUILD_MODE_PREFIX));
+	 return panels_mini_load($mini);
+}
+
+function bc_panel_bonus_preprocess_node(&$vars) {
+	
+	if ( !defined('BC_PANELS_BONUS_REQUIRED_CTOOLS_API') || !module_invoke('ctools', 'api_version', PANELS_REQUIRED_CTOOLS_API)) {
+	    return;
+	}
+	$node = $vars['node'] ;
+
+	
+	//check if node was already builded
+	
+	if ( $vars['node']->panel_build_mode_info['processed'] == true   ) {
+		return ;
+	}
+	
+	if ( is_numeric($node->build_mode) && $vars['page'] == true && isset($node->panel_build_mode_info['page'])  ) {
+		$node->build_mode = BC_PANELS_BUILD_MODE_PREFIX . $node->panel_build_mode_info['page'];
+	} elseif ( is_numeric($node->build_mode) == true && isset($node->panel_build_mode_info['teaser']) ) {
+		$node->build_mode = BC_PANELS_BUILD_MODE_PREFIX . $node->panel_build_mode_info['teaser'];
+	}
+	
+	if ( (is_numeric($node->build_mode))  ) {
+		if ( $vars['page'] ) $node->build_mode =  BC_PANELS_BUILD_MODE_PREFIX . variable_get('node_default_display_page_' . $node->type,"0" ) ;
+		else $node->build_mode =  BC_PANELS_BUILD_MODE_PREFIX . variable_get('node_default_display_teaser_' . $node->type,"0" ) ;
+	}
+	
+	if ( ( drupal_substr($node->build_mode,0,drupal_strlen(BC_PANELS_BUILD_MODE_PREFIX)) == BC_PANELS_BUILD_MODE_PREFIX ) ) {
+		$node->build_mode = drupal_substr($node->build_mode,drupal_strlen(BC_PANELS_BUILD_MODE_PREFIX));
+	}
+	
+	if ( !isset($node->build_mode) ) return ;
+	
+	
+	$display = $node->build_mode;
+	
+
+	//load the node so there is no infinite loop
+	$node = node_load($vars['node']->nid);
+
+	//load mini
+	$panel_mini = panels_mini_load($display);
+	if ( !is_object($panel_mini) || $panel_mini->disabled == true ) return;
+
+	/** set correct build mode **/
+	
+	if ( $vars['page'] )  $node->build_mode = $vars['node']->build_mode = 1;
+	else $node->build_mode = $vars['node']->build_mode = 0;
+  	
+	$vars['template_file'] = 'node-panel-pane' ;
+	$vars['template_files'] = array( 'node-panel-pane' );
+  	
+	ctools_include('context');
+  	ctools_include('context-task-handler');
+  	
+  	$vars['mini_name'] = $display ;
+  	
+  	//$node->build_mode = $vars['node']->build_mode = $display ;
+  	$node->panel_build_mode_info['processed'] = $vars['node']->panel_build_mode_info['processed'] = true;
+ 	
+  	$info = ctools_get_context('node');
+	$contexts[$info['name']] = $info['context'](false,$node,true) ;
+
+  	$context = ctools_context_match_required_contexts($panel_mini->requiredcontexts, $contexts);
+
+  	$panel_mini->context = $panel_mini->display->context = ctools_context_load_contexts($panel_mini, FALSE, $context);
+  	$output = panels_render_display($panel_mini->display) ;;
+    $vars['node']->content = array('panel_content' => array('#value' => $output ) ) ;
+  	$vars['content'] =  $output;
+}
+
+function bc_panel_bonus_theme_registry_alter(&$theme_registry) {
+  $modulepath = drupal_get_path('module', 'bc_panel_bonus');
+  array_unshift($theme_registry['node']['theme paths'], $modulepath);
+}
+
+/**
+ * override default node view with mini panel content 
+ */
+
+function bc_panel_bonus_nodeapi( &$node, $op, $a3 = NULL, $a4 = NULL ) {
+	if (!defined('BC_PANELS_BONUS_REQUIRED_CTOOLS_API') || !module_invoke('ctools', 'api_version', PANELS_REQUIRED_CTOOLS_API)) {
+	    return;
+	}
+	
+	switch ( $op ) 
+	{
+		case 'delete':
+			$sql = 'DELETE from {minipanel_templates} where nid = %d';
+			db_query($sql,$node->nid);
+		break ;
+		case 'update':
+			if ( user_access('administer ministyle') && ($node->panel_build_mode_info['teaser'] != "0" || $node->panel_build_mode_info['page'] != "0") )
+			{
+				$n = new StdClass();
+				$n->nid = $node->nid ;
+				$n->vid = $node->vid ;
+				$n->page = $node->panel_build_mode_info['page'] ;
+				$n->teaser = $node->panel_build_mode_info['teaser'] ;
+				
+				$sql = 'SELECT * from {minipanel_templates} where nid = %d AND vid = %d ' ;
+				if ( is_object($item = db_fetch_object(db_query($sql,$n->nid,$n->vid))) != 0 ) {
+					drupal_write_record('minipanel_templates',$n,array('nid','vid'));
+				} else {
+					drupal_write_record('minipanel_templates',$n);
+				}
+			} else {
+				$sql = 'DELETE FROM {minipanel_templates} where nid = %d AND vid = %d ';
+				db_query($sql,$node->nid,$node->vid);
+			}
+		break ;
+		case 'load': 
+			$sql = 'SELECT page ,teaser FROM {minipanel_templates} WHERE nid = %d AND vid=%d' ;
+			$additons['panel_build_mode_info'] = db_fetch_array(db_query($sql,$node->nid,$node->vid));
+			$additons['panel_build_mode_info']['processed'] = false;
+			return $additons;
+	  	break ;
+	}
+}

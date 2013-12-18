@@ -1,0 +1,11 @@
+.slideshow-pager a {
+	padding-right:5px;
+}
+
+.slideshow-pager a.last {
+	padding-right:0;
+}
+
+.slideshow-pager a.activeSlide {
+	text-decoration:underline;
+}

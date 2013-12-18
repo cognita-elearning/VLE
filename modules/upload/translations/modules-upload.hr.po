@@ -1,0 +1,250 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from files:
+#  upload.admin.inc,v 1.7 2008/01/10 20:22:57 goba
+#  upload.module,v 1.197.2.4 2009/01/12 15:30:23 goba
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-08-11 13:49+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/upload/upload.admin.inc:10
+msgid ""
+"The maximum allowed image size expressed as WIDTHxHEIGHT (e.g. 640x480). Set "
+"to 0 for no restriction."
+msgstr ""
+"Maksimalna dopuštena veličina slike izražena kao ŠIRINAxVISINA (npr. "
+"640x480). Postavite na 0 za neograničeno."
+
+#: modules/upload/upload.admin.inc:18
+msgid ""
+"Depending on your server environment, these settings may be changed in the "
+"system-wide php.ini file, a php.ini file in your Drupal root directory, in "
+"your Drupal site's settings.php file, or in the .htaccess file in your "
+"Drupal root directory."
+msgstr ""
+"U ovisnosti o radnom okruženju na Vašem serveru, ove postavke možete urediti "
+"za cijeli sustav u php.ini datoteci, u php.ini u Vašem osnovnom Drupal "
+"folderu (engl. root directory), u datoteci settings.php Vašeg Drupal sitea, "
+"ili u .htaccess datoteci u Vašem osnovnom Drupal folderu."
+
+#: modules/upload/upload.admin.inc:21,24,39,42
+msgid "The %role file size limit must be a number and greater than zero."
+msgstr "Najveća veličina %role datoteke mora biti pozitivni broj veći od nule."
+
+#: modules/upload/upload.admin.inc:21,24,31
+msgid "default"
+msgstr "podrazumjevano"
+
+#: modules/upload/upload.admin.inc:31,49
+msgid ""
+"The %role maximum file size per upload is greater than the total file size "
+"allowed per user"
+msgstr ""
+"Najveća veličina datoteke za ulogu %role po jednom uploadu je veća nego "
+"ukupna veličina svih datoteka dozvoljena po korisniku."
+
+#: modules/upload/upload.admin.inc:64
+msgid "General settings"
+msgstr "Opće postavke"
+
+#: modules/upload/upload.admin.inc:69
+msgid "Maximum resolution for uploaded images"
+msgstr "Maksimalna rezolucija uploadanih slika"
+
+#: modules/upload/upload.admin.inc:73
+msgid ""
+"The maximum allowed image size (e.g. 640x480). Set to 0 for no restriction. "
+"If an <a href=\"!image-toolkit-link\">image toolkit</a> is installed, files "
+"exceeding this value will be scaled down to fit."
+msgstr ""
+"Najveća dozvoljena veličina slike (npr. 640x480). Postavite na 0 kada nema "
+"restrikcija. Ako je instaliran <a href=\"!image-toolkit-link\">alat za rad "
+"sa slikama</a>, datoteke koje premašuju ovu vrijednost biće automatski "
+"smanjene ispod ove vrijednosti."
+
+#: modules/upload/upload.admin.inc:74
+msgid "WIDTHxHEIGHT"
+msgstr "ŠIRINAxVISINA"
+
+#: modules/upload/upload.admin.inc:78
+msgid "List files by default"
+msgstr "Popis datoteka po dafault-u"
+
+#: modules/upload/upload.admin.inc:81
+msgid "Display attached files when viewing a post."
+msgstr "Prikaži prikačene datoteke kada pregledaš poruke."
+
+#: modules/upload/upload.admin.inc:97
+msgid ""
+"The default maximum file size a user can upload. If an image is uploaded and "
+"a maximum resolution is set, the size will be checked after the file has "
+"been resized."
+msgstr ""
+"Podrazumjevana najveća veličina datoteke koju korisnik može da postavi na "
+"server. Ako se postavlja slika i zadata je najveća rezolucija, veličina će "
+"biti provjerena nakon promjene veličine slike."
+
+#: modules/upload/upload.admin.inc:135
+msgid ""
+"The maximum size of a file a user can upload. If an image is uploaded and a "
+"maximum resolution is set, the size will be checked after the file has been "
+"resized."
+msgstr ""
+"Maksimalna veličina datoteke koju korisnik može da postavi na site. U "
+"slučaju da se radi o slici, a maksimalna rezolucija je postavljena, veličina "
+"datoteke će biti provjerena nakon što je izvršeno skaliranje slike na "
+"maksimalnu dozvoljenu rezoluciju."
+
+#: modules/upload/upload.admin.inc:144
+msgid "The maximum size of all files a user can have on the site."
+msgstr "Najveća veličina svih datoteka koje korisnik može imati na siteu."
+
+#: modules/upload/upload.module:16
+msgid ""
+"The upload module allows users to upload files to the site. The ability to "
+"upload files is important for members of a community who want to share work. "
+"It is also useful to administrators who want to keep uploaded files "
+"connected to posts."
+msgstr ""
+"Modul upload omogućava korisnicima da postave datoteke na site. Ovo je važna "
+"mogućnost za pripadnike jedne grupe koja želi mogućnost da dijeli svoj rad. "
+"Takođe je od koristi za administratore koji žele da zadrže postavljene "
+"datoteke povezane sa postavljenim porukama."
+
+#: modules/upload/upload.module:17
+msgid ""
+"Users with the upload files permission can upload attachments to posts. "
+"Uploads may be enabled for specific content types on the content types "
+"settings page. Each user role can be customized to limit or control the file "
+"size of uploads, or the maximum dimension of image files."
+msgstr ""
+"Korisnici sa dozvolama za učitavanje datoteka mogu da učitavaju priloge uz "
+"poruke. Učitavanja mogu biti omogućena za određeni zip sadržaja zadat na "
+"stranici za definiranje tipova sadržaja. Svaka korisnička uloga može da se "
+"prilagodi da ograniči ili kontrolira veličinu datoteka za učitavanje ili "
+"najveću veličinu datoteka sa slikama."
+
+#: modules/upload/upload.module:18
+msgid ""
+"For more information, see the online handbook entry for <a href=\"@upload"
+"\">Upload module</a>."
+msgstr ""
+"Za više informacija, pogledajte online priručnik za <a href=\"@upload"
+"\">Upload modul</a>."
+
+#: modules/upload/upload.module:21
+msgid ""
+"Users with the <a href=\"@permissions\">upload files permission</a> can "
+"upload attachments. Users with the <a href=\"@permissions\">view uploaded "
+"files permission</a> can view uploaded attachments. You can choose which "
+"post types can take attachments on the <a href=\"@types\">content types "
+"settings</a> page."
+msgstr ""
+"Korisnici sa <a href=\"@permissions\">dozvolama za upload datoteka</a>mogu "
+"kačiti dodatke. Korisnici sa dozvolama <a href=\"@permissions\">mogu vidjeti "
+"uploadirane priloge</a>. Možete birati koji tip poruka može da prima dodatke "
+"na stranici <a href=\"@types\">postavke tipova sadržaja</a>."
+
+#: modules/upload/upload.module:67
+msgid "Read full article to view attachments."
+msgstr "Pročitajte pun članak da biste pregledali dodatke."
+
+#: modules/upload/upload.module:213
+msgid "Attachments"
+msgstr "Prilozi"
+
+#: modules/upload/upload.module:226
+msgid "File attachments"
+msgstr "Privitci"
+
+#: modules/upload/upload.module:229
+msgid ""
+"Changes made to the attachments are not permanent until you save this post. "
+"The first \"listed\" file will be included in RSS feeds."
+msgstr ""
+"Promjene na pridruženim datotekama nisu trajne sve dok ne spremite ovaj "
+"unos. Prva datoteka na popisu će biti uključena u RSS feed."
+
+#: modules/upload/upload.module:247
+msgid ""
+"File attachments are disabled. The file directories have not been properly "
+"configured."
+msgstr ""
+"Prilaganje datoteka nije omogućeno. Direktorij sa datotekama nije bio "
+"ispravno konfiguriran."
+
+#: modules/upload/upload.module:249
+msgid ""
+"Please visit the <a href=\"@admin-file-system\">file system configuration "
+"page</a>."
+msgstr ""
+"Molim posjetite <a href=\"@admin-file-system\">stranica za konfiguriranje "
+"datotečnog sustava</a>."
+
+#: modules/upload/upload.module:252
+msgid "Please contact the site administrator."
+msgstr "Otkriven je nepravilan odabir. Kontaktirajte administratora lokacije."
+
+#: modules/upload/upload.module:344
+msgid "Attachment"
+msgstr "Prilog"
+
+#: modules/upload/upload.module:344,517
+msgid "Size"
+msgstr "Veličina"
+
+#: modules/upload/upload.module:491
+msgid "Attach new file"
+msgstr "Priloži novu datoteku"
+
+#: modules/upload/upload.module:493
+msgid "Images are larger than %resolution will be resized. "
+msgstr "Slike su veće od %resolution, biti će smanjene. "
+
+#: modules/upload/upload.module:493
+msgid ""
+"The maximum upload size is %filesize. Only files with the following "
+"extensions may be uploaded: %extensions. "
+msgstr ""
+"Najveća veličina proslijeđenih datoteka je %filesize. Samo datoteke sa "
+"sljedećim ekstenzijama mogu se prosljeđivati na server: %extensions. "
+
+#: modules/upload/upload.module:497
+msgid "Attach"
+msgstr "Priloži"
+
+#: modules/upload/upload.module:502
+msgid "Please wait..."
+msgstr "Molimo pričekajte..."
+
+#: modules/upload/upload.module:65,309
+msgid "1 attachment"
+msgid_plural "@count attachments"
+msgstr[0] "1 privitak"
+msgstr[1] "@count privitka"
+msgstr[2] "@count privitaka"
+
+#: modules/upload/upload.module:46
+msgid "upload files"
+msgstr "uploadaj datoteke"
+
+#: modules/upload/upload.module:46
+msgid "view uploaded files"
+msgstr "prikaži uploadirane datoteke"
+
+#: modules/upload/upload.module:86
+msgid "File uploads"
+msgstr "Učitavanje datoteka"
+
+#: modules/upload/upload.module:87
+msgid "Control how files may be attached to content."
+msgstr "Kontroliraj kako datoteke mogu biti priložene u sadržaj."

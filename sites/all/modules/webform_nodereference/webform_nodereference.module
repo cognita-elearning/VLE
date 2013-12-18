@@ -1,0 +1,308 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ * Webform module nodereference component.
+ */
+
+/**
+ * Implements hook_webform_component_info
+ */
+function webform_nodereference_webform_component_info() {
+  $components = array(
+    'nodereference' => array(
+      'label' => t('Node Reference'),
+      'description' => t('Allow the user to select a node when filling out the webform.'),
+    ),
+  );
+  return $components;
+}
+
+/**
+ * Implementation of _webform_defaults_component().
+ */
+function _webform_defaults_nodereference() {
+  return array(
+    'name' => '',
+    'form_key' => NULL,
+    'pid' => 0,
+    'weight' => 0,
+    'value' => '',
+    'mandatory' => 0,
+    'email' => 0,
+    'extra' => array(
+      // 'width' => '',
+      // 'maxlength' => '',
+      // 'field_prefix' => '',
+      // 'field_suffix' => '',
+      'type' => 'select',
+      'view' => NULL,
+      'multiple' => NULL,
+      'disabled' => 0,
+      'unique' => 0,
+      'description' => '',
+      'attributes' => array(),
+    ),
+  );
+}
+
+/**
+ * Implementation of _webform_theme_component().
+ */
+function _webform_theme_nodereference() {
+  return array(
+    'webform_display_nodereference' => array(
+      'arguments' => array('element' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implementation of _webform_edit_component().
+ */
+function _webform_edit_nodereference($component) {
+  $form = array();
+  $form['value'] = array(
+    '#type' => 'nodereference',
+    '#title' => t('Default value'),
+    '#default_value' => $component['value'],
+    '#description' => t('The default value of the field.') . theme('webform_token_help'),
+    '#size' => 60,
+    '#maxlength' => 127,
+    '#weight' => 0,
+  );
+  
+  $form['extra']['type'] = array(
+    '#type' => 'select',
+    '#title' => t('Widget Type'),
+    '#default_value' => $component['extra']['type'],
+    '#description' => t('How should this field be rendered on the webform?'),
+    '#options' => array(
+      'select' => 'select',
+      'radio_cb' => 'radios / checkboxes',
+      // TODO: Autocomplete support
+      // 'autocomplete' => 'autocomplete',
+      ),
+  );
+    
+  if (module_exists('views')) {
+    $views = array('--' => '--');
+    $all_views = views_get_all_views();
+    foreach ($all_views as $view) {
+      // Only 'node' views that have fields will work for our purpose.
+      if ($view->base_table == 'node' && !empty($view->display['default']->display_options['fields'])) {
+        if ($view->type == 'Default') {
+          $views[t('Default Views')][$view->name] = $view->name;
+        }
+        else {
+          $views[t('Existing Views')][$view->name] = $view->name;
+        }
+      }
+    }
+    $form['extra']['view'] = array(
+      '#type' => 'select',
+      '#title' => t('Select View'),
+      '#default_value' => $component['extra']['view'],
+      '#description' => t('To limit nodes available for selection, please select the view that exposes them.'),
+      '#weight' => 0,
+      '#options' => $views,
+    );
+  }
+  else {
+    $form['extra']['view'] = array('#type' => 'value', '#value' => FALSE);
+  }
+  $form['extra']['multiple'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Multiple'),
+    '#default_value' => $component['extra']['multiple'],
+    '#description' => t('Check this option if the user should be allowed to choose multiple values.'),
+    '#weight' => 0,
+  );
+  $form['display']['field_prefix'] = array(
+    '#type' => 'nodereference',
+    '#title' => t('Label placed to the left of the nodereference'),
+    '#default_value' => $component['extra']['field_prefix'],
+    '#description' => t('Examples: $, #, -.'),
+    '#size' => 20,
+    '#maxlength' => 127,
+    '#weight' => 1.1,
+    '#parents' => array('extra', 'field_prefix'),
+  );
+  $form['display']['field_suffix'] = array(
+    '#type' => 'nodereference',
+    '#title' => t('Label placed to the right of the nodereference'),
+    '#default_value' => $component['extra']['field_suffix'],
+    '#description' => t('Examples: lb, kg, %.'),
+    '#size' => 20,
+    '#maxlength' => 127,
+    '#weight' => 1.2,
+    '#parents' => array('extra', 'field_suffix'),
+  );
+  $form['display']['disabled'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Disabled'),
+    '#return_value' => 1,
+    '#description' => t('Make this field non-editable. Useful for setting an unchangeable default value.'),
+    '#weight' => 3,
+    '#default_value' => $component['extra']['disabled'],
+    '#parents' => array('extra', 'disabled'),
+  );
+  $form['validation']['unique'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Unique'),
+    '#return_value' => 1,
+    '#description' => t('Check that all entered values for this field are unique. The same value is not allowed to be used twice.'),
+    '#weight' => 1,
+    '#default_value' => $component['extra']['unique'],
+    '#parents' => array('extra', 'unique'),
+  );
+  return $form;
+}
+
+/**
+ * Implementation of _webform_render_component().
+ */
+function _webform_render_nodereference($component, $value = NULL, $filter = TRUE) {
+  $element = array(
+    '#type'          => $component['extra']['type'],
+    '#title'         => $component['name'],
+    '#default_value' => $filter ? _webform_filter_values($component['value'], NULL, NULL, NULL, FALSE) : $component['value'],
+    '#required'      => $component['mandatory'],
+    '#weight'        => $component['weight'],
+    '#field_prefix'  => empty($component['extra']['field_prefix']) ? NULL : check_plain($component['extra']['field_prefix']),
+    '#field_suffix'  => empty($component['extra']['field_suffix']) ? NULL : check_plain($component['extra']['field_suffix']),
+    '#description'   => $filter ? _webform_filter_descriptions($component['extra']['description']) : $component['extra']['description'],
+    '#attributes'    => $component['extra']['attributes'],
+    '#prefix'        => '<div class="webform-component webform-component-' . $component['type'] . '" id="webform-component-' . $component['form_key'] . '">',
+    '#suffix'        => '</div>',
+    '#webform_component' => $component,
+    '#element_validate' => array(),
+  );
+
+  if ($component['extra']['disabled']) {
+    $element['#attributes']['readonly'] = 'readonly';
+  }
+
+  // Enforce uniqueness.
+  if ($component['extra']['unique']) {
+    $element['#element_validate'][] = 'webform_validate_unique';
+  }
+
+  // Change the 'width' option to the correct 'size' option.
+  if (isset($value)) {
+    $element['#default_value'] = $value[0];
+  }
+
+  switch ($element['#type']) {
+    case 'select':
+    case 'radio_cb': {
+      if (module_exists('views')) {
+        $view = $component['extra']['view'];
+        $field = array('advanced_view' => $view);
+        $references = _nodereference_potential_references_views($field);
+        if (empty($references)) {
+          return FALSE;
+        }
+        $options = array();
+        $element['#type'] = $element['#type'] != 'select'
+          ? ($element['extra']['multiple'] ? 'checkboxes' : 'radios')
+          : $element['#type'];
+        foreach ($references as $key => $value) {
+          $options[$key] = $element['#type'] == 'select' ? $value['title'] : $value['rendered'];
+        }
+        $element['#options'] = $options;
+      }
+      break;
+    }
+    // TODO: autocomplete support
+    // case 'autocomplete': {
+    //   $element['#type'] = 'autocomplete';
+    //   break;
+    // }
+  }
+  
+  return $element;
+}
+
+/**
+ * Implementation of _webform_display_component().
+ */
+function _webform_display_nodereference($component, $value, $format = 'html') {
+  return array(
+    '#title' => $component['name'],
+    '#weight' => $component['weight'],
+    '#theme' => 'webform_display_nodereference',
+    '#theme_wrappers' => $format == 'html' ? array('webform_element') : array('webform_element_text'),
+    '#post_render' => array('webform_element_wrapper'),
+    '#field_prefix' => $component['extra']['field_prefix'],
+    '#field_suffix' => $component['extra']['field_suffix'],
+    '#component' => $component,
+    '#format' => $format,
+    '#value' => isset($value[0]) ? $value[0] : '',
+  );
+}
+
+/**
+ * Format the output of data for this component.
+ */
+function theme_webform_display_nodereference($element) {
+  $prefix = $element['#format'] == 'html' ? filter_xss($element['#field_prefix']) : $element['#field_prefix'];
+  $suffix = $element['#format'] == 'html' ? filter_xss($element['#field_suffix']) : $element['#field_suffix'];
+  $value = $element['#format'] == 'html' ? check_plain($element['#value']) : $element['#value'];
+  return $value ? ($prefix . $value . $suffix) : ' ';
+}
+
+/**
+ * Implementation of _webform_analysis_component().
+ */
+function _webform_analysis_nodereference($component, $sids = array()) {
+  $placeholders = count($sids) ? array_fill(0, count($sids), "'%s'") : array();
+  $sidfilter = count($sids) ? " AND sid in (" . implode(",", $placeholders) . ")" : "";
+  $query = 'SELECT data ' .
+    ' FROM {webform_submitted_data} ' .
+    ' WHERE nid = %d ' .
+    ' AND cid = %d ' . $sidfilter;
+  $nonblanks = 0;
+  $submissions = 0;
+  $wordcount = 0;
+
+  $result = db_query($query, array_merge(array($component['nid'], $component['cid']), $sids));
+  while ($data = db_fetch_array($result)) {
+    if (drupal_strlen(trim($data['data'])) > 0) {
+      $nonblanks++;
+      $wordcount += str_word_count(trim($data['data']));
+    }
+    $submissions++;
+  }
+
+  $rows[0] = array(t('Left Blank'), ($submissions - $nonblanks));
+  $rows[1] = array(t('User entered value'), $nonblanks);
+  $rows[2] = array(t('Average submission length in words (ex blanks)'), ($nonblanks != 0 ? number_format($wordcount/$nonblanks, 2) : '0'));
+  return $rows;
+}
+
+/**
+ * Implementation of _webform_table_component().
+ */
+function _webform_table_nodereference($component, $value) {
+  return check_plain(empty($value[0]) ? '' : $value[0]);
+}
+
+/**
+ * Implementation of _webform_csv_headers_component().
+ */
+function _webform_csv_headers_nodereference($component, $export_options) {
+  $header = array();
+  $header[0] = '';
+  $header[1] = '';
+  $header[2] = $component['name'];
+  return $header;
+}
+
+/**
+ * Implementation of _webform_csv_data_component().
+ */
+function _webform_csv_data_nodereference($component, $export_options, $value) {
+  return !isset($value[0]) ? '' : $value[0];
+}

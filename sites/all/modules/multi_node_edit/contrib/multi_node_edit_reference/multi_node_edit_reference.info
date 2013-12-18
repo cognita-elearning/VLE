@@ -1,0 +1,13 @@
+name = "Multi-Node-Edit Node Reference"
+description = "Edit nodes referenced by another node",
+core = 6.x
+package = Multi Node Edit Tools
+dependencies[] = multi_node_edit
+dependencies[] = nodereference
+
+; Information added by drupal.org packaging script on 2011-02-25
+version = "6.x-1.x-dev"
+core = "6.x"
+project = "multi_node_edit"
+datestamp = "1298619692"
+

@@ -1,0 +1,216 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from files:
+#  openid.inc,v 1.8 2008/01/30 22:11:22 goba
+#  openid.pages.inc,v 1.5.2.1 2008/07/09 21:48:28 goba
+#  openid.module,v 1.19.2.6 2009/06/10 14:05:23 goba
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-08-11 15:55+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/openid/openid.inc:44
+msgid "OpenID redirect"
+msgstr "OpenID preusmjeravanje"
+
+#: modules/openid/openid.inc:67
+msgid "Send"
+msgstr "Poslati"
+
+#: modules/openid/openid.pages.inc:18
+msgid "OpenID login failed."
+msgstr "OpenID prijava nije uspjela."
+
+#: modules/openid/openid.pages.inc:21
+msgid "OpenID login cancelled."
+msgstr "OpenID prijava je otkazana."
+
+#: modules/openid/openid.pages.inc:39
+msgid "Successfully added %identity"
+msgstr "Uspešno je dodan %identity"
+
+#: modules/openid/openid.pages.inc:66
+msgid "Add an OpenID"
+msgstr "Dodaj OpenID"
+
+#: modules/openid/openid.pages.inc:74
+msgid "That OpenID is already in use on this site."
+msgstr "Ovaj OpenID je već u uporabi na ovom siteu."
+
+#: modules/openid/openid.pages.inc:103
+msgid "Are you sure you want to delete the OpenID %authname for %user?"
+msgstr "Jeste li sigurni da želite obrisati OpenID %authname za %user?"
+
+#: modules/openid/openid.pages.inc:109
+msgid "OpenID deleted."
+msgstr "OpenID je obrisan."
+
+#: modules/openid/openid.module:47
+msgid ""
+"This site supports <a href=\"@openid-net\">OpenID</a>, a secure way to log "
+"into many websites using a single username and password. OpenID can reduce "
+"the necessity of managing many usernames and passwords for many websites."
+msgstr ""
+"Site podržava <a href=\"@openid-net\">OpenID</a>, sigurnu metodu za "
+"prijavljivanje na više website-ova uporabom jednog korisničkog imena i "
+"lozinke. OpenID može reducirati potrebu upravljanja velikim brojem "
+"korisničkih imena i lozinki za više website-ova."
+
+#: modules/openid/openid.module:48
+msgid ""
+"To use OpenID you must first establish an identity on a public or private "
+"OpenID server. If you do not have an OpenID and would like one, look into "
+"one of the <a href=\"@openid-providers\">free public providers</a>. You can "
+"find out more about OpenID at <a href=\"@openid-net\">this website</a>."
+msgstr ""
+"Kako bi ste koristili OpenID morate prvo stvoriti vaš identitet na nekom "
+"javnom ili privatnom OpenID serveru. Ako nemate OpenID i želite jedan, "
+"potražite na listu na <a href=\"@openid-providers\">stranici besplatnih "
+"pružatelja</a> OpenID usluge. O OpenID-u možete saznati više na  <a href="
+"\"@openid-net\">ovom siteu</a>."
+
+#: modules/openid/openid.module:49
+msgid ""
+"If you already have an OpenID, enter the URL to your OpenID server below (e."
+"g. myusername.openidprovider.com). Next time you login, you will be able to "
+"use this URL instead of a regular username and password. You can have "
+"multiple OpenID servers if you like; just keep adding them here."
+msgstr ""
+"Ako već imate OpenID, unesite ispod URL do vašeg OpenID servera (npr. "
+"myusername.openidprovider.com). Slijedeći put kad se budete prijavljivali "
+"moćićete koristiti ovaj URL umjesto redovite kombinacije korisničkog imena i "
+"lozinke. Možete imati više OpenID servera ako želite; dodajte ih koliko "
+"želite."
+
+#: modules/openid/openid.module:53
+msgid ""
+"OpenID is a secure method for logging into many websites with a single "
+"username and password. It does not require special software, and it does not "
+"share passwords with any site to which it is associated; including your site."
+msgstr ""
+"OpenID je sigurna metoda za prijavu na veliki broj  site-ova sa jednim "
+"(istim) korisničkim imenom i lozinkom. Ne zahtijeva specijalan software, i "
+"ne dijeli lozinku ni sa jednim siteom sa kojim je povezan; uključujući i vaš "
+"site."
+
+#: modules/openid/openid.module:54
+msgid ""
+"Users can create accounts using their OpenID, assign one or more OpenIDs to "
+"an existing account, and log in using an OpenID. This lowers the barrier to "
+"registration, which is good for the site, and offers convenience and "
+"security to the users. OpenID is not a trust system, so email verification "
+"is still necessary. The benefit stems from the fact that users can have a "
+"single password that they can use on many websites. This means they can "
+"easily update their single password from a centralized location, rather than "
+"having to change dozens of passwords individually."
+msgstr ""
+"Korisnik može napraviti račun uporabom svog OpenID-a, dodijeliti jedan ili "
+"više OpenID-ja postojećem računu ili se prijaviti koristeći OpenID. Ovo "
+"pojednostavljuje registraciju, što je dobro za site i daje korisniku "
+"udobnost i sigurnost. OpenID nije trust sustav, pa je e-mail verifikacija "
+"neophodna. Dobra strana je u tome što korisnik može imati jedanu lozinku za "
+"prijavljivanje na više website-ova. Pod tim mislimo da mogu ažurirati svoju "
+"lozinku na jedinstvenoj lokaciji, radije nego raditi promjene na svakom "
+"siteu."
+
+#: modules/openid/openid.module:55
+msgid ""
+"The basic concept is as follows: A user has an account on an OpenID server. "
+"This account provides them with a unique URL (such as myusername."
+"openidprovider.com). When the user comes to your site, they are presented "
+"with the option of entering this URL. Your site then communicates with the "
+"OpenID server, asking it to verify the identity of the user. If the user is "
+"logged into their OpenID server, the server communicates back to your site, "
+"verifying the user. If they are not logged in, the OpenID server will ask "
+"the user for their password. At no point does your site record, or need to "
+"record the user's password."
+msgstr ""
+"Osnovni koncept je slijedeći: Korisnik ima korisnički račun na OpenID "
+"serveru. Ovaj račun mu daje jedinstveni URL (npr. myusername.openidprovider."
+"com). Kada korisnik dođe na vaš site, biti će mu omogućeno da unese ovaj "
+"URL. Vaš site će onda tražiti od OpenID servera da potvrdi identitet "
+"korisnika. Ako je korisnik prijavljen na OpenID serveru, server će onda "
+"vašem siteu potvrditi indentitet korisnika. Ako nije prijavljen OpenID "
+"server će tražiti od korisnika lozinku. Ni u jednom trenutku vaš site neće "
+"sačuvati, ili ima potrebu čuvati, lozinku korisnika."
+
+#: modules/openid/openid.module:56
+msgid ""
+"More information on OpenID is available at <a href=\"@openid-net\">OpenID."
+"net</a>."
+msgstr ""
+"Više informacija o OpenID-u možete pronaći na <a href=\"@openid-net\">OpenID."
+"net</a>."
+
+#: modules/openid/openid.module:57
+msgid ""
+"For more information, see the online handbook entry for <a href=\"@handbook"
+"\">OpenID module</a>."
+msgstr ""
+"Za više informacija, pogledajte online priručnik za <a href=\"@handbook"
+"\">OpenID modul</a>."
+
+#: modules/openid/openid.module:69
+msgid "Once you have verified your email address, you may log in via OpenID."
+msgstr ""
+"Jednom kad ste potvrdili svoju e-mail adresu, možete se prijaviti preko "
+"OpenID-a."
+
+#: modules/openid/openid.module:91,108
+msgid "Log in using OpenID"
+msgstr "Prijavite se uporabom OpenID-a"
+
+#: modules/openid/openid.module:95
+msgid "Cancel OpenID login"
+msgstr "Otkaži OpenID prijavu"
+
+#: modules/openid/openid.module:112
+msgid "What is OpenID?"
+msgstr "Što je OpenID?"
+
+#: modules/openid/openid.module:161
+msgid ""
+"Sorry, that is not a valid OpenID. Please ensure you have spelled your ID "
+"correctly."
+msgstr ""
+"Žao nam je, to nije ispravan OpenID. Molimo pobrinite se da ispravno unesete "
+"vaš  ID."
+
+#: modules/openid/openid.module:391
+msgid ""
+"You must validate your email address for this account before logging in via "
+"OpenID"
+msgstr ""
+"Morate potvrditi svoju e-mail adresu za ovaj korisnički račun prije nego što "
+"se prijavite preko OpenID."
+
+#: modules/openid/openid.module:409
+msgid ""
+"OpenID registration failed for the reasons listed. You may register now, or "
+"if you already have an account you can <a href=\"@login\">log in</a> now and "
+"add your OpenID under \"My Account\""
+msgstr ""
+"OpenID registracija nije uspjela radi navedenih razloga. Možete se "
+"registrirati sada, ili ako već imate korisnički račun možete se <a href="
+"\"@login\">prijaviti</a> i dodati vaš OpenID na stranici \"Moj korisnički "
+"račun\"."
+
+#: modules/openid/openid.module:14
+msgid "OpenID Login"
+msgstr "OpenID prijava."
+
+#: modules/openid/openid.module:21
+msgid "OpenID identities"
+msgstr "OpenID identitet"
+
+#: modules/openid/openid.module:30
+msgid "Delete OpenID"
+msgstr "Obriši OpenID"

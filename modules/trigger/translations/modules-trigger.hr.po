@@ -1,0 +1,174 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from files:
+#  trigger.admin.inc,v 1.5 2008/01/08 10:35:43 goba
+#  trigger.module,v 1.13.2.3 2009/06/08 16:34:57 goba
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-08-11 13:57+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/trigger/trigger.admin.inc:74
+msgid "Are you sure you want to unassign the action %title?"
+msgstr "Jeste li sigurni da želite ukloniti radnju %title ?"
+
+#: modules/trigger/trigger.admin.inc:76
+msgid "You can assign it again later if you wish."
+msgstr "Kasnije je možete zadati ako želite."
+
+#: modules/trigger/trigger.admin.inc:88,87
+msgid "Action %action has been unassigned."
+msgstr "Radnja %action je uklonjena."
+
+#: modules/trigger/trigger.admin.inc:144
+msgid "Trigger: "
+msgstr "Okidač: "
+
+#: modules/trigger/trigger.admin.inc:154
+msgid "unassign"
+msgstr "ukloni"
+
+#: modules/trigger/trigger.admin.inc:171
+msgid "Assign"
+msgstr "Dodijeli"
+
+#: modules/trigger/trigger.admin.inc:176
+msgid "No available actions for this trigger."
+msgstr "Nema raspoloživih radnji za ovaj okidač"
+
+#: modules/trigger/trigger.admin.inc:192
+msgid "The action you chose is already assigned to that trigger."
+msgstr "Radnja koju ste odabrali je već dodjeljena ovom okidaču."
+
+#: modules/trigger/trigger.admin.inc:218
+msgid ""
+"You have added an action that changes a the property of a post. A Save post "
+"action has been added so that the property change will be saved."
+msgstr ""
+"Dodali ste akciju koja mijenja osobine priloga. Akcija Spremi post je dodana "
+"tako da ova promjena može biti sačuvana automatski."
+
+#: modules/trigger/trigger.admin.inc:238
+msgid "Operation"
+msgstr "Operacija"
+
+#: modules/trigger/trigger.module:14
+msgid ""
+"Triggers are system events, such as when new content is added or when a user "
+"logs in. Trigger module combines these triggers with actions (functional "
+"tasks), such as unpublishing content or e-mailing an administrator. The <a "
+"href=\"@url\">Actions settings page</a> contains a list of existing actions "
+"and provides the ability to create and configure additional actions."
+msgstr ""
+"Okidači su događaji na nivou sustava, kao što je dodavanje novog sadržaja "
+"ili prijavljivanje korisnika. Modul Okidač kombinira okidače sa akcijama "
+"(finkcijskim radnjama), kao što su promjena statusa sadržaja u \"nije "
+"objavljen\" i slanje elektronske poruke administratoru. Strana <a href=\"@url"
+"\">Postavljanje akcija</a> sadrži popis postojećih akcija, kao i alate "
+"potrebne za kreiranje i konfiguriranje novih akcija."
+
+#: modules/trigger/trigger.module:17
+msgid ""
+"Below you can assign actions to run when certain comment-related triggers "
+"happen. For example, you could promote a post to the front page when a "
+"comment is added."
+msgstr ""
+"Ispod možete dodati akcije koje bivaju pokrenute prilikom aktiviranja "
+"određenih okidača. Npr. možete učinite neki unos vidljivim na naslovnici u "
+"slučaju dodavanja komentara za unos."
+
+#: modules/trigger/trigger.module:19
+msgid ""
+"Below you can assign actions to run when certain content-related triggers "
+"happen. For example, you could send an e-mail to an administrator when a "
+"post is created or updated."
+msgstr ""
+"Ovde možete aktivirati obradu određnih akcija koje se aktiviraju prilikom "
+"izvjesnih akcija. Npr. možete poslati e-mail poruku administratoru kada se "
+"pojavi novi unos ili izmjeni neki postojeći."
+
+#: modules/trigger/trigger.module:21
+msgid ""
+"Below you can assign actions to run during each pass of a <a href=\"@cron"
+"\">cron maintenance task</a>."
+msgstr ""
+"Ispod možete pronaći mogućnost da pokrenete određenu akciju svakog puta kada "
+"se aktivira<a href=\"@cron\">cron poslovi održavanja</a>."
+
+#: modules/trigger/trigger.module:23
+msgid ""
+"Below you can assign actions to run when certain taxonomy-related triggers "
+"happen. For example, you could send an e-mail to an administrator when a "
+"term is deleted."
+msgstr ""
+"Ovde možete povezati određene akcije sa okidačima povezanim sa taksonomijom. "
+"Npr. možete poslati administratoru poruku u slučaju da neki termin bude "
+"obrisan."
+
+#: modules/trigger/trigger.module:25
+msgid ""
+"Below you can assign actions to run when certain user-related triggers "
+"happen. For example, you could send an e-mail to an administrator when a "
+"user account is deleted."
+msgstr ""
+"Ovde možete povezati određene akcije okidačima povezanim sa korisničkim "
+"računima. Npr. možete poslati administratoru poruku u slučaju da korisnički "
+"račun bude obrisan."
+
+#: modules/trigger/trigger.module:27
+msgid ""
+"The Trigger module provides the ability to trigger <a href=\"@actions"
+"\">actions</a> upon system events, such as when new content is added or when "
+"a user logs in."
+msgstr ""
+"Modul okidač omogućava dodavanje <a href=\"@actions\">akcija</a> koje se "
+"povezuju sa određenim događajima u sustavu, kao dodavanje novog sadržaja ili "
+"prijavljivanje korisnika."
+
+#: modules/trigger/trigger.module:28
+msgid ""
+"The combination of actions and triggers can perform many useful tasks, such "
+"as e-mailing an administrator if a user account is deleted, or automatically "
+"unpublishing comments that contain certain words. By default, there are five "
+"\"contexts\" of events (Comments, Content, Cron, Taxonomy, and Users), but "
+"more may be added by additional modules."
+msgstr ""
+"Kombinacija akcija i okidača se može koristiti za automatizaciju velikog "
+"broja različitih zadataka, kao što je poslati administratoru poruku u "
+"slučaju da korisnik bude obrisan, ili spriječiti pojavljivanje komentara "
+"koji sadrže određene predefinirane termine. Standardno je postavljeno pet "
+"različitih \"konteksta\" za događaje (Komentari, Sadržaj,  Cron, Taksonomija "
+"i Korisnici), više ih može biti dodano od strane drugih modula dodatih "
+"sustavu."
+
+#: modules/trigger/trigger.module:29
+msgid ""
+"For more information, see the online handbook entry for <a href=\"@trigger"
+"\">Trigger module</a>."
+msgstr ""
+"Za više informacija, pogledajte online priručnik za <a href=\"@trigger"
+"\">Okidač modul</a>."
+
+#: modules/trigger/trigger.module:39
+msgid "Triggers"
+msgstr "Okidači"
+
+#: modules/trigger/trigger.module:40
+msgid "Tell Drupal when to execute actions."
+msgstr "Reći Drupal-u kada da izvrši radnju."
+
+#: modules/trigger/trigger.module:85
+msgid "Cron"
+msgstr "Cron"
+
+#: modules/trigger/trigger.module:115
+msgid "Unassign an action from a trigger."
+msgstr "Razdvojiti akciju od okidača."

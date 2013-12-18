@@ -1,0 +1,3 @@
+<?php
+
+include_once('cognita_elearner_vle.features.inc');

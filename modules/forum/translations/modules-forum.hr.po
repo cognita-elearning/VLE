@@ -1,0 +1,460 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from files:
+#  forum-list.tpl.php,v 1.4 2007/08/30 18:58:12 goba
+#  forum-submitted.tpl.php,v 1.3 2007/08/07 08:39:35 goba
+#  forum-topic-navigation.tpl.php,v 1.2 2007/08/07 08:39:35 goba
+#  forum.admin.inc,v 1.8.2.1 2009/05/26 08:13:00 goba
+#  forum.module,v 1.448.2.7 2009/06/03 18:27:48 goba
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-08-10 15:12+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/forum/forum-list.tpl.php:38
+msgid "Topics"
+msgstr "Teme"
+
+#: modules/forum/forum-list.tpl.php:39
+msgid "Posts"
+msgstr "Unos"
+
+#: modules/forum/forum-list.tpl.php:40
+msgid "Last post"
+msgstr "Posljednji unos"
+
+#: modules/forum/forum-submitted.tpl.php:21
+msgid "@time ago<br />by !author"
+msgstr "Prije @time<br />od !author"
+
+#: modules/forum/forum-topic-navigation.tpl.php:29
+msgid "Go to previous forum topic"
+msgstr "Idi na prethodnu temu na forumu"
+
+#: modules/forum/forum-topic-navigation.tpl.php:32
+msgid "Go to next forum topic"
+msgstr "Idi na sljedeću temu foruma"
+
+#: modules/forum/forum.admin.inc:38
+msgid "Forum name"
+msgstr "Naziv foruma"
+
+#: modules/forum/forum.admin.inc:41
+msgid "Short but meaningful name for this collection of threaded discussions."
+msgstr "Kratko ali smisaono ime za ovu kolekciju povezanih rasprava."
+
+#: modules/forum/forum.admin.inc:47
+msgid "Description and guidelines for discussions within this forum."
+msgstr "Opisi i savjeti za rasprave na ovom forumu."
+
+#: modules/forum/forum.admin.inc:54
+msgid ""
+"Forums are displayed in ascending order by weight (forums with equal weights "
+"are displayed alphabetically)."
+msgstr ""
+"Forumi su prikazani u rastućem redoslijedu po težini (forumi sa istom "
+"težinom prikazani su po abecenom redu)."
+
+#: modules/forum/forum.admin.inc:75
+msgid "forum container"
+msgstr "forum spremnik"
+
+#: modules/forum/forum.admin.inc:79
+msgid "forum"
+msgstr "forum"
+
+#: modules/forum/forum.admin.inc:90
+msgid "Created new @type %term."
+msgstr "Novi @type %term je kreiran."
+
+#: modules/forum/forum.admin.inc:93
+msgid "The @type %term has been updated."
+msgstr "@type %term je ažuriran."
+
+#: modules/forum/forum.admin.inc:116
+msgid "Container name"
+msgstr "Ime spremnika"
+
+#: modules/forum/forum.admin.inc:120
+msgid "Short but meaningful name for this collection of related forums."
+msgstr "Kratko ali smisleno ime za ovu kolekciju povezanih foruma."
+
+#: modules/forum/forum.admin.inc:128
+msgid "Description and guidelines for forums within this container."
+msgstr "Opis i upute za forume u okviru ovog spremnika."
+
+#: modules/forum/forum.admin.inc:136
+msgid ""
+"Containers are displayed in ascending order by weight (containers with equal "
+"weights are displayed alphabetically)."
+msgstr ""
+"Spremnici su prikazani u rastućem redoslijedu po težini (spremnici sa istom "
+"težinom su prikazani po abecednom redu)."
+
+#: modules/forum/forum.admin.inc:168
+msgid "Are you sure you want to delete the forum %name?"
+msgstr "Da li ste sigurni da želite obrisati forum %name?"
+
+#: modules/forum/forum.admin.inc:168
+msgid ""
+"Deleting a forum or container will also delete its sub-forums, if any. To "
+"delete posts in this forum, visit <a href=\"@content\">content "
+"administration</a> first. This action cannot be undone."
+msgstr ""
+"Brisanje foruma ili spremnika će također obrisati sve podforume, ako "
+"postoje. Da bi ste obirsali poruke u ovom forumu posjetite prvo <a href="
+"\"@content\">administraciju sadržaja</a>. Ova radnja ne može biti opozvana."
+
+#: modules/forum/forum.admin.inc:176
+msgid ""
+"The forum %term and all sub-forums and associated posts have been deleted."
+msgstr "Forum %term i svi podforumi i njihovi sadržaji su obrisani."
+
+#: modules/forum/forum.admin.inc:192
+msgid "Hot topic threshold"
+msgstr "Granica za vruću temu"
+
+#: modules/forum/forum.admin.inc:195
+msgid "The number of posts a topic must have to be considered \"hot\"."
+msgstr "Broj poruka koje tema mora imati da bi se smatrala \"vrućom\"."
+
+#: modules/forum/forum.admin.inc:199
+msgid "Topics per page"
+msgstr "Tema po stranici"
+
+#: modules/forum/forum.admin.inc:202
+msgid "Default number of forum topics displayed per page."
+msgstr "Podrazumijevani broj prikazanih forum tema po stranici."
+
+#: modules/forum/forum.admin.inc:204
+msgid "Posts - most active first"
+msgstr "Unosi - najatraktivniji prvi"
+
+#: modules/forum/forum.admin.inc:204
+msgid "Posts - least active first"
+msgstr "Unosi - najneatraktivniji prvi"
+
+#: modules/forum/forum.admin.inc:206
+msgid "Default order"
+msgstr "Podrazumijevani redoslijed"
+
+#: modules/forum/forum.admin.inc:209
+msgid "Default display order for topics."
+msgstr "Podrazumijevano prikazivanje uređeno po naslovima."
+
+#: modules/forum/forum.admin.inc:229
+msgid "edit container"
+msgstr "uredi spremnik"
+
+#: modules/forum/forum.admin.inc:232
+msgid "edit forum"
+msgstr "uredi forum"
+
+#: modules/forum/forum.admin.inc:244
+msgid ""
+"There are no existing containers or forums. Containers and forums may be "
+"added using the <a href=\"@container\">add container</a> and <a href=\"@forum"
+"\">add forum</a> pages."
+msgstr ""
+"Ne postoje spremnici ili forumi. Spremnici ili forumi mogu biti dodani "
+"uporabom <a href=\"@container\">dodaj spremnik</a> i <a href=\"@forum"
+"\">dodaj forum</a> strana."
+
+#: modules/forum/forum.admin.inc:285
+msgid ""
+"Containers are usually placed at the top (root) level, but may also be "
+"placed inside another container or forum."
+msgstr ""
+"Spremnici se obično nalaze na najvišem (osnovnom) nivou, ali također mogu "
+"biti i u drugom spremniku ili forumu."
+
+#: modules/forum/forum.admin.inc:288
+msgid ""
+"Forums may be placed at the top (root) level, or inside another container or "
+"forum."
+msgstr ""
+"Forumi mogu biti postavljeni na vrh (osnovni) nivo, ili unutar drugog "
+"spremnika ili foruma."
+
+#: modules/forum/forum.admin.inc:177
+msgid "forum: deleted %term and all its sub-forums and associated posts."
+msgstr "forum: obrisati %term i sve podforume i njihove sadržaje."
+
+#: modules/forum/forum.module:15
+msgid ""
+"The forum module lets you create threaded discussion forums with "
+"functionality similar to other message board systems. Forums are useful "
+"because they allow community members to discuss topics with one another "
+"while ensuring those conversations are archived for later reference. The <a "
+"href=\"@create-topic\">forum topic</a> menu item (under <em>Create content</"
+"em> on the Navigation menu) creates the initial post of a new threaded "
+"discussion, or thread."
+msgstr ""
+"Forum modul vam omogućava kreiranje foruma sa povezanim raspravama slično "
+"drugim sustavima za javno komuniciranje porukama. Forumi su korisni je "
+"omogućavaju pripadnicima neke zajednice da raspravljaju o temama, pri čemu "
+"rasprava ostaje sačuvana kao bilješka. Meni stavka  <a href=\"@create-topic"
+"\">tema foruma</a> (ispod <em>kreiraj sadržaj</em> u meniju Navigacija) "
+"kreira inicijalni post u novoj povezanoj raspravi."
+
+#: modules/forum/forum.module:16
+msgid ""
+"A threaded discussion occurs as people leave comments on a forum topic (or "
+"on other comments within that topic). A forum topic is contained within a "
+"forum, which may hold many similar or related forum topics. Forums are "
+"(optionally) nested within a container, which may hold many similar or "
+"related forums. Both containers and forums may be nested within other "
+"containers and forums, and provide structure for your message board. By "
+"carefully planning this structure, you make it easier for users to find and "
+"comment on a specific forum topic."
+msgstr ""
+"Povezana rasprava nastaje kada korisnici ostavljaju komentare u vezi jedne "
+"od tema foruma (ili komentiraju druge komentare u okviru te teme). Tema "
+"foruma je dio samog foruma, koji može sadržavati mnoge slične ili povezane "
+"teme foruma. Opciono, forumi mogu biti dio drugih kontejnera i foruma, i "
+"omogućavati strukturu koja podržava ploču sa porukama. Pažljivim planiranjem "
+"strukture omogućavate vašim korisnicima da lakše pronađu i dodaju komentare "
+"u vezi neke određene teme foruma."
+
+#: modules/forum/forum.module:17
+msgid "When administering a forum, note that:"
+msgstr "Kada administrirate forum, znajte slijedeće:"
+
+#: modules/forum/forum.module:18
+msgid ""
+"a forum topic (and all of its comments) may be moved between forums by "
+"selecting a different forum while editing a forum topic."
+msgstr ""
+"tema unutar foruma (kao i svi pripadajući komentari) se može premjestiti iz "
+"jednog foruma u drugi putem selekcije nekog drugog foruma kada pravite "
+"izmjene na samoj temi."
+
+#: modules/forum/forum.module:19
+msgid ""
+"when moving a forum topic between forums, the <em>Leave shadow copy</em> "
+"option creates a link in the original forum pointing to the new location."
+msgstr ""
+"kada premještate temu iz jednog foruma u drugi, opcija <em>Ostavi kopiju-"
+"sjenku</em> kreira link koji u originalnom forumu kreira link prema novoj "
+"lokaciji."
+
+#: modules/forum/forum.module:20
+msgid ""
+"selecting <em>Read only</em> under <em>Comment settings</em> while editing a "
+"forum topic will lock (prevent new comments) on the thread."
+msgstr ""
+"selektirajte <em>Samo za čitanje</em> u <em>Postavke komentara</em> kada "
+"mijenjate temu foruma, biće zaključana (onemogućit će nove komentare) za "
+"raspravu."
+
+#: modules/forum/forum.module:21
+msgid ""
+"selecting <em>Disabled</em> under <em>Comment settings</em> while editing a "
+"forum topic will hide all existing comments on the thread, and prevent new "
+"ones."
+msgstr ""
+"selektirajte <em>Isključeno</em> ispod <em>Postavke komentara</em> prilikom "
+"mijenjanja teme foruma, forum će skriti sve komentare vezane za neku "
+"raspravu, i onemogućiti nove unose."
+
+#: modules/forum/forum.module:22
+msgid ""
+"For more information, see the online handbook entry for <a href=\"@forum"
+"\">Forum module</a>."
+msgstr ""
+"Za više informacija, pogledajte online priručnik za <a href=\"@forum\">Forum "
+"modul</a>."
+
+#: modules/forum/forum.module:25
+msgid ""
+"This page displays a list of existing forums and containers. Containers "
+"(optionally) hold forums, and forums hold forum topics (a forum topic is the "
+"initial post to a threaded discussion). To provide structure, both "
+"containers and forums may be placed inside other containers and forums. To "
+"rearrange forums and containers, grab a drag-and-drop handle under the "
+"<em>Name</em> column and drag the forum or container to a new location in "
+"the list. (Grab a handle by clicking and holding the mouse while hovering "
+"over a handle icon.) Remember that your changes will not be saved until you "
+"click the <em>Save</em> button at the bottom of the page."
+msgstr ""
+"Ova stranica prikazuje popis postojećih foruma i spremnika. Spremnici sadrže "
+"(opcionalno) forume, a forum sadrži temu foruma (tema foruma je prvi prilog "
+"kojim je započeta povezana rasprava. Da bi stuktura funkcionirala, spremnici "
+"i forumi moraju biti unutar drugih spremnika i foruma. Reorganizacija foruma "
+"i spremnika se može izvesti pomoću alata za prevlačenje mišem ispod stupca "
+"<em>Ime</em> koji koristite za prevlačenje foruma ili spremnika na novu "
+"lokaciju na popisu. (Uhvatite alatnu ikonicu klikom miša i prevucite na "
+"drugu lokaciju sa pritisnutom lijevom tipkom miša). Zapamtite da vaše "
+"promjene neće biti sačuvane sve dok ne pritisnete dugme <em>Spremi</em> na "
+"dnu stranice."
+
+#: modules/forum/forum.module:27
+msgid ""
+"By grouping related or similar forums, containers help organize forums. For "
+"example, a container named \"Food\" may hold two forums named \"Fruit\" and "
+"\"Vegetables\", respectively."
+msgstr ""
+"Grupiranje srodnih ili sličnih foruma, spremnik, pomaže u organiziranju "
+"foruma. Npr. spremnik s imenom \"Food\" može imadi dva foruma s imenima "
+"\"Fruit\" i \"Vegetables\", posebno."
+
+#: modules/forum/forum.module:29
+msgid ""
+"A forum holds related or similar forum topics (a forum topic is the initial "
+"post to a threaded discussion). For example, a forum named \"Fruit\" may "
+"contain forum topics titled \"Apples\" and \"Bananas\", respectively."
+msgstr ""
+"Forum sadržava srodna ili slična poglavlja (forum tema je inicijalna poruka "
+"za pokretanje rasprave). Npr. ime foruma \"Voće\" može sadržavati naslove "
+"tema \"Jabuke\" i \"Banane\", posebno."
+
+#: modules/forum/forum.module:31
+msgid ""
+"These settings allow you to adjust the display of your forum topics. The "
+"content types available for use within a forum may be selected by editing "
+"the <em>Content types</em> on the <a href=\"@forum-vocabulary\">forum "
+"vocabulary page</a>."
+msgstr ""
+"Ove postavke vam omogućuju da prikažete teme foruma. Tipovi sadržaja koji  "
+"se mogu koristiti na forumu mogu se obilježiti putem odabiranja <em>Tipovi "
+"sadržaja</em> na stranici <a href=\"@forum-vocabulary\">forum rječnik</a>."
+
+#: modules/forum/forum.module:236
+msgid ""
+"The item %forum is only a container for forums. Please select one of the "
+"forums below it."
+msgstr ""
+"Stavka %forum je samo spremnik za forume. Molimo označite forume ispod."
+
+#: modules/forum/forum.module:302
+msgid "Forum topic"
+msgstr "Tema foruma"
+
+#: modules/forum/forum.module:304
+msgid ""
+"A <em>forum topic</em> is the initial post to a new discussion thread within "
+"a forum."
+msgstr ""
+"<em>Poglavlje foruma</em> je inicijalni sadržaj za novu raspravu u okviru "
+"foruma."
+
+#: modules/forum/forum.module:367
+msgid ""
+"This is the designated forum vocabulary. Some of the normal vocabulary "
+"options have been removed."
+msgstr ""
+"Ovo je predviđeni rječnik za forum. Neke od uobičajenih postavki rječnika su "
+"uklonjene."
+
+#: modules/forum/forum.module:409,425
+msgid "Active forum topics"
+msgstr "Aktivne teme na forumu"
+
+#: modules/forum/forum.module:410,432
+msgid "New forum topics"
+msgstr "Nove teme na forumu"
+
+#: modules/forum/forum.module:414
+msgid "Number of topics"
+msgstr "Broj tema"
+
+#: modules/forum/forum.module:441
+msgid "Read the latest forum topics."
+msgstr "Pročitajte posljednje teme foruma."
+
+#: modules/forum/forum.module:460
+msgid "Leave shadow copy"
+msgstr "Ostavi kopiju-sjenku"
+
+#: modules/forum/forum.module:460
+msgid ""
+"If you move this topic, you can leave a link in the old forum to the new "
+"forum."
+msgstr ""
+"Ukoliko premjestite ovu temu, možete ostaviti poveznicu u prvobitnom forumu "
+"ka njenoj novoj lokaciji."
+
+#: modules/forum/forum.module:559
+msgid "Topic"
+msgstr "Tema"
+
+#: modules/forum/forum.module:561
+msgid "Created"
+msgstr "Kreiran"
+
+#: modules/forum/forum.module:562
+msgid "Last reply"
+msgstr "Posljednji odgovor"
+
+#: modules/forum/forum.module:675
+msgid "Post new @node_type"
+msgstr "Postavi novi @node_type"
+
+#: modules/forum/forum.module:724
+msgid "No forums defined"
+msgstr "Nije definiran nijedan forum."
+
+#: modules/forum/forum.module:810
+msgid "This topic has been moved"
+msgstr "Ova tema je premještena."
+
+#: modules/forum/forum.module:328
+msgid "create forum topics"
+msgstr "kreiraj teme foruma"
+
+#: modules/forum/forum.module:328
+msgid "delete own forum topics"
+msgstr "obriši vlastite teme na foruma"
+
+#: modules/forum/forum.module:328
+msgid "delete any forum topic"
+msgstr "obriši bilo koju temu foruma"
+
+#: modules/forum/forum.module:328
+msgid "edit own forum topics"
+msgstr "uredi vlastite teme na forumu"
+
+#: modules/forum/forum.module:328
+msgid "edit any forum topic"
+msgstr "uredi bilo koju temu foruma"
+
+#: modules/forum/forum.module:328
+msgid "administer forums"
+msgstr "admnistriraj forume"
+
+#: modules/forum/forum.module:94
+msgid "Control forums and their hierarchy and change forum settings."
+msgstr ""
+"Upravljajte forumima i njihovom hijerarhijom i izmijenite postavke foruma."
+
+#: modules/forum/forum.module:106
+msgid "Add container"
+msgstr "Dodaj spremnik"
+
+#: modules/forum/forum.module:115
+msgid "Add forum"
+msgstr "Dodaj forum"
+
+#: modules/forum/forum.module:140
+msgid "Edit container"
+msgstr "Uredi spremnik"
+
+#: modules/forum/forum.module:148
+msgid "Edit forum"
+msgstr "Uredi forum"
+
+#: modules/forum/forum.module:682
+msgid "You are not allowed to post new content in the forum."
+msgstr "Nemate dopuštenje za unos novog sadržaja u forum."
+
+#: modules/forum/forum.module:686
+msgid "<a href=\"@login\">Login</a> to post new content in the forum."
+msgstr "<a href=\"@login\">Ulogirajte</a> se kako bi napravili novi unos."

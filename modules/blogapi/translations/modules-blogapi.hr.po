@@ -1,0 +1,288 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from file: blogapi.module,v 1.115.2.5 2008/10/08 20:12:17 goba
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-08-11 16:03+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/blogapi/blogapi.module:15
+msgid ""
+"The Blog API module allows your site's users to access and post to their "
+"blogs from external blogging clients. External blogging clients are "
+"available for a wide range of desktop operating systems, and generally "
+"provide a feature-rich graphical environment for creating and editing posts."
+msgstr ""
+"Blog API modul omogućava korisnicima vašeg site-a da pristupe i šalju svoje "
+"blogove preko eksternog blog klijenta. Eksterni blog klijenti su dostupni za "
+"mnogobrojne desktop operativne sustave, i generalno omogućuju bogato "
+"grafičko okruženje za kreiranje i mijenjanje poruka."
+
+#: modules/blogapi/blogapi.module:16
+msgid ""
+"<a href=\"@ecto-link\">Ecto</a>, a blogging client available for both Mac OS "
+"X and Microsoft Windows, can be used with Blog API. Blog API also supports "
+"<a href=\"@blogger-api\">Blogger API</a>, <a href=\"@metaweblog-api"
+"\">MetaWeblog API</a>, and most of the <a href=\"@movabletype-api\">Movable "
+"Type API</a>. Blogging clients and other services (e.g. <a href=\"@flickr"
+"\">Flickr's</a> \"post to blog\") that support these APIs may also be "
+"compatible."
+msgstr ""
+"<a href=\"@ecto-link\">Ecto</a>, klijent software za pisanje blogova, "
+"dostupan na platformama Mac OS X i Microsoft Windows, može se koristiti "
+"zajedno sa Blog API-jem. Blog API također podržava <a href=\"@blogger-api"
+"\">Blogger API</a>, <a href=\"@metaweblog-api\">MetaWeblog API</a>, kao i "
+"veći dio <a href=\"@movabletype-api\">Movable Type API-ja</a>. Klijenti za "
+"pisanje bloga i drugi servisi (npr. <a href=\"@flickr\">Flickr alat</a> "
+"\"post to blog\") koji podržavaju ovaj API mogu također biti kompatibilni."
+
+#: modules/blogapi/blogapi.module:17
+msgid ""
+"Select the content types available to external clients on the <a href="
+"\"@blogapi-settings\">Blog API settings page</a>. If supported and "
+"available, each content type will be displayed as a separate \"blog\" by the "
+"external client."
+msgstr ""
+"Odaberite tipove sadržaja koji su dostupni eksternim klijentima na stranici "
+"<a href=\"@blogapi-settings\">Blog API postavke</a>. Ukoliko je određeni tip "
+"podržan i omogućen u sustavu, svaki tip sadržaja će biti prikazan u "
+"eksternom klijentu kao poseban \"blog\"."
+
+#: modules/blogapi/blogapi.module:18
+msgid ""
+"For more information, see the online handbook entry for <a href=\"@blogapi"
+"\">Blog API module</a>."
+msgstr ""
+"Za više informacija, pogledajte online priručnik za  <a href=\"@blogapi"
+"\">Blog API modul</a>."
+
+#: modules/blogapi/blogapi.module:39
+msgid "Returns a list of blogs to which an author has posting privileges."
+msgstr "Vraća popis blogova koje je autor kreirao po privilegijama kreiranja."
+
+#: modules/blogapi/blogapi.module:44
+msgid "Returns information about an author in the system."
+msgstr "Vraća informacije o autoru u sustav."
+
+#: modules/blogapi/blogapi.module:49,74
+msgid "Creates a new post, and optionally publishes it."
+msgstr "Kreira novu poruku, i po izboru je objavljuje."
+
+#: modules/blogapi/blogapi.module:54
+msgid "Updates the information about an existing post."
+msgstr "Ažurira informacije o postojećoj poruci."
+
+#: modules/blogapi/blogapi.module:59,84
+msgid "Returns information about a specific post."
+msgstr "Vraća informacije o određenoj poruci."
+
+#: modules/blogapi/blogapi.module:64
+msgid "Deletes a post."
+msgstr "Briše post."
+
+#: modules/blogapi/blogapi.module:69,99
+msgid "Returns a list of the most recent posts in the system."
+msgstr "Vratiti popis svih nedavnih sadržaja koji su u sustavu."
+
+#: modules/blogapi/blogapi.module:79
+msgid "Updates information about an existing post."
+msgstr "Ažurira informacije o postojećoj poruci."
+
+#: modules/blogapi/blogapi.module:89
+msgid "Uploads a file to your webserver."
+msgstr "Smješta datoteku na vaš web server."
+
+#: modules/blogapi/blogapi.module:94,114
+msgid "Returns a list of all categories to which the post is assigned."
+msgstr "Vratiti listu svih kategorija gdje je sadržaj dodjeljen."
+
+#: modules/blogapi/blogapi.module:104
+msgid ""
+"Returns a bandwidth-friendly list of the most recent posts in the system."
+msgstr "Vraća (bandwidth-friendly) popis svih nedavnih sadržaja u sustav."
+
+#: modules/blogapi/blogapi.module:109
+msgid "Returns a list of all categories defined in the blog."
+msgstr "Vraća popis svih kategorija definiranih u blog-u."
+
+#: modules/blogapi/blogapi.module:119
+msgid "Sets the categories for a post."
+msgstr "Postaviti kategorije za sadržaj."
+
+#: modules/blogapi/blogapi.module:124
+msgid "Retrieve information about the XML-RPC methods supported by the server."
+msgstr "Vraća informacije o XML-RPC metodama koje su podržane na serveru."
+
+#: modules/blogapi/blogapi.module:129
+msgid ""
+"Retrieve information about the text formatting plugins supported by the "
+"server."
+msgstr ""
+"Dobavi informacije o plug-inovima za formatiranje teksta koje podržava sever."
+
+#: modules/blogapi/blogapi.module:134
+msgid ""
+"Publish (rebuild) all of the static files related to an entry from your "
+"blog. Equivalent to saving an entry in the system (but without the ping)."
+msgstr ""
+"Objavite (rebuild) svih statičkih datoteka povezanih nekim unosom u vašem "
+"blogu. Odgovara čuvanju unosa u sustav (ali bez ping-a)."
+
+#: modules/blogapi/blogapi.module:216
+msgid "You do not have permission to create this type of post."
+msgstr "Nemate dozvolu za kreiranje sadržaja ovog tipa."
+
+#: modules/blogapi/blogapi.module:243,304
+msgid "Error storing post."
+msgstr "Greška prilikom spremanja sadržaja."
+
+#: modules/blogapi/blogapi.module:265,644
+msgid "You do not have permission to update this post."
+msgstr "Vi nemate dozvolu za ažuriranje ovog sadržaja."
+
+#: modules/blogapi/blogapi.module:338
+msgid ""
+"You do not have permission to publish this type of post. Please save it as a "
+"draft instead."
+msgstr ""
+"Nemate dozvolu za objavljivanje sadržaja ovog tipa. Molimo umjesto toga "
+"sačuvajte nacrt."
+
+#: modules/blogapi/blogapi.module:341
+msgid ""
+"You do not have permission to save this post as a draft. Please publish it "
+"instead."
+msgstr ""
+"Nemate dozvolu za spremanje ovog posta kao nacrta. Molimo vas da ga umjesto "
+"toga objavite."
+
+#: modules/blogapi/blogapi.module:426
+msgid ""
+"It is not possible to upload the file, because it exceeded the maximum "
+"filesize of @maxsize."
+msgstr ""
+"Nije moguće upload-irati datoteku, jer prelazi najveću dozvoljenu veličinu "
+"datoteke od @maxsize."
+
+#: modules/blogapi/blogapi.module:430
+msgid ""
+"The file can not be attached to this post, because the disk quota of @quota "
+"has been reached."
+msgstr ""
+"Datoteka ne može da se prikači na poruku, jer je dostignut prag @quota na "
+"disku."
+
+#: modules/blogapi/blogapi.module:446
+msgid ""
+"It is not possible to upload the file, because it is only possible to upload "
+"files with the following extensions: @extensions"
+msgstr ""
+"Datoteka ne može da se upload-ira, jer se samo mogu upload-irati datoteke "
+"slijedećih ekstenzija: @extensions"
+
+#: modules/blogapi/blogapi.module:456
+msgid "No file sent."
+msgstr "Datoteka nije poslana."
+
+#: modules/blogapi/blogapi.module:460
+msgid "Error storing file."
+msgstr "Pogreška prilikom spremanja datoteke."
+
+#: modules/blogapi/blogapi.module:584
+msgid "Invalid categories submitted."
+msgstr "Poslana je neispravna kategorija."
+
+#: modules/blogapi/blogapi.module:593
+msgid "A category from the @vocabulary_name vocabulary is required."
+msgstr "Kategorija @vocabulary_name za rječnik je neophodna."
+
+#: modules/blogapi/blogapi.module:597
+msgid "You may only choose one category from the @vocabulary_name vocabulary."
+msgstr "Možete izabrati samo jednu kategoriju za @vocabulary_name rječnik."
+
+#: modules/blogapi/blogapi.module:602
+msgid "Error saving categories. This feature is not available."
+msgstr "Pogreška pri spremanju kategorija. Ova značajka nije dostupna."
+
+#: modules/blogapi/blogapi.module:635
+msgid "Invalid post."
+msgstr "Neispravan sadržaj."
+
+#: modules/blogapi/blogapi.module:680
+msgid "You do not have permission to edit this blog."
+msgstr "Nemate dozvolu za mijenjanje ovog bloga."
+
+#: modules/blogapi/blogapi.module:684
+msgid "Wrong username or password."
+msgstr "Krivo korisničko ime ili lozinka."
+
+#: modules/blogapi/blogapi.module:707
+msgid "Enable for external blogging clients"
+msgstr "Omogućiti za eksterne blog klijente"
+
+#: modules/blogapi/blogapi.module:711
+msgid ""
+"Select the content types available to external blogging clients via Blog "
+"API. If supported, each enabled content type will be displayed as a separate "
+"\"blog\" by the external client."
+msgstr ""
+"Označite tip sadržaja koji je dostupan za vanjske blog klijente putem Blog "
+"API-a. Ako je podržano, svaki dostupni tip sadržaja će biti prikazan kao "
+"poseban \"blog\" za vanjske klijente."
+
+#: modules/blogapi/blogapi.module:720
+msgid "File settings"
+msgstr "Postavke datoteke"
+
+#: modules/blogapi/blogapi.module:738
+msgid "The default maximum file size a user can upload."
+msgstr "Zadata najveća veličina datoteke koju je moguće upload-irati."
+
+#: modules/blogapi/blogapi.module:777
+msgid "The maximum size of a file a user can upload (in megabytes)."
+msgstr ""
+"Najveća veličina datoteke koju korisnik može uploadati (u megabajtima)."
+
+#: modules/blogapi/blogapi.module:785
+msgid ""
+"The maximum size of all files a user can have on the site (in megabytes)."
+msgstr ""
+"Najveća ukupna veličina svih datoteka koju jedan korisnik može imati na site-"
+"u (u megabajtima)."
+
+#: modules/blogapi/blogapi.module:815,794
+msgid "RSD"
+msgstr "RSD"
+
+#: modules/blogapi/blogapi.module:933
+msgid ""
+"Blog API module is not configured to support the %type content type, or you "
+"don't have sufficient permissions to post this type of content."
+msgstr ""
+"Blog API modul nije konfiguriran da podržava tip sadržaja %type ili nemate "
+"potrebne dozvole da postavite ovaj tip sadržaja na site."
+
+#: modules/blogapi/blogapi.module:238
+msgid "@type: added %title using blog API."
+msgstr "@type: dodana %title pomoću blog API."
+
+#: modules/blogapi/blogapi.module:300
+msgid "@type: updated %title using Blog API."
+msgstr "@type: ažuriran %title uporabom Blog API-ja."
+
+#: modules/blogapi/blogapi.module:27
+msgid "administer content with blog api"
+msgstr "administracija sadržaja sa blog api-jem"
+
+#: modules/blogapi/blogapi.module:801
+msgid "Configure the content types available to external blogging clients."
+msgstr ""
+"Konfiguracija tipova sadržaja koji su dostupni za spoljne blog klijente."

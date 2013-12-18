@@ -1,0 +1,772 @@
+<?php
+/**
+ * @file
+ * Simplenews Scheduler module allows a schedule to be set
+ * for sending (and resending) a Simplenews item.
+ */
+
+/**
+ * NEWSLETTER SEND COMMAND
+ *
+ * Extends the options in Simplenews module.
+ */
+define('SIMPLENEWS_COMMAND_SEND_SCHEDULE', 3);
+define('SIMPLENEWS_COMMAND_SEND_NONE', 4);
+
+/**
+ * Implementation of hook_perm().
+ */
+function simplenews_scheduler_perm() {
+  return array('overview scheduled newsletters', 'send scheduled newsletters', 'use PHP for scheduling newsletters');
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function simplenews_scheduler_menu() {
+  $items = array();
+  $items["node/%node/editions"] = array(
+    'title' => 'Newsletter Editions',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 2,
+    'page callback' => 'simplenews_scheduler_node_page',
+    'page arguments' => array(1),
+    'access callback' => '_simplenews_scheduler_tab_permission',
+    'access arguments' => array(1),
+  );
+  return $items;
+}
+
+/**
+ * Implementation of hook_form_FORM_ID_alter().
+ *
+ * Add schedule settings to the newsletter edit form.
+ */
+function simplenews_scheduler_form_simplenews_node_tab_send_form_alter(&$form, &$form_state) {
+  global $user;
+  // if this is an edition, then we should be fiddling with it, only the parent.
+  if (user_access('send scheduled newsletters') && !isset($node->simplenews_scheduler_edition)) {
+    drupal_add_js(drupal_get_path('module', 'simplenews_scheduler') . '/simplenews_scheduler.js', 'module', 'header', FALSE, FALSE, TRUE);
+
+    // Set the default values.
+    $form['#submit'][] = "simplenews_scheduler_submit";
+
+    $scheduler = array();
+    $result = db_query("SELECT * FROM {simplenews_scheduler} WHERE nid = %d", arg(1));
+    $row = db_fetch_array($result);
+    if ($row) {
+      $scheduler = $row;
+    }
+    else {
+      $scheduler['activated'] = 0;
+    }
+
+    $form['#simplenews_scheduler'] = $scheduler;
+
+    // Add further commands to the 'Send action' radio buttons.
+    $form['simplenews']['send']['#options'][SIMPLENEWS_COMMAND_SEND_SCHEDULE] = t('Send newsletter according to schedule');
+    $form['simplenews']['send']['#options'][SIMPLENEWS_COMMAND_SEND_NONE] = t("Don't send now or stop sending");
+    $form['simplenews']['send']['#default_value'] = ($scheduler['activated'] == 1) ? SIMPLENEWS_COMMAND_SEND_SCHEDULE : variable_get('simplenews_send', SIMPLENEWS_COMMAND_SEND_NONE);
+
+    $form['simplenews']['scheduler'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Schedule details'),
+      '#attributes' => array('class' => 'schedule_info'),
+      '#collapsible' => FALSE,
+      '#collapsed' => FALSE,
+      '#tree' => TRUE,
+    );
+    // Display settings only if this is not an edition.
+    if (!isset($form['#node']->simplenews_scheduler_edition)) {
+      $form['simplenews']['scheduler']['send_interval'] = array(
+        '#type' => 'select',
+        '#title' => t('Send once per'),
+        '#options' => array(
+          'hour' => t('Hour'),
+          'day' => t('Day'),
+          'week' => t('Week'),
+          'month' => t('Month'),
+        ),
+        '#description' => t('Interval to send at'),
+        '#default_value'=> isset($scheduler['send_interval']) ? $scheduler['send_interval'] : 'week',
+      );
+
+      // If there is no default value, use the current time for start.
+      $date_start = isset($scheduler['start_date']) ? $scheduler['start_date'] : $_SERVER['REQUEST_TIME'];
+      // and Today + 2 years for stop, that should be enough.
+      $date_stop = isset($scheduler['stop_date']) ? $scheduler['stop_date'] : $_SERVER['REQUEST_TIME'] + 2 * 365 * 24 * 60 * 60;
+      $form_date = false;
+      if (isset($form['#node'])) {
+        // Convert dates to valid date objects.
+        if ($form['#node']->build_mode == 1) {
+          $date_start = date_make_date($date_start, NULL, DATE_DATETIME);
+          $date_stop = date_make_date($date_stop, NULL, DATE_DATETIME);
+          $form_date = true;
+        }
+      }
+
+      if (! $form_date) {
+        $date_start = date_make_date($date_start, date_default_timezone_name(), DATE_UNIX);
+        $date_stop = date_make_date($date_stop, date_default_timezone_name(), DATE_UNIX);
+      }
+
+      // Translate formatted date results.
+      $date_str_start = date_format_date($date_start, 'custom', 'Y-m-d H:i');
+      $date_str_stop = date_format_date($date_stop, 'custom', 'Y-m-d H:i');
+      $form['simplenews']['scheduler']['start_date'] = array(
+        '#type' => 'date_select', '#title' => t('Start sending on'),
+        '#default_value' => $date_str_start,
+        '#date_type' => DATE_DATETIME,
+        '#date_format' => 'm-d-Y - H:i',
+        '#date_timezone' => date_default_timezone_name(),
+        '#date_label_position' => 'none',
+        '#date_increment' => 1,
+        '#date_year_range' => '0:+3',
+        '#required' => TRUE,
+        '#description' => t('Intervals work by creating a new node at the
+           desired time and marking this to be sent, ensure
+           you have your <a href="@site">site timezones</a>
+           configured and <a href="@user">user timezone</a>
+           configured.', array(
+             '@site' => url('admin/settings/date-time'),
+             '@user' => url('user/' . $user->uid . '/edit'),
+           )),
+         );
+      $form['simplenews']['scheduler']['stop_type'] = array(
+        '#type' => 'radios',
+        '#title' => t('Stop sending'),
+        '#default_value' => isset($scheduler['stop_type']) ? $scheduler['stop_type'] : 0,
+        '#options' => array(
+          t('Never'),
+          t('On a given date'),
+          t('After a maximum number of editions'),
+        ),
+        '#attributes' => array('class' => 'simplenews-command-stop'),
+      );
+      $form['simplenews']['scheduler']['stop_date'] = array(
+        '#type' => 'date_select',
+        '#default_value' => $date_str_stop,
+        '#date_type' => DATE_DATETIME,
+        '#date_format' => 'm-d-Y - H:i',
+        '#date_timezone' => date_default_timezone_name(),
+        '#date_label_position' => 'none',
+        '#date_increment' => 1,
+        '#date_year_range' => '2010:+3',
+        '#required' => TRUE,
+      );
+      $form['simplenews']['scheduler']['stop_edition'] = array(
+        '#type' => 'textfield',
+        '#default_value' => isset($scheduler['stop_edition']) ? $scheduler['stop_edition'] : 0,
+        '#size' => 5,
+        '#maxlength' => 5,
+        '#required' => TRUE,
+        '#description' => t('The maximum number of editions which should be sent.'),
+      );
+      $form['simplenews']['scheduler']['php_eval'] = array(
+        '#type' => 'textarea',
+        '#title' => t('Additionally only create newsletter edition if the following code returns true'),
+        '#default_value' => isset($scheduler['php_eval']) ? $scheduler['php_eval'] : '',
+        '#required' => FALSE,
+        '#description' => t('Additionally evaluate the following PHP code and only issue the newsletter edition if it returns true. Do not include &lt;?php ?&gt; tags.'),
+        '#access' => user_access('use PHP for scheduling newsletters'),
+      );
+      $form['simplenews']['scheduler']['title'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Title pattern for new edition nodes'),
+        '#description' => t('New edition nodes will have their title set to the above string, with tokens replaced.'),
+        '#required' => TRUE,
+        '#default_value' => isset($scheduler['title']) ? $scheduler['title'] : '[title]',
+      );
+      $form['simplenews']['scheduler']['token_help'] = array(
+        '#title' => t('Replacement patterns'),
+        '#type' => 'fieldset',
+        '#collapsible' => TRUE,
+        '#collapsed' => TRUE,
+      );
+      $form['simplenews']['scheduler']['token_help']['help'] = array(
+        '#value' => theme('token_help', array('node', 'global')),
+      );
+      $form['simplenews']['scheduler']['activated'] = array(
+        '#type' => 'hidden',
+        '#value' => $scheduler['activated'],
+      );
+    }
+    else {
+      // This is a newsletter edition.
+      $title .= t('This node is part of a scheduled newsletter configuration. View the original newsletter <a href="@parent">here</a>.', array('@parent' => url('node/' . $form['#node']->simplenews_scheduler_edition['pid'])));
+      $form['simplenews']['none']['#title'] = $title;
+      // If the node has attachments
+      if (count($form['attachments']['wrapper']['files']) && user_access('upload files')) {
+        // Disable all attachment form elements and the delete button to avoid the deletion of the parent's attachments.
+        $form['attachments']['#description'] = t('Attachments cannot be changed, this is a newsletter edition created by Simplenews Scheduler.');
+        $form['attachments']['wrapper']['new']['upload']['#disabled'] = TRUE;
+        $form['attachments']['wrapper']['new']['attach']['#disabled'] = TRUE;
+        // Disable every file element.
+        foreach ($form['attachments']['wrapper']['files'] as $key => $file) {
+          if (is_numeric($key)) {
+            $form['attachments']['wrapper']['files'][$key]['description']['#disabled'] = TRUE;
+            $form['attachments']['wrapper']['files'][$key]['remove']['#disabled'] = TRUE;
+            $form['attachments']['wrapper']['files'][$key]['list']['#disabled'] = TRUE;
+            $form['attachments']['wrapper']['files'][$key]['weight']['#disabled'] = TRUE;
+            $form['buttons']['delete']['#disabled'] = TRUE;
+          }
+        }
+      }
+    }
+  }
+}
+
+function simplenews_scheduler_submit($form, &$form_state) {
+  $scheduler = $form['#simplenews_scheduler'];
+
+  $nid = $form_state['values']['nid'];
+  $node = node_load($nid);
+
+  // Get Scheduler values from Simplenews.
+  $send = $form_state['values']['simplenews']['send'];
+  // Change activation status if necessary.
+  switch ($send) {
+    case SIMPLENEWS_COMMAND_SEND_TEST :
+    case SIMPLENEWS_COMMAND_SEND_NOW :
+      $activated = 0;
+      break;
+    case SIMPLENEWS_COMMAND_SEND_SCHEDULE :
+      $activated = 1;
+      break;
+  }
+
+  $start_date = $form_state['values']['simplenews']['scheduler']['start_date'];
+  $stop_date = $form_state['values']['simplenews']['scheduler']['stop_date'];
+  // Convert the user time back to GMT time and use that as our record.
+  $start_date = date_convert($start_date, DATE_DATETIME, DATE_UNIX, date_default_timezone_name());
+  $stop_date = date_convert($stop_date, DATE_DATETIME, DATE_UNIX, date_default_timezone_name());
+
+  $record = array(
+    'nid'           => $nid,
+    'activated'     => $activated,
+    'send_interval' => $form_state['values']['simplenews']['scheduler']['send_interval'],
+    'start_date'    => $start_date,
+    'stop_type'     => $form_state['values']['simplenews']['scheduler']['stop_type'], // number of edition
+    'stop_date'     => $stop_date,
+    'stop_edition'  => $form_state['values']['simplenews']['scheduler']['stop_edition'],
+    'php_eval'      => $form_state['values']['simplenews']['scheduler']['php_eval'],
+    'title'         => $form_state['values']['simplenews']['scheduler']['title'],
+  );
+  // Merge in values from the existing scheduler, such as last_run and next_run.
+  $record += $scheduler;
+
+  // For a new scheduler, add the next_run time.
+  if (!isset($scheduler['next_run'])) {
+    $record['next_run'] = $start_date;
+  }
+
+  db_query("DELETE FROM {simplenews_scheduler} WHERE nid = %d", $nid);
+  $result = drupal_write_record('simplenews_scheduler', $record);
+
+  if (! $result) {
+    drupal_set_message(t('Saving or updating schedule settings for <em>@title</em> has been unsuccessful.', array(
+      '@title' => $node->title
+    )), 'error');
+  }
+  else {
+    drupal_set_message(t('Newsletter Schedule preferences saved'));
+  }
+}
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function simplenews_scheduler_nodeapi(&$node, $op) {
+  if (in_array($node->type, variable_get('simplenews_content_types', array('simplenews')))) {
+    switch ($op) {
+      case 'load':
+        if (isset($node->nid)) {
+          $result = db_query("SELECT * FROM {simplenews_scheduler} WHERE nid = %d", $node->nid);
+          $row = db_fetch_array($result);
+          if ($row) {
+            $node->simplenews_scheduler = $row;
+          }
+          else {
+            // Maybe this was an edition that has been sent?
+            $result = db_query("SELECT * FROM {simplenews_scheduler_editions} WHERE eid = %d", $node->nid);
+            $row = db_fetch_array($result);
+            if ($row) {
+              $node->simplenews_scheduler_edition = $row;
+            }
+          }
+        }
+        break;
+     case 'delete':
+       // erase the record from the scheduler table so it does not try to send
+       db_query("DELETE FROM {simplenews_scheduler} WHERE nid = %d", $node->nid);
+     break;
+     case 'view':
+      // leaving this out until we figure out a nicer UI for showing this.
+      // this should be letting you know that you are viewing a generated newsletter, not the original
+     /*  if(isset($node->simplenews_scheduler_edition)) {
+         drupal_set_message(t('You have been redirected to the original newsletter'));
+         drupal_goto('node/'.$node->simplenews_scheduler_edition['pid'].'/simplenews');
+       }
+      */
+     break;
+    }
+  }
+}
+
+/**
+ * Implementation of hook_cron().
+ *
+ * Essentially we are just checking against a status table
+ * and recreating nodes to be sent.
+ *
+ */
+function simplenews_scheduler_cron() {
+  // Get the newsletters that need to be sent at this time.
+  $now_time = $_SERVER['REQUEST_TIME'];
+  $newsletters_to_send = simplenews_scheduler_get_newsletters_due($now_time);
+  foreach ($newsletters_to_send as $newsletter_parent_data) {
+    // Get the node id of the parent newsletter.
+    $pid = $newsletter_parent_data->nid;
+
+    $edition_time = simplenews_scheduler_calculate_edition_time($newsletter_parent_data, $now_time);
+
+    // Create a new edition.
+    $eid = _simplenews_scheduler_new_edition($pid, $edition_time);
+
+    // Update the edition record.
+    simplenews_scheduler_scheduler_update($newsletter_parent_data, $now_time);
+
+    // Send it.
+    _simplenews_scheduler_send_new_edition($edition_time, $newsletter_parent_data, $eid);
+  }
+}
+
+/**
+ * Updates a scheduler record with any housekeeping changes and saves it.
+ *
+ * This should be called once a new edition has been created. This sets the
+ * next_run time on the scheduler.
+ *
+ * @todo: Make this a general API function for saving a new or existing scheduler?
+ *
+ * @param $newsletter_parent_data
+ *   A row of data from {simplenews_scheduler}, as returned by
+ *   simplenews_scheduler_get_newsletters_due().
+ * @param $now_time
+ *   The time of the operation.
+ */
+function simplenews_scheduler_scheduler_update($newsletter_parent_data, $now_time) {
+  // Set the run time for the next edition.
+  $newsletter_parent_data->next_run = simplenews_scheduler_calculate_next_run_time($newsletter_parent_data, $now_time);
+
+  drupal_write_record('simplenews_scheduler', $newsletter_parent_data, 'nid');
+}
+
+/**
+ * Calculates time for the current edition about to be created.
+ *
+ * Because cron may run after the scheduled timestamp, one or more scheduled
+ * edition times may have been skipped. This calculates the most recent
+ * possible time for an edition.
+ *
+ * @param $newsletter_parent_data
+ *   A row of data from {simplenews_scheduler}, as returned by
+ *   simplenews_scheduler_get_newsletters_due().
+ * @param $now_time
+ *   The time of the operation.
+ *
+ * @return
+ *   The calculated creation time of the newsletter edition.
+ */
+function simplenews_scheduler_calculate_edition_time($newsletter_parent_data, $now_time) {
+  // Make an offset string of the format '+1 month'.
+  $offset_string = _simplenews_scheduler_make_time_offset($newsletter_parent_data->send_interval, 1);
+
+  // Take the last run time and add as many intervals as possible without going
+  // past 'now'.
+
+  // Create a date object to act as a pointer we'll advance and increment.
+  if ($newsletter_parent_data->last_run) {
+    // Generate a date string to initialize a DateTime() object, otherwise the
+    // timezone is ignored.
+    $start_date = date('Y-m-d H:i:s', $newsletter_parent_data->last_run);
+  }
+  else {
+    $start_date = date('Y-m-d H:i:s', $newsletter_parent_data->start_date);
+  }
+  // Initialize the DateTime object using the configured ste timezone.
+  $pointer_date = new DateTime($start_date);
+
+  while ($pointer_date->getTimestamp() <= $now_time) {
+    // Get the last iteration's timestamp before we change the pointer.
+    $timestamp_old = $pointer_date->getTimestamp();
+
+    // Add interval to the pointer time.
+    $pointer_date->modify($offset_string);
+
+    // Check if the pointer is now in the future.
+    if ($pointer_date->getTimestamp() > $now_time) {
+      // If so, return the last iteration timestamp as the edition time.
+      return $timestamp_old;
+    }
+  }
+}
+
+/**
+ * Calculates time for the next edition to be sent.
+ *
+ * This is set in the {simplenews_scheduler} table when a new edition is run,
+ * for subsequent cron runs to query against.
+ *
+ * The time is strictly in the future; that is, if the $now_time is a valid
+ * edition time, a schedule interval is added to it. This is to allow for cron
+ * runs that need to calculate the next run time at the time of the current
+ * edition being sent.
+ *
+ * @param $newsletter_parent_data
+ *   A row of data from {simplenews_scheduler}, as returned by
+ *   simplenews_scheduler_get_newsletters_due().
+ * @param $now_time
+ *   The time of the operation.
+ *
+ * @return
+ *   The calculcated run time for the next future edition.
+ */
+function simplenews_scheduler_calculate_next_run_time($newsletter_parent_data, $now_time) {
+  // Make an offset string of the format '+1 month'.
+  $offset_string = _simplenews_scheduler_make_time_offset($newsletter_parent_data->send_interval, 1);
+
+  // Create a date object to act as a pointer we'll advance and increment.
+  if ($newsletter_parent_data->last_run) {
+    // Generate a date string to initialize a DateTime() object, otherwise the
+    // timezone is ignored.
+    $start_date = date('Y-m-d H:i:s', $newsletter_parent_data->last_run);
+  }
+  else {
+    $start_date = date('Y-m-d H:i:s', $newsletter_parent_data->start_date);
+  }
+  // Initialize the DateTime object using the configured ste timezone.
+  $pointer_date = new DateTime($start_date);
+
+  // Add as many offsets as possible until we get into the future.
+  while ($pointer_date->getTimestamp() <= $now_time) {
+    // Add the offset to the pointer time.
+    $pointer_date->modify($offset_string);
+  }
+  return $pointer_date->getTimestamp();
+}
+
+/**
+ * Helper to create a PHP time offset string.
+ *
+ * @param $interval
+ *  A time interval. One of hour, day, week, month.
+ * @param $frequency
+ *  An integer that specifies how many of the $interval to create an offset for.
+ *
+ * @return
+ *  A string representing a time offset that can be understood by strtotime(),
+ *  eg '+1 month'.
+ */
+function _simplenews_scheduler_make_time_offset($interval, $frequency) {
+  $offset_string = "+{$frequency} {$interval}";
+  return $offset_string;
+}
+
+/**
+ * Get the newsletters that need to have new editions sent.
+ *
+ * This is a helper function for hook_cron that has the current date abstracted
+ * out so it can be tested.
+ *
+ * @param $timestamp
+ *   A unix timestamp at which to determine which newsletters are due to be
+ *   sent. In ordinary operation this should be the current time.
+ *
+ * @return
+ *  An array of newsletter data arrays in the form of rows from the
+ * {simplenews_scheduler} table, keyed by newsletter nid.
+ */
+function simplenews_scheduler_get_newsletters_due($timestamp) {
+  // Get all newsletters that need to be sent.
+  $result = db_query("SELECT * FROM {simplenews_scheduler} WHERE activated = 1 AND next_run <= %d AND (stop_date > %d OR stop_date = 0)", $timestamp);
+
+  $newsletters = array();
+  while ($newsletter_parent_data = db_fetch_object($result)) {
+    // Check if sending should stop with a given edition number.
+    $stop = $newsletter_parent_data->stop_type;
+    $stop_edition = $newsletter_parent_data->stop_edition;
+    // Don't create new edition if the edition number would exceed the given maximum value.
+    if ($stop == 2 && $serial >= $stop_edition) {
+      continue;
+    }
+
+    // Does this newsletter have something to evaluate to check running condition?
+    if (strlen($newsletter_parent_data->php_eval)) {
+      $eval_result = eval($newsletter_parent_data->php_eval);
+      if (!$eval_result) {
+        // Skip this newsletter and move on to the next if its PHP eval
+        // condition is not met.
+        continue;
+      }
+    }
+
+    $nid = $newsletter_parent_data->nid;
+    $newsletters[$nid] = $newsletter_parent_data;
+  }
+
+  return $newsletters;
+}
+
+/**
+ * Helper for hook_cron() to send a new edition.
+ *
+ * @param $edition_time
+ *  The time of the operation. Usually the current time unless testing.
+ * @param $newsletter_parent_data
+ *  A row of data from {simplenews_scheduler}, as returned by
+ *  simplenews_scheduler_get_newsletters_due().
+ * @param $eid
+ *  The node id of the new edition to send. This should already have been
+ *  created by _simplenews_scheduler_new_edition().
+ */
+function _simplenews_scheduler_send_new_edition($edition_time, $newsletter_parent_data, $eid) {
+  $pid = $newsletter_parent_data->nid;
+
+  db_query("UPDATE {simplenews_scheduler} SET last_run = %d WHERE nid = %d", $edition_time, $pid);
+  $node = node_load($eid);
+  // Send the newsletter edition to each subscriber of the parent newsletter
+  // get the tid of this newsletter and generate a list of accounts to send this new newsletter to, based on the parent newsletter.
+  $tid = db_result(db_query("SELECT tid from {simplenews_newsletters} WHERE nid = %d", $node->nid));
+  $accounts = simplenews_scheduler_get_newsletter_accounts($tid);
+
+  module_load_include('inc', 'simplenews', 'includes/simplenews.mail');
+  simplenews_send_node($node, $accounts);
+}
+
+// @todo: might be a better already existing function for this
+function simplenews_scheduler_get_newsletter_accounts($newsletter_tid) {
+
+  // taken from the newsletter subscription list
+   $query = '
+    SELECT DISTINCT ss.snid, ss.*, u.name
+    FROM {simplenews_subscriptions} ss
+    LEFT JOIN {users} u
+      ON ss.uid = u.uid
+    INNER JOIN {simplenews_snid_tid} s
+      ON ss.snid = s.snid
+    AND s.tid = %d AND s.status = 1';
+
+   $result = db_query($query, $newsletter_tid);
+
+  // build the accounts array
+  /* @param array $accounts  account objects to send the newsletter to.
+     *   account = object (
+     *     snid     = subscription id, or 0 if no subscription record exists.
+     *     tids     = array(tid) array of newsletter tid's.
+     *     uid      = user id, or 0 if subscriber is anonymous user.
+     *     mail     = user email address.
+     *     name     = <empty>. Added for compatibility with user account object.
+     *     language = language object. User-preferred or default language.
+     *
+     */
+  $accounts = array();
+  while ($account = db_fetch_object($result)) {
+    $account->tids = array(
+      $newsletter_tid
+    );
+    $accounts[] = $account;
+  }
+
+   return $accounts;
+}
+/**
+ * Menu callback to provide an overview page with the scheduled newsletters.
+ */
+function simplenews_scheduler_node_page($node) {
+  drupal_set_title(t('Scheduled newsletter editions'));
+  $nid = _simplenews_scheduler_get_pid($node);
+  // This is the original newsletter.
+  if ($nid == $node->nid) {
+    $output .= '<p>' . t('This is the original newsletter of which all editions are based on.') . '</p>';
+  }
+  // This is a newsletter edition.
+  else {
+    $output .= '<p>' . t('This node is part of a scheduled newsletter configuration. View the original newsletter <a href="@parent">here</a>.', array('@parent' => url('node/' . $nid))) . '</p>';
+  }
+  // Load the corresponding editions from the database to further process.
+  $result = pager_query("SELECT * FROM {simplenews_scheduler_editions} sse LEFT JOIN {node} n ON n.nid = sse.pid WHERE sse.pid = %d", 20, 0, NULL, $nid);
+  while ($row = db_fetch_object($result)) {
+    $node = node_load($row->eid);
+    $rows[] = array(format_date($row->date_issued, 'custom', 'Y-m-d H:i'), l($node->title, 'node/' . $row->eid));
+  }
+  // Display a table with all editions.
+  if (! empty($rows)) {
+    $output .= theme('table', array(t('Date sent'), t('Node')), $rows, array('class' => 'schedule_history'));
+    $output .= theme('pager', 20);
+  }
+  else {
+    $output .= '<p>' . t('No scheduled newsletters have been sent.') . '</p>';
+  }
+  return $output;
+}
+
+/**
+ * Check whether to display the Scheduled Newsletter tab.
+ */
+function _simplenews_scheduler_tab_permission($node) {
+  if (in_array($node->type, variable_get('simplenews_content_types', array('simplenews'))) && user_access('overview scheduled newsletters')) {
+    $pid = _simplenews_scheduler_get_pid($node);
+    // Only display the tab if there is a parent template newsletter or if this
+    // is itself a template newsletter.
+    return !empty($pid);
+  }
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Use the Drupal API for finding the Full HTML input format, this is what the subsequent newsletter editions
+ * need to be set to.
+ */
+function _simplenews_scheduler_get_full_html_format() {
+  $formats = filter_formats();
+
+  foreach ($formats as $index => $format) {
+    if (stristr($format->name, 'Full HTML')) {
+      return $index;
+    }
+  }
+
+  return false;
+}
+
+/**
+ * Create a new newsletter edition.
+ *
+ * This does no checking of whether a new edition should be made; it's up to
+ * the caller to determine this first.
+ *
+ * @param $nid
+ *  The node id of the parent newsletter node to use as a template.
+ * @param $edition_time
+ *   Desired edition creation time.
+ *
+ * @return
+ *  The node id of the new edition node.
+ */
+function _simplenews_scheduler_new_edition($nid, $edition_time) {
+  $node = node_load($nid);
+
+  if (module_exists('upload')) {
+    $files = upload_load($node);
+  }
+
+  // Switch to the anonymous user to render node content.
+  // This prevents things like Views admin links from showing in edition node body.
+  global $user;
+  if ($user->uid) {
+    // Store the current user and session so we can restore them.
+    $original_user = $user;
+    $old_state = session_save_session();
+
+    // Disable session saving and load the anonymous user.
+    session_save_session(FALSE);
+    $user = user_load(0);
+  }
+
+  // Render node content.
+  $node = node_build_content($node, FALSE, FALSE);
+  $content = drupal_render($node->content);
+  // Keep the teaser in sync with the rendered node content.
+  $node->teaser = node_teaser($node->body, isset($node->format) ? $node->format : NULL);
+
+  // Restore the original user if necessary.
+  if (isset($original_user)) {
+    $user = $original_user;
+    session_save_session($old_state);
+  }
+
+  // Store taxonomy terms to save later to the node.
+  $terms = $node->taxonomy;
+
+  // Output format for all newly created items should just be Full HTML, incase of Views output etc.
+  if ($format_id = _simplenews_scheduler_get_full_html_format()) {
+    $node->format = $format_id;
+  }
+
+  // Trigger it for sending.
+  $node->simplenews['send'] = 1;
+
+  // Mark as new with removeing node ID and creation date.
+  unset($node->nid, $node->created, $node->path);
+  // Mark as new edition.
+  $node->is_edition = TRUE;
+  // Set the creation time.
+  $node->created = $edition_time;
+
+  // Run the title through token replacement.
+  $title_pattern = $node->simplenews_scheduler['title'];
+  $node->title = token_replace($title_pattern, 'node', $node);
+
+  // Invoke simplenews_scheduler_edition_node_alter() to give installed modules
+  // a chance to modify the cloned edition node before it gets saved.
+  drupal_alter('simplenews_scheduler_edition_node', $node);
+
+  // Now save it as a new node.
+  node_save($node);
+  // Save taxonomy terms.
+  taxonomy_node_save($node, $terms);
+  watchdog('simplenews_sched', 'Saved new node ready to be sent. Node ID: !nid', array(
+    '!nid' => $node->nid
+  ));
+  // If the node has attachments.
+  if (isset($files) && count($files)) {
+    // Simply copy the corresponding records in files and upload tables without duplicate the file.
+    foreach ($files as $file) {
+      db_query_range("INSERT INTO {files} (uid, filename, filepath, filemime, filesize, status, timestamp) (SELECT uid, filename, filepath, filemime, filesize, status, timestamp FROM {files} WHERE filename = '%s')", $file->filename, 0, 1);
+      db_query("INSERT INTO {upload} (fid, nid, vid, list, description, weight) VALUES ((SELECT MAX(fid) AS fid FROM files WHERE filename = '%s'), %d, %d, %d, '%s', %d)", $file->filename, $node->nid, $node->vid, $file->list, $file->description, $file->weight);
+    }
+  }
+  // Prepare the correct status for Simplenews to pickup.
+  db_query("UPDATE {simplenews_newsletters} SET s_status=1 WHERE nid=%d", $node->nid);
+
+  // ensure this edition has the same simplenews_newsletter settings as the parent
+  // also ensures the 'tid' is set, so we use the same newsletter settings as the parent
+  if ($newsletter = db_fetch_array(db_query("SELECT * from {simplenews_newsletters} WHERE nid = %d", $nid))) {
+    db_query("UPDATE {simplenews_newsletters} SET s_status = 1, tid = %d, s_format = '%s', priority = %d, receipt = %d WHERE nid=%d", $newsletter['tid'], $newsletter['s_format'], $newsletter['priority'], $newsletter['receipt'], $node->nid);
+  }
+
+  // Record the new edition.
+  db_query("INSERT INTO {simplenews_scheduler_editions} (eid, pid, date_issued) VALUES (%d, %d, %d)", $node->nid, $nid, $edition_time);
+
+  return $node->nid;
+}
+
+/**
+ * Helper function to get the identifier of newsletter.
+ *
+ * @param $node
+ *  The node object for the newsletter.
+ *
+ * @return
+ *  If the node is a newsletter edition, the node id of its parent template
+ *  newsletter; if the node is a template newsletter, its own node id; and
+ *  FALSE if the node is not part of a scheduled newsletter set.
+ */
+function _simplenews_scheduler_get_pid($node) {
+  $nid = FALSE;
+
+  // First assume this is a newsletter edition,
+  if (isset($node->simplenews_scheduler_edition)) {
+    $nid = $node->simplenews_scheduler_edition['pid'];
+  }
+  // or this itself is the parent newsletter.
+  elseif (isset($node->simplenews_scheduler)) {
+    $nid = $node->nid;
+  }
+
+  return $nid;
+}
+

@@ -1,0 +1,13 @@
+; $Id: book_copy.info,v 1.1.2.1 2008/11/11 22:14:31 jgraham Exp $
+name = Book Copy
+description = Allows users to copy entire books.
+dependencies[] = book
+dependencies[] = clone
+core = 6.x
+
+; Information added by drupal.org packaging script on 2008-11-26
+version = "6.x-1.1"
+core = "6.x"
+project = "book_copy"
+datestamp = "1227733505"
+

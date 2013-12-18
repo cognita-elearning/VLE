@@ -1,0 +1,12 @@
+name = Taskbar Views
+description = Views provider for Taskbar
+core = 6.x
+dependencies[] = taskbar
+dependencies[] = views
+package = "Taskbar"
+; Information added by drupal.org packaging script on 2013-05-29
+version = "6.x-1.5"
+core = "6.x"
+project = "taskbar"
+datestamp = "1369820164"
+

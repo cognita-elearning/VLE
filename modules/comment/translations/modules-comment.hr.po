@@ -1,0 +1,564 @@
+# Croatian translation of drupal (6.13)
+# Copyright (c) 2009 by the Croatian translation team
+# Generated from files:
+#  comment-folded.tpl.php,v 1.2 2007/08/07 08:39:35 goba
+#  comment.admin.inc,v 1.4.2.2 2008/05/19 07:27:35 goba
+#  comment.pages.inc,v 1.2.2.2 2009/07/01 20:51:55 goba
+#  comment.module,v 1.617.2.8 2009/07/01 20:51:55 goba
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drupal (6.13)\n"
+"POT-Creation-Date: 2009-08-19 09:52+0200\n"
+"PO-Revision-Date: 2009-08-10 15:07+0200\n"
+"Language-Team: Croatian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((((n%10)==1)&&((n%100)!=11))?(0):(((((n%10)"
+">=2)&&((n%10)<=4))&&(((n%100)<10)||((n%100)>=20)))?(1):2));\n"
+
+#: modules/comment/comment-folded.tpl.php:20
+msgid "by"
+msgstr "od"
+
+#: modules/comment/comment.admin.inc:56
+msgid "Posted in"
+msgstr "Objavljeno u"
+
+#: modules/comment/comment.admin.inc:86
+msgid "Please select one or more comments to perform the update on."
+msgstr "Molimo odaberite jedan ili više komentara kako bi izvršili ažuriranje."
+
+#: modules/comment/comment.admin.inc:142
+msgid "No comments available."
+msgstr "Nema dostupnih komentara."
+
+#: modules/comment/comment.admin.inc:183
+msgid ""
+"There do not appear to be any comments to delete or your selected comment "
+"was deleted by another administrator."
+msgstr ""
+"Nema objavljenih komentara koje ste htjeli obrisati ili ih je obrisao drugi "
+"administrator."
+
+#: modules/comment/comment.admin.inc:188
+msgid "Are you sure you want to delete these comments and all their children?"
+msgstr ""
+"Jeste li sigurni da želite obrisati ove komentare sa sivm njihovim "
+"podređenim komentarima?"
+
+#: modules/comment/comment.admin.inc:190
+msgid "Delete comments"
+msgstr "Obriši komentare"
+
+#: modules/comment/comment.admin.inc:207
+msgid "The comments have been deleted."
+msgstr "Komentari su obrisani."
+
+#: modules/comment/comment.admin.inc:228
+msgid "The comment no longer exists."
+msgstr "Komentar više ne postoji."
+
+#: modules/comment/comment.admin.inc:245
+msgid "Are you sure you want to delete the comment %title?"
+msgstr "Da li zaista želite obrisati ovaj komentar %title?"
+
+#: modules/comment/comment.admin.inc:247
+msgid "Any replies to this comment will be lost. This action cannot be undone."
+msgstr ""
+"Svi odgovori na ovaj komentar biće obrisani. Ovu radnju nije moguće vratiti "
+"u prvobitno stanje."
+
+#: modules/comment/comment.admin.inc:257
+msgid "The comment and all its replies have been deleted."
+msgstr "Komentar i svi odgovori na njega su obrisani."
+
+#: modules/comment/comment.admin.inc:280
+msgid "Cannot delete non-existent comment."
+msgstr "Ne možete obrisati komentar koji ne postoji."
+
+#: modules/comment/comment.admin.inc:286
+msgid "Comment: deleted %subject."
+msgstr "Komentar: %subject je obrisan."
+
+#: modules/comment/comment.pages.inc:65,105
+msgid "You are not authorized to post comments."
+msgstr "Nemate dozlovu za slanje komentara."
+
+#: modules/comment/comment.pages.inc:78,87
+msgid "The comment you are replying to does not exist."
+msgstr "Komentar na koji sada odgovarate više ne postoji."
+
+#: modules/comment/comment.pages.inc:98
+msgid "This discussion is closed: you can't post new comments."
+msgstr "Ova rasprava je zatovrena: ne možete ostaviti novi komentar."
+
+#: modules/comment/comment.pages.inc:102
+msgid "Reply"
+msgstr "Odgovori"
+
+#: modules/comment/comment.pages.inc:111
+msgid "You are not authorized to view comments."
+msgstr "Nemate dozvolu da vidite komentare."
+
+#: modules/comment/comment.module:129
+msgid ""
+"The comment module allows visitors to comment on your posts, creating ad hoc "
+"discussion boards. Any <a href=\"@content-type\">content type</a> may have "
+"its <em>Default comment setting</em> set to <em>Read/Write</em> to allow "
+"comments, or <em>Disabled</em>, to prevent comments. Comment display "
+"settings and other controls may also be customized for each content type "
+"(some display settings are customizable by individual users)."
+msgstr ""
+"Modul komentar omogućava posjetiteljima sitea da postave svoje komentare i "
+"na taj način spontano kreiraju teme za raspravu. \r\n"
+"Svaki <a href=\"@content-type\">tip</a> može imati <em>Podrazumijevane "
+"postavke komentara</em> koje uključuju <em>Čitaj/Piši</em> opciju koja "
+"omogućava postavljanje komentara ili <em>Onemogućeno</em> opciju koja "
+"sprječava postavljanje komentara. Opcije za prikaz komentara kao i druge "
+"postavke mogu se namjestiti za svaki tip sadržaja posebno (pri čemu neke od "
+"opcija prikaza mogu biti dodijeljene pojedinačno od strane samih korisnika)."
+
+#: modules/comment/comment.module:130
+msgid ""
+"Comment permissions are assigned to user roles, and are used to determine "
+"whether anonymous users (or other roles) are allowed to comment on posts. If "
+"anonymous users are allowed to comment, their individual contact information "
+"may be retained in cookies stored on their local computer for use in later "
+"comment submissions. When a comment has no replies, it may be (optionally) "
+"edited by its author. The comment module uses the same input formats and "
+"HTML tags available when creating other forms of content."
+msgstr ""
+"Dozvole za komentare se dodjeljuju prema korisničkim ulogama i koriste se za "
+"kontrolu da li je anonimnim korisnicima sustava (ili korisnicima sa ostalim "
+"ulogama) dozvoljeno komentiranje sadržaja. Ukoliko anonimni korisnici imaju "
+"mogućnost postavljanja komentara, njihove kontakt informacije mogu biti "
+"sačuvane u cookies-ima na njihovom lokalnom računalu za identifikaciju "
+"prilikom postavljanja novih komentara. Kada na postavljeni komentar još nema "
+"odgovora, autor komentara ga može izmijeniti ako to želi. Modul komentar za "
+"kreiranje sadržaja koristi iste firmate i HTML takove koji su dostupni za "
+"kreiranje drugih sadržaja."
+
+#: modules/comment/comment.module:131
+msgid ""
+"For more information, see the online handbook entry for <a href=\"@comment"
+"\">Comment module</a>."
+msgstr ""
+"Za više informacija, pogledajte online priručnik za <a href=\"@comment"
+"\">Komentar modul</a>."
+
+#: modules/comment/comment.module:134
+msgid ""
+"Below is a list of the latest comments posted to your site. Click on a "
+"subject to see the comment, the author's name to edit the author's user "
+"information, 'edit' to modify the text, and 'delete' to remove their "
+"submission."
+msgstr ""
+"Ispod možete pronaći popis najnovijih komentara postavljenih na vašem siteu. "
+"Kliknite na temu da biste pregledali komentar, na ime autora da biste "
+"promijenili informacije o autoru priloga, ili na 'briši' da biste obrisali "
+"ovaj prilog."
+
+#: modules/comment/comment.module:136
+msgid ""
+"Below is a list of the comments posted to your site that need approval. To "
+"approve a comment, click on 'edit' and then change its 'moderation status' "
+"to Approved. Click on a subject to see the comment, the author's name to "
+"edit the author's user information, 'edit' to modify the text, and 'delete' "
+"to remove their submission."
+msgstr ""
+"Ispod je popis komentara na vašem siteu koji čekaju odobrenje. Kako bi "
+"odobrili komentar, kliknite na 'uredi', a zatim promijenite 'status "
+"moderiranja' na odobren. Kliknite na temu kako bi ste vidjeli komentar, na "
+"ime autora kako b iste promijenili informacije o autoru, ili na 'obriši' "
+"kako bi ste obrisali komentar."
+
+#: modules/comment/comment.module:285,289
+msgid "Recent comments"
+msgstr "Nedavni komentari"
+
+#: modules/comment/comment.module:421
+msgid "Jump to the first comment of this posting."
+msgstr "Pređi na prvi komentar ovog unosa."
+
+#: modules/comment/comment.module:432
+msgid "Jump to the first new comment of this posting."
+msgstr "Pređi na prvi novi komentar ovog unosa."
+
+#: modules/comment/comment.module:441,462
+msgid "Add new comment"
+msgstr "Dodaj novi komentar"
+
+#: modules/comment/comment.module:443
+msgid "Add a new comment to this page."
+msgstr "Dodaj novi komentar na ovu stranicu."
+
+#: modules/comment/comment.module:464
+msgid "Share your thoughts and opinions related to this posting."
+msgstr "Iznesite svoje mišljenje po pitanju ovog unosa."
+
+#: modules/comment/comment.module:493,576
+msgid "Comment settings"
+msgstr "Postavke komentara"
+
+#: modules/comment/comment.module:499
+msgid "Default comment setting"
+msgstr "Podrazumijevane postavke komentara"
+
+#: modules/comment/comment.module:501,585
+msgid "Read only"
+msgstr "Samo za čitanje"
+
+#: modules/comment/comment.module:501,585
+msgid "Read/Write"
+msgstr "Čitaj/Piši"
+
+#: modules/comment/comment.module:502
+msgid ""
+"Users with the <em>administer comments</em> permission will be able to "
+"override this setting."
+msgstr ""
+"Korisnici sa pravom <em>administriranja komentara</em> moći će da promijene "
+"ove postavke."
+
+#: modules/comment/comment.module:506
+msgid "Default display mode"
+msgstr "Podrazumijevani način prikaza"
+
+#: modules/comment/comment.module:509
+msgid ""
+"The default view for comments. Expanded views display the body of the "
+"comment. Threaded views keep replies together."
+msgstr ""
+"Podrazumijevani prikaz komentara. Rašireni prikazi prikazuje tijelo "
+"komentara. Nanizani prikazi drže komentare na okupu."
+
+#: modules/comment/comment.module:513
+msgid "Default display order"
+msgstr "Podrazumijevani redoslijed prikaza"
+
+#: modules/comment/comment.module:516
+msgid ""
+"The default sorting for new users and anonymous users while viewing "
+"comments. These users may change their view using the comment control panel. "
+"For registered users, this change is remembered as a persistent user "
+"preference."
+msgstr ""
+"Podrazumijevano razvrstavanje za nove korisnike i anonimne korisnike dok "
+"pregledaju komentare. Ovi korisnici mogu da promijene prikaz preko kontrolne "
+"ploče komentara. Ova promjena će biti zapamćena za registrirane korisnike."
+
+#: modules/comment/comment.module:520
+msgid "Default comments per page"
+msgstr "Podrazumijevani broj komentara po stranici"
+
+#: modules/comment/comment.module:523
+msgid ""
+"Default number of comments for each page: more comments are distributed in "
+"several pages."
+msgstr ""
+"Podrazumijevani broj komentara po svakoj stranici: veći broj komentara od "
+"ovog se raspoređuje na više strana."
+
+#: modules/comment/comment.module:527
+msgid "Comment controls"
+msgstr "Kontrole komentara"
+
+#: modules/comment/comment.module:530
+msgid "Display above the comments"
+msgstr "Prikaži iznad komentara"
+
+#: modules/comment/comment.module:531
+msgid "Display below the comments"
+msgstr "Prikaži ispod komentara"
+
+#: modules/comment/comment.module:532
+msgid "Display above and below the comments"
+msgstr "Prikaži i iznad i ispod komentara"
+
+#: modules/comment/comment.module:533
+msgid "Do not display"
+msgstr "Ne prikazuj"
+
+#: modules/comment/comment.module:534
+msgid ""
+"Position of the comment controls box. The comment controls let the user "
+"change the default display mode and display order of comments."
+msgstr ""
+"Pozicija kontrolne kućice komentara. Kontrole komentara omogućuju "
+"korisnicima da promijene podrazumijevani način i redoslijed prikaza "
+"komentara."
+
+#: modules/comment/comment.module:538
+msgid "Anonymous commenting"
+msgstr "Komentiranja anonimnih korisnika"
+
+#: modules/comment/comment.module:541
+msgid "Anonymous posters may not enter their contact information"
+msgstr "Anonimni autori ne mogu da unesu osobne kontakt informacije"
+
+#: modules/comment/comment.module:542
+msgid "Anonymous posters may leave their contact information"
+msgstr "Anonimni autori mogu da unesu osobne kontakt informacije"
+
+#: modules/comment/comment.module:543
+msgid "Anonymous posters must leave their contact information"
+msgstr "Anonimni autori moraju da unesu osobne kontakt informacije"
+
+#: modules/comment/comment.module:544
+msgid ""
+"This option is enabled when anonymous users have permission to post comments "
+"on the <a href=\"@url\">permissions page</a>."
+msgstr ""
+"Ova opcija je uključena na <a href=\"@url\">stranici sa dozvolama</a> kada "
+"anonimni korisnici imaju pravo da šalju komentare."
+
+#: modules/comment/comment.module:551
+msgid "Comment subject field"
+msgstr "Polje tema komentara"
+
+#: modules/comment/comment.module:554
+msgid "Can users provide a unique subject for their comments?"
+msgstr "Mogu li korisnici navesti osobnu temu za svoje komentare?"
+
+#: modules/comment/comment.module:558,1430
+msgid "Preview comment"
+msgstr "Pregled komentara"
+
+#: modules/comment/comment.module:561
+msgid ""
+"Forces a user to look at their comment by clicking on a 'Preview' button "
+"before they can actually add the comment"
+msgstr ""
+"Primorati korisnika da pogleda komentar tako što će kliknuti na 'Pregled' "
+"dugme prije nego što doda svoj komentar"
+
+#: modules/comment/comment.module:565
+msgid "Location of comment submission form"
+msgstr "Lokacija obrasca za slanje komentara"
+
+#: modules/comment/comment.module:567
+msgid "Display on separate page"
+msgstr "Prikaži na zasebnoj starnici"
+
+#: modules/comment/comment.module:567
+msgid "Display below post or comments"
+msgstr "Prikaži ispod unosa ili komentara"
+
+#: modules/comment/comment.module:781
+msgid ""
+"Your comment has been queued for moderation by site administrators and will "
+"be published after approval."
+msgstr ""
+"Vaš komentar čeka odobrenje administratora i biće objavljen po odobrenju."
+
+#: modules/comment/comment.module:794,793
+msgid ""
+"Comment: unauthorized comment submitted or comment submitted to a closed "
+"post %subject."
+msgstr ""
+"Komentar: pokušano je neovlašteno slanje komentara ili je komentar podnijet "
+"za zatvoreni post %subject."
+
+#: modules/comment/comment.module:817
+msgid "parent"
+msgstr "nadređeni"
+
+#: modules/comment/comment.module:834,846
+msgid "reply"
+msgstr "odgovori"
+
+#: modules/comment/comment.module:1051
+msgid "Post new comment"
+msgstr "Objavi novi komentar"
+
+#: modules/comment/comment.module:1074,1086
+msgid "Publish the selected comments"
+msgstr "Objavi odabrane komentare"
+
+#: modules/comment/comment.module:1075,1081,1088
+msgid "Delete the selected comments"
+msgstr "Obriši odabrane komentare"
+
+#: modules/comment/comment.module:1080,1087
+msgid "Unpublish the selected comments"
+msgstr "Sakrij izabrane komentare."
+
+#: modules/comment/comment.module:1197
+msgid "You have to specify a valid author."
+msgstr "Morate navesti točnog autora."
+
+#: modules/comment/comment.module:1208
+msgid "The name you used belongs to a registered user."
+msgstr "Ime koje ste uzeli pripada registriranom korisniku."
+
+#: modules/comment/comment.module:1213
+msgid "You have to leave your name."
+msgstr "Morate navesti vaše ime."
+
+#: modules/comment/comment.module:1218
+msgid "The e-mail address you specified is not valid."
+msgstr "E-mail adresa koju ste naveli nije važeća."
+
+#: modules/comment/comment.module:1222
+msgid "You have to leave an e-mail address."
+msgstr "Morate upisati e-mail adresu."
+
+#: modules/comment/comment.module:1227
+msgid ""
+"The URL of your homepage is not valid. Remember that it must be fully "
+"qualified, i.e. of the form <code>http://example.com/directory</code>."
+msgstr ""
+"URL vaše naslovne stranice nije točan. Zapamtite da treba biti potpuno "
+"ispravan, npr. <code>http://primjer.com/directory</code>."
+
+#: modules/comment/comment.module:1283
+msgid "Administration"
+msgstr "Administracija"
+
+#: modules/comment/comment.module:1326,1351,1358
+msgid "Homepage"
+msgstr "Naslovnica"
+
+#: modules/comment/comment.module:1532
+msgid "(No subject)"
+msgstr "(Bez teme)"
+
+#: modules/comment/comment.module:1620
+msgid "!a comments per page"
+msgstr "!a komentara po stranici"
+
+#: modules/comment/comment.module:1647
+msgid ""
+"Select your preferred way to display the comments and click \"Save settings"
+"\" to activate your changes."
+msgstr ""
+"Odaberite preferirani način za prikazivanje komentara i kliknite \"Spremi "
+"postavke\" kako bi ste aktivirali promjene."
+
+#: modules/comment/comment.module:1648
+msgid "Comment viewing options"
+msgstr "Opcije za prikazivanje komentara"
+
+#: modules/comment/comment.module:1801
+msgid ""
+"<a href=\"@login\">Login</a> or <a href=\"@register\">register</a> to post "
+"comments"
+msgstr ""
+"<a href=\"@login\">Prijavite se</a> ili <a href=\"@register\">registrirajte</"
+"a> da možete objavljivati komentare"
+
+#: modules/comment/comment.module:1805
+msgid "<a href=\"@login\">Login</a> to post comments"
+msgstr "<a href=\"@login\">Prijavite se</a> kako bi napisali komentar"
+
+#: modules/comment/comment.module:1833
+msgid "Submitted by !username on @datetime."
+msgstr "Postavljeno od !username, @datetime."
+
+#: modules/comment/comment.module:1848
+msgid "Flat list - collapsed"
+msgstr "Ravan popis - skupljen"
+
+#: modules/comment/comment.module:1849
+msgid "Flat list - expanded"
+msgstr "Ravan popis - raširen"
+
+#: modules/comment/comment.module:1850
+msgid "Threaded list - collapsed"
+msgstr "Popis u nizu - sažet"
+
+#: modules/comment/comment.module:1851
+msgid "Threaded list - expanded"
+msgstr "Popis u nizu - raširen"
+
+#: modules/comment/comment.module:2007
+msgid "After saving a new comment"
+msgstr "Kada se sačuva novi komentar"
+
+#: modules/comment/comment.module:2010
+msgid "After saving an updated comment"
+msgstr "Kada se sačuva ažurirani komentar"
+
+#: modules/comment/comment.module:2013
+msgid "After deleting a comment"
+msgstr "Kada se obriše komentar"
+
+#: modules/comment/comment.module:2016
+msgid "When a comment is being viewed by an authenticated user"
+msgstr "Kada je komentar viđen od strane potvrđenih korisnika"
+
+#: modules/comment/comment.module:2029
+msgid "Unpublish comment"
+msgstr "Neobjavljen komentar"
+
+#: modules/comment/comment.module:2037
+msgid "Unpublish comment containing keyword(s)"
+msgstr "Ne objavljivati komentare koji sadrže ove ključne riječi"
+
+#: modules/comment/comment.module:2077
+msgid ""
+"The comment will be unpublished if it contains any of the character "
+"sequences above. Use a comma-separated list of character sequences. Example: "
+"funny, bungee jumping, \"Company, Inc.\". Character sequences are case-"
+"sensitive."
+msgstr ""
+"Komentar neće biti objavljen ako sadrži bilo koji karakter u ovom nizu "
+"iznad. Koristite zarez za odvajanje riječi. Npr.: zabavno, bungee jupming, "
+"\"Company, Inc.\". Karakteri su osjetljivi na velika i mala slova."
+
+#: modules/comment/comment.module:771
+msgid "Comment: added %subject."
+msgstr "Komentar: %subject je dodan."
+
+#: modules/comment/comment.module:2065,2105
+msgid "Unpublished comment %subject."
+msgstr "Neobjavljeni komentar %subject."
+
+#: modules/comment/comment.module:429
+msgid "1 new comment"
+msgid_plural "@count new comments"
+msgstr[0] "1 novi komenatar"
+msgstr[1] "@count nova komentara"
+msgstr[2] "@count novih komentara"
+
+#: modules/comment/comment.module:275
+msgid "access comments"
+msgstr "pristup komentarima"
+
+#: modules/comment/comment.module:275
+msgid "post comments"
+msgstr "slanje komentara"
+
+#: modules/comment/comment.module:275
+msgid "administer comments"
+msgstr "administracija komentara"
+
+#: modules/comment/comment.module:275
+msgid "post comments without approval"
+msgstr "slanje komentara bez odobrenja"
+
+#: modules/comment/comment.module:199
+msgid "List and edit site comments and the comment moderation queue."
+msgstr "Izlistajte i uredite komentare i red čekanja na moderiranje na site-u."
+
+#: modules/comment/comment.module:207
+msgid "Published comments"
+msgstr "Objavljeni komentari"
+
+#: modules/comment/comment.module:212
+msgid "Approval queue"
+msgstr "Red za odobravanje"
+
+#: modules/comment/comment.module:220
+msgid "Delete comment"
+msgstr "Obriši komentar"
+
+#: modules/comment/comment.module:228
+msgid "Edit comment"
+msgstr "Uredi komentar"
+
+#: modules/comment/comment.module:235
+msgid "Reply to comment"
+msgstr "Odgovori na komentar"

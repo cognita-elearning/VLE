@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ * Simple, extensible user import from a CSV file.
+ */
+
+/**
+ * Implementation of hook_install().
+ */
+function uif_install() {
+  drupal_set_message(st("User import framework module installed. You can now !link.", 
+    array( '!link' => l('import users',  'admin/user/uif' ))
+  ));
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function uif_uninstall() {
+  $result = db_query("SELECT name FROM {variable} WHERE name LIKE 'uif_%'");
+  while ($row = db_fetch_object($result)) {
+    variable_del($row->name);
+  }
+  drupal_set_message(t('User import framework module has been uninstalled.'));
+}
+

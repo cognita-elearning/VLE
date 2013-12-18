@@ -1,0 +1,10 @@
+<?php
+// $Id$
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function bookblock_uninstall() {
+  // Delete variable.
+  variable_del('bookblock_books');
+}
